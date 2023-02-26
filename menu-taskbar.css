@@ -11,4 +11,97 @@ header {
     background-repeat: no-repeat;
     background-position: center;
     margin: auto;
+    background-color: #125A8E;
+    
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    gap: 55rem;
+}
+.logo img {
+    height: 4rem;
+    width: auto;
+    cursor: pointer;
+}
+.notification-account {
+    display: flex;
+    align-items: center;
+    gap: 2rem;
+}
+.notification-account i {
+    color: beige;
+    font-size: 1.5rem;
+    cursor: pointer;
+}
+.notification-account button {
+    background: #ffd15e ;
+  background-image: -webkit-linear-gradient(top, #ffd15e , #ffbb00);
+  background-image: -moz-linear-gradient(top, #ffd15e , #ffbb00);
+  background-image: -ms-linear-gradient(top, #ffd15e , #ffbb00);
+  background-image: -o-linear-gradient(top, #ffd15e , #ffbb00);
+  background-image: linear-gradient(to bottom, #ffd15e , #ffbb00);
+  -webkit-border-radius: 28;
+  -moz-border-radius: 28;
+  border-radius: 28px;
+  font-family: Arial;
+  color: #000000;
+  font-size: 20px;
+  padding: 10px 30px 10px 30px;
+  text-decoration: none;
+  border: none;
+}
+.notification-account button:hover {
+    background: #f55f76;
+    background-image: -webkit-linear-gradient(top, #f55f76, #e83c53);
+    background-image: -moz-linear-gradient(top, #f55f76, #e83c53);
+    background-image: -ms-linear-gradient(top, #f55f76, #e83c53);
+    background-image: -o-linear-gradient(top, #f55f76, #e83c53);
+    background-image: linear-gradient(to bottom, #f55f76, #e83c53);
+    text-decoration: none;
+    color: beige;
+}
+main {
+    width: 100%;
+    height: auto;
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+    margin: auto;
+    background-color: grey;
+    display: flex;
+    flex-direction: row;
+}
+.taskbar {
+    background-color: #FFFBF2;
+    width: 20%;
+    height: auto;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 9rem;
+}
+.taskbar ul {
+    list-style-type: none;
+    margin: none;
+    background-color: rgb(17, 214, 171);
+    width: 100%;
+    text-align: left;
+    padding: 1rem 0 0 3rem;
+   
+
+}
+.taskbar > ul li {
+    font-family: 'Poppins', sans-serif;
+    font-size: 1.5rem;
+    font-weight: 700;
+    color: #125A8E;
+    padding: 0.5rem 0.5rem;
+    
+    
+    
+}
+.taskbar img {
+    
+    height: 6rem;
 }

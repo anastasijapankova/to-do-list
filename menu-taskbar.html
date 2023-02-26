@@ -5,24 +5,40 @@
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <link rel="stylesheet" href="menu-taskbar.css">
+        <script src="https://kit.fontawesome.com/571ecca289.js" crossorigin="anonymous"></script>
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
         <title>To do list Project: Menu and Taskbar</title>
     </head>
     <body>
-    <!--MENU and TASKBAR start from here.-->
-        <header>
-            <div class="menu">
-                <div class="logo">
-                    <img href="">
-                </div>
-                <div class="notification-account">
-                    <i></i>
-                    <button></button>
-                </div>
+    <!--MENU's elements are children of HEADER and start from here.-->
+        <header class="menu">
+            <div class="logo">
+                <a href=""><img src="./img-anh/logo-tidy.png"></a>
+            </div>
+            <div class="notification-account">
+                <i class="fa-solid fa-bell"></i>
+                <button>Account</button>
             </div>
         </header>
+    <!--MAIN will be contain 2 <DIV>, display as FLEX, flex-firection is ROW-->
+    <!--"I will work on <DIV> of taskbar" - Anh Chau-->
         <main>
-            <div class="taskbar"></div>
-            <div class="workspace"></div>
+            <div class="taskbar">
+                <ul>
+                    <li>Boards</li>
+                    <li>Add</li>
+                    <li>Manage</li>
+                    <li>People</li>
+                    <li>Archive</li>
+                    <li>Calendar</li>
+                </ul>
+                <img src="./img-anh/help-img.png">
+            </div>
+            <div class="workspace">This block is for the workspace</div>
+            
         </main>
     </body>
 
