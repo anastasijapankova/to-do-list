@@ -101,7 +101,11 @@ main {
     cursor: pointer;
     
 }
-.active {
+.taskbar i {
+    padding-right: 1rem;
+    
+}
+#active {
     background-color: #FFE49D;
     width: 100%;
 }
