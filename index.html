@@ -5,11 +5,283 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/style.css" />
+    <link rel="stylesheet" media="screen and (min-width: 786px)" href="tablet-display.css">
+    <link rel="stylesheet" media="screen and (max-width: 430px)" href="mobile.css">
+    <script src="https://kit.fontawesome.com/571ecca289.js" crossorigin="anonymous"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap"
+        rel="stylesheet">
     <title>Document</title>
 </head>
 
 <body>
-    <h1>Hello</h1>
+    <header>
+        <div class="logo">
+            <a href=""><img src="/img/logo-tidy.png"></a>
+        </div>
+        <div class="notification-account">
+            <i class="fa-solid fa-bell"></i>
+            <div class="drop-button">
+                <div class="button">Account</div>
+            </div>
+
+        </div>
+    </header>
+    <main>
+        <div class="taskbar">
+            <ul>
+                <li><a id="active"><i class="fa-solid fa-folder"></i>My Boards</a></li>
+                <li><a><i class="fa-solid fa-pen-nib"></i>Add</a></li>
+                <li><a><i class="fa-solid fa-people-group"></i>People</a></li>
+                <li><a><i class="fa-solid fa-gear"></i>Manage</a></li>
+                <li><a><i class="fa-solid fa-box-archive"></i>Archive</a></li>
+                <li><a><i class="fa-solid fa-calendar-days"></i>Views</a></li>
+            </ul>
+            <img class="help-icon" src="/img/help-img.png">
+        </div>
+        <div class="dashboard">
+            <div class="item">
+                <img class="item-menu" src="/img/DotsThreeVertical.png">
+                <div class="item-info">
+                    <h3 class="item-name">Business Plan</h3>
+                    <p class="item-description">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed
+                        do
+                        eiusmod
+                        tempor incididunt ut labore et dolore magna aliqua.</p>
+                </div>
+                <div class="item-planner">
+                    <div class="person">
+                        <div class="person-details">
+                            <img src="/img/UserCircle.png">
+                            <p>Person</p>
+                        </div>
+                        <div class="person-initial">
+                            <div class="initial-LR">
+                                <p class="initial">LR</p>
+                            </div>
+                            <div class="initial-AC">
+                                <p class="initial">AC</p>
+                            </div>
+                            <div class="initial-AP">
+                                <p class="initial">AP</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="deadline">
+                        <div class="deadline-details">
+                            <img src="/img/CalendarCheck.png">
+                            <p>Deadline</p>
+                        </div>
+                        <input class="calendar-box" type="date" id="calendar">
+                    </div>
+                    <div class="status">
+                        <div class="status-details">
+                            <img src="/img/ChartLine.png">
+                            <p>Status</p>
+                        </div>
+                        <div class="status-selection">
+                            <select class="status-selection-dropdown" name="status" id="status">
+                                <option class="status-select" value="none" selected disabled hidden>Select
+                                </option>
+                                <option class="status-stuck" value="stuck">Stuck</option>
+                                <option class="status-in-process" value="in-process">In process</option>
+                                <option class="status-done" value="done">Done</option>
+                            </select>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="item">
+                <img class="item-menu" src="/img/DotsThreeVertical.png">
+                <div class="item-info">
+                    <h3 class="item-name">Calculate finances</h3>
+                    <p class="item-description">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed
+                        do
+                        eiusmod
+                        tempor incididunt ut labore et dolore magna aliqua.</p>
+                </div>
+                <div class="item-planner">
+                    <div class="person">
+                        <div class="person-details">
+                            <img src="/img/UserCircle.png">
+                            <p>Person</p>
+                        </div>
+                        <div class="person-initial">
+                            <div class="initial-AP">
+                                <p class="initial">AP</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="deadline">
+                        <div class="deadline-details">
+                            <img src="/img/CalendarCheck.png">
+                            <p>Deadline</p>
+                        </div>
+                        <input class="calendar-box" type="date" id="calendar">
+                    </div>
+                    <div class="status">
+                        <div class="status-details">
+                            <img src="/img/ChartLine.png">
+                            <p>Status</p>
+                        </div>
+                        <div class="status-selection">
+                            <select class="status-selection-dropdown" name="status" id="status">
+                                <option class="status-select" value="none" selected disabled hidden>Select
+                                </option>
+                                <option class="status-stuck" value="stuck">Stuck</option>
+                                <option class="status-in-process" value="in-process">In process</option>
+                                <option class="status-done" value="done">Done</option>
+                            </select>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="item">
+                <img class="item-menu" src="/img/DotsThreeVertical.png">
+                <div class="item-info">
+                    <h3 class="item-name">Purchase domain</h3>
+                    <p class="item-description">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed
+                        do
+                        eiusmod
+                        tempor incididunt ut labore et dolore magna aliqua.</p>
+                </div>
+                <div class="item-planner">
+                    <div class="person">
+                        <div class="person-details">
+                            <img src="/img/UserCircle.png">
+                            <p>Person</p>
+                        </div>
+                        <div class="person-initial">
+                            <div class="initial-AC">
+                                <p class="initial">AC</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="deadline">
+                        <div class="deadline-details">
+                            <img src="/img/CalendarCheck.png">
+                            <p>Deadline</p>
+                        </div>
+                        <input class="calendar-box" type="date" id="calendar">
+                    </div>
+                    <div class="status">
+                        <div class="status-details">
+                            <img src="/img/ChartLine.png">
+                            <p>Status</p>
+                        </div>
+                        <div class="status-selection">
+                            <select class="status-selection-dropdown" name="status" id="status">
+                                <option class="status-select" value="none" selected disabled hidden>Select
+                                </option>
+                                <option class="status-stuck" value="stuck">Stuck</option>
+                                <option class="status-in-process" value="in-process">In process</option>
+                                <option class="status-done" value="done">Done</option>
+                            </select>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="item">
+                <img class="item-menu" src="/img/DotsThreeVertical.png">
+                <div class="item-info">
+                    <h3 class="item-name">Create LinkedIn Page</h3>
+                    <p class="item-description">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed
+                        do
+                        eiusmod
+                        tempor incididunt ut labore et dolore magna aliqua.</p>
+                </div>
+                <div class="item-planner">
+                    <div class="person">
+                        <div class="person-details">
+                            <img src="/img/UserCircle.png">
+                            <p>Person</p>
+                        </div>
+                        <div class="person-initial">
+                            <div class="initial-LR">
+                                <p class="initial">LR</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="deadline">
+                        <div class="deadline-details">
+                            <img src="/img/CalendarCheck.png">
+                            <p>Deadline</p>
+                        </div>
+                        <input class="calendar-box" type="date" id="calendar">
+                    </div>
+                    <div class="status">
+                        <div class="status-details">
+                            <img src="/img/ChartLine.png">
+                            <p>Status</p>
+                        </div>
+                        <div class="status-selection">
+                            <select class="status-selection-dropdown" name="status" id="status">
+                                <option class="status-select" value="none" selected disabled hidden>Select
+                                </option>
+                                <option class="status-stuck" value="stuck">Stuck</option>
+                                <option class="status-in-process" value="in-process">In process</option>
+                                <option class="status-done" value="done">Done</option>
+                            </select>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="item">
+                <img class="item-menu" src="/img/DotsThreeVertical.png">
+                <div class="item-info">
+                    <h3 class="item-name">Pay invoices</h3>
+                    <p class="item-description">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed
+                        do
+                        eiusmod
+                        tempor incididunt ut labore et dolore magna aliqua.</p>
+                </div>
+                <div class="item-planner">
+                    <div class="person">
+                        <div class="person-details">
+                            <img src="/img/UserCircle.png">
+                            <p>Person</p>
+                        </div>
+                        <div class="person-initial">
+                            <div class="initial-LR">
+                                <p class="initial">LR</p>
+                            </div>
+
+                        </div>
+                    </div>
+                    <div class="deadline">
+                        <div class="deadline-details">
+                            <img src="/img/CalendarCheck.png">
+                            <p>Deadline</p>
+                        </div>
+                        <input class="calendar-box" type="date" id="calendar">
+                    </div>
+                    <div class="status">
+                        <div class="status-details">
+                            <img src="/img/ChartLine.png">
+                            <p>Status</p>
+                        </div>
+                        <div class="status-selection">
+                            <select class="status-selection-dropdown" name="status" id="status">
+                                <option class="status-select" value="none" selected disabled hidden>Select
+                                </option>
+                                <option class="status-stuck" value="stuck">Stuck</option>
+                                <option class="status-in-process" value="in-process">In process</option>
+                                <option class="status-done" value="done">Done</option>
+
+                            </select>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="item">
+                <div class="add">
+                    <img class="add-icon" src="/img/PlusCircle.png">
+                </div>
+            </div>
+        </div>
+    </main>
 </body>
 
 </html>
