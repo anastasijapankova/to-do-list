@@ -5,6 +5,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="lakmali.css">
     <link rel="stylesheet" href="/style.css" />
     <link rel="stylesheet" media="screen and (min-width: 786px)" href="tablet-display.css">
     <link rel="stylesheet" media="screen and (max-width: 430px)" href="mobile.css">
@@ -17,6 +18,7 @@
 </head>
 
 <body>
+    <!-- ANH'S SECTION -->
     <header>
         <div class="logo">
             <a href=""><img src="/img/logo-tidy.png"></a>
@@ -41,245 +43,421 @@
             </ul>
             <img class="help-icon" src="/img/help-img.png">
         </div>
-        <div class="dashboard">
-            <div class="item">
-                <img class="item-menu" src="/img/DotsThreeVertical.png">
-                <div class="item-info">
-                    <h3 class="item-name">Business Plan</h3>
-                    <p class="item-description">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed
-                        do
-                        eiusmod
-                        tempor incididunt ut labore et dolore magna aliqua.</p>
-                </div>
-                <div class="item-planner">
-                    <div class="person">
-                        <div class="person-details">
-                            <img src="/img/UserCircle.png">
-                            <p>Person</p>
-                        </div>
-                        <div class="person-initial">
-                            <div class="initial-LR">
-                                <p class="initial">LR</p>
-                            </div>
-                            <div class="initial-AC">
-                                <p class="initial">AC</p>
-                            </div>
-                            <div class="initial-AP">
-                                <p class="initial">AP</p>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="deadline">
-                        <div class="deadline-details">
-                            <img src="/img/CalendarCheck.png">
-                            <p>Deadline</p>
-                        </div>
-                        <input class="calendar-box" type="date" id="calendar">
-                    </div>
-                    <div class="status">
-                        <div class="status-details">
-                            <img src="/img/ChartLine.png">
-                            <p>Status</p>
-                        </div>
-                        <div class="status-selection">
-                            <select class="status-selection-dropdown" name="status" id="status">
-                                <option class="status-select" value="none" selected disabled hidden>Select
-                                </option>
-                                <option class="status-stuck" value="stuck">Stuck</option>
-                                <option class="status-in-process" value="in-process">In process</option>
-                                <option class="status-done" value="done">Done</option>
-                            </select>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <div class="item">
-                <img class="item-menu" src="/img/DotsThreeVertical.png">
-                <div class="item-info">
-                    <h3 class="item-name">Calculate finances</h3>
-                    <p class="item-description">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed
-                        do
-                        eiusmod
-                        tempor incididunt ut labore et dolore magna aliqua.</p>
-                </div>
-                <div class="item-planner">
-                    <div class="person">
-                        <div class="person-details">
-                            <img src="/img/UserCircle.png">
-                            <p>Person</p>
-                        </div>
-                        <div class="person-initial">
-                            <div class="initial-AP">
-                                <p class="initial">AP</p>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="deadline">
-                        <div class="deadline-details">
-                            <img src="/img/CalendarCheck.png">
-                            <p>Deadline</p>
-                        </div>
-                        <input class="calendar-box" type="date" id="calendar">
-                    </div>
-                    <div class="status">
-                        <div class="status-details">
-                            <img src="/img/ChartLine.png">
-                            <p>Status</p>
-                        </div>
-                        <div class="status-selection">
-                            <select class="status-selection-dropdown" name="status" id="status">
-                                <option class="status-select" value="none" selected disabled hidden>Select
-                                </option>
-                                <option class="status-stuck" value="stuck">Stuck</option>
-                                <option class="status-in-process" value="in-process">In process</option>
-                                <option class="status-done" value="done">Done</option>
-                            </select>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <div class="item">
-                <img class="item-menu" src="/img/DotsThreeVertical.png">
-                <div class="item-info">
-                    <h3 class="item-name">Purchase domain</h3>
-                    <p class="item-description">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed
-                        do
-                        eiusmod
-                        tempor incididunt ut labore et dolore magna aliqua.</p>
-                </div>
-                <div class="item-planner">
-                    <div class="person">
-                        <div class="person-details">
-                            <img src="/img/UserCircle.png">
-                            <p>Person</p>
-                        </div>
-                        <div class="person-initial">
-                            <div class="initial-AC">
-                                <p class="initial">AC</p>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="deadline">
-                        <div class="deadline-details">
-                            <img src="/img/CalendarCheck.png">
-                            <p>Deadline</p>
-                        </div>
-                        <input class="calendar-box" type="date" id="calendar">
-                    </div>
-                    <div class="status">
-                        <div class="status-details">
-                            <img src="/img/ChartLine.png">
-                            <p>Status</p>
-                        </div>
-                        <div class="status-selection">
-                            <select class="status-selection-dropdown" name="status" id="status">
-                                <option class="status-select" value="none" selected disabled hidden>Select
-                                </option>
-                                <option class="status-stuck" value="stuck">Stuck</option>
-                                <option class="status-in-process" value="in-process">In process</option>
-                                <option class="status-done" value="done">Done</option>
-                            </select>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <div class="item">
-                <img class="item-menu" src="/img/DotsThreeVertical.png">
-                <div class="item-info">
-                    <h3 class="item-name">Create LinkedIn Page</h3>
-                    <p class="item-description">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed
-                        do
-                        eiusmod
-                        tempor incididunt ut labore et dolore magna aliqua.</p>
-                </div>
-                <div class="item-planner">
-                    <div class="person">
-                        <div class="person-details">
-                            <img src="/img/UserCircle.png">
-                            <p>Person</p>
-                        </div>
-                        <div class="person-initial">
-                            <div class="initial-LR">
-                                <p class="initial">LR</p>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="deadline">
-                        <div class="deadline-details">
-                            <img src="/img/CalendarCheck.png">
-                            <p>Deadline</p>
-                        </div>
-                        <input class="calendar-box" type="date" id="calendar">
-                    </div>
-                    <div class="status">
-                        <div class="status-details">
-                            <img src="/img/ChartLine.png">
-                            <p>Status</p>
-                        </div>
-                        <div class="status-selection">
-                            <select class="status-selection-dropdown" name="status" id="status">
-                                <option class="status-select" value="none" selected disabled hidden>Select
-                                </option>
-                                <option class="status-stuck" value="stuck">Stuck</option>
-                                <option class="status-in-process" value="in-process">In process</option>
-                                <option class="status-done" value="done">Done</option>
-                            </select>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <div class="item">
-                <img class="item-menu" src="/img/DotsThreeVertical.png">
-                <div class="item-info">
-                    <h3 class="item-name">Pay invoices</h3>
-                    <p class="item-description">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed
-                        do
-                        eiusmod
-                        tempor incididunt ut labore et dolore magna aliqua.</p>
-                </div>
-                <div class="item-planner">
-                    <div class="person">
-                        <div class="person-details">
-                            <img src="/img/UserCircle.png">
-                            <p>Person</p>
-                        </div>
-                        <div class="person-initial">
-                            <div class="initial-LR">
-                                <p class="initial">LR</p>
-                            </div>
 
+        <div class="workspace">
+            <!-- LAKMALI'S SECTION -->
+        <!-- Selected project -->
+                <div class="slected-project">
+                    <!-- first inline -->
+                    <div class = information>
+                      <div class="selected-project-name">My First Project</div>
+                      <div class="infor-button">
+                        <div class="tooltip">
+                          <img class="infor-icon" onclick="openInfromationForm()" src="img/info-64.png" />
+                          <span class="tooltiptext">Information</span>
                         </div>
-                    </div>
-                    <div class="deadline">
-                        <div class="deadline-details">
-                            <img src="/img/CalendarCheck.png">
-                            <p>Deadline</p>
+                        <!-- For the information pop up form -->
+                        <div action ="onclick" class="popup-information" id="informationForm">
+                          <form action ="onclick............." class="container-form">
+                            <div class="form-left">
+                              <p class="project-title">My First Project</p>
+                              <textarea class="project-description" placeholder="Add project description here......"></textarea>
+                            </div>
+                            <div class="form-right">
+                              <img class="close-button" onclick="closeInformationForm()" src="img/close-64.png"/>
+                              <p class="basic-info">Basic information</p>
+                              <div class="created">
+                                <p class="createby-user">Created by</p> 
+                                <div class ="user-details">
+                                  <img class="create-user" src="img/male-user-64.png"/>
+                                  <p class="owner">Lakmali</p>
+                                </div>
+                              </div>
+                              <div class="owners">
+                                <p class="responsible-users">Owners</p> 
+                                <div class ="owner-details">
+                                  <img class="responsible" src="img/male-user-64.png"/>
+                                  <p class="owner">Anastasija </p>
+                                </div>
+                                <div class ="owner-details">
+                                  <img class="responsible" src="img/male-user-64.png"/>
+                                  <p class="owner">Anh </p>
+                                </div>
+                                <div class ="owner-details">
+                                  <img class="responsible" src="img/male-user-64.png"/>
+                                  <p class="owner">Lakmali </p>
+                                </div>
+                              </div>
+                            </div>
+                          </form>
+                      
                         </div>
-                        <input class="calendar-box" type="date" id="calendar">
-                    </div>
-                    <div class="status">
-                        <div class="status-details">
-                            <img src="/img/ChartLine.png">
-                            <p>Status</p>
+                      </div>
+                  
+                      <div class="favorite-projects">
+                        <div class="tooltip">
+                          <span class="tooltiptext">Add to favorite</span>
+                          <img onclick="myFunction1()" class="star-outline" src="img/star-64.png"/>
+                        
+                          <img onclick="myFunction1()" class="star-fill" src="img/starfill-64.png"/>
+                        
                         </div>
-                        <div class="status-selection">
-                            <select class="status-selection-dropdown" name="status" id="status">
-                                <option class="status-select" value="none" selected disabled hidden>Select
-                                </option>
-                                <option class="status-stuck" value="stuck">Stuck</option>
-                                <option class="status-in-process" value="in-process">In process</option>
-                                <option class="status-done" value="done">Done</option>
-
+                        </div>
+                      </div>
+                  
+                  
+                  
+                  <!-- SECOND SECTION -->
+                  <div class="second-section">
+                    <div class="task-container">
+                      <button class="new-taskbutton" onclick="addTaskForm()">New Task</button>
+                      <!-- POPUP TASK FORM -->
+                      <div class="task-form" id="taskInput">
+                        <form action="onclick" class="input-task">
+                          <input class="task-name" id="taskName" type="text" placeholder="Task name">
+                          <textarea class="task-description" placeholder="Task description..."></textarea>
+                          <div class="person-assign">
+                            <p class="assign-name"><input class="asign-person" type="checkbox"><span class="name-assign">Lakmali</span></p>
+                            <p class="assign-name"><input class="asign-person" type="checkbox"><span class="name-assign">Anastasija</span></p>
+                            <p class="assign-name"><input class="asign-person" type="checkbox"><span class="name-assign">Anh</span></p>
+                            <p class="assign-name"><input class="asign-person" type="checkbox"><span class="name-assign">Anna</span></p>
+                            <p class="assign-name"><input class="asign-person" type="checkbox"><span class="name-assign">Max</span></p>
+                            </div>
+                          <lable class="assign-date">Date assign:<input class="date-assign" type="date"></lable>
+                          <div class="status">
+                            <select class="status-select">
+                              <option class="initial-status">Status</option>
+                              <option class="initial-status">In progress</option>
+                              <option class="initial-status">Assign</option>
                             </select>
+                          </div>
+                          <button class="submit-task" action="onclick" method="post">Submit</button>
+                        </form>
+                      </div>
+                    </div>
+                
+                    <!-- SEARCH BUTTON -->
+                    <div class="search-button">
+                      <form class="search-in" id="formSearch" role="search">
+                      <input class="serach-bar" type="search" placeholder="Search..." >
+                      <button class="searchicon"><img class="searchicon" src="img/search-64.png"/></button>
+                    </form>
+                    </div>
+                
+                
+                    <!-- FILTERING BY STAUS AND USER -->
+                    <div class ="filter-Button">
+                     <a> <p class="button-filter" onclick="filterTask()">Filter
+                      <img class="filtericon" src ="img/filter-64.png">
+                      </p></a>
+                      <!-- POPUP FILTER WINDOW -->
+                      <div class="filterform" id="filterTasks" action="onclick">
+                        <form class="form-filter" action="onclick">
+                        <div class="task-status">
+                          <select class="status-tasks">
+                            <option class="status-filter">Task status</option>
+                            <option class="status-filter">Assign</option>
+                            <option class="status-filter">In progress</option>
+                            <option class="status-filter">Back Log</option>
+                            <option class="status-filter">Completed</option>
+
+                          </select>
+                        </div>
+                        <div class="filter-user">
+                          <select class="user-filter">
+                            <option class="user-filtering">User</option>
+                            <option class="user-filtering">Anastasija</option>
+                            <option class="user-filtering">Anh</option>
+                            <option class="user-filtering">Anna</option>
+                            <option class="user-filtering">Ahamad</option>
+                            <option class="user-filtering">Lakmali</option>
+                            <option class="user-filtering">Max</option>
+                            <option class="user-filtering">Tami</option>
+                          </select>
+                        </div>
+                        <button class="submit-filter" action="onclick">Submit</button>
+                        </form>
+                      </div>
+                    </div>
+                
+                
+                    <!-- SORT TASKS -->
+                    <div class ="sort-button">
+                      <button class="sort" action="onclick">Sort
+                        <img class="sorticon" src="img/sort-48.png"/>
+                      </button>
+                      <form class="sortform">
+                      <select>
+                        <option class="status-selection">Status</option>
+                        <option class="date-selection">Date</option>
+                      </select>
+                      </form>
+                    </div>
+                
+                
+                    <!-- USERS -->
+                    <div class ="person-button">
+                        <button class="dropdown-user">Person
+                        <img class="personicon" src="img/male-user-64.png"/></button>
+                        <form>
+                            <select class="user-filter">
+                                <option class="user-selection">User</option>
+                                <option class="user-selection">Anastasija</option>
+                                <option class="user-selection">Anh</option>
+                                <option class="user-selection">Anna</option>
+                                <option class="user-selection">Ahamad</option>
+                                <option class="user-selection">Lakmali</option>
+                                <option class="user-selection">Max</option>
+                                <option class="user-selection">Tami</option>
+                            </select>
+                        </form>
+                    </div>
+                
+                  </div>
+
+                  </div>
+
+                  <!-- ANASTASIJA'S SECTION -->
+                <div class="dashboard">
+                    <div class="item">
+                        <img class="item-menu" src="/img/DotsThreeVertical.png">
+                        <div class="item-info">
+                            <h3 class="item-name">Business Plan</h3>
+                            <p class="item-description">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed
+                                do
+                                eiusmod
+                                tempor incididunt ut labore et dolore magna aliqua.</p>
+                        </div>
+                        <div class="item-planner">
+                            <div class="person">
+                                <div class="person-details">
+                                    <img src="/img/UserCircle.png">
+                                    <p>Person</p>
+                                </div>
+                                <div class="person-initial">
+                                    <div class="initial-LR">
+                                        <p class="initial">LR</p>
+                                    </div>
+                                    <div class="initial-AC">
+                                        <p class="initial">AC</p>
+                                    </div>
+                                    <div class="initial-AP">
+                                        <p class="initial">AP</p>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="deadline">
+                                <div class="deadline-details">
+                                    <img src="/img/CalendarCheck.png">
+                                    <p>Deadline</p>
+                                </div>
+                                <input class="calendar-box" type="date" id="calendar">
+                            </div>
+                            <div class="status">
+                                <div class="status-details">
+                                    <img src="/img/ChartLine.png">
+                                    <p>Status</p>
+                                </div>
+                                <div class="status-selection">
+                                    <select class="status-selection-dropdown" name="status" id="status">
+                                        <option class="status-select" value="none" selected disabled hidden>Select
+                                        </option>
+                                        <option class="status-stuck" value="stuck">Stuck</option>
+                                        <option class="status-in-process" value="in-process">In process</option>
+                                        <option class="status-done" value="done">Done</option>
+                                    </select>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="item">
+                        <img class="item-menu" src="/img/DotsThreeVertical.png">
+                        <div class="item-info">
+                            <h3 class="item-name">Calculate finances</h3>
+                            <p class="item-description">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed
+                                do
+                                eiusmod
+                                tempor incididunt ut labore et dolore magna aliqua.</p>
+                        </div>
+                        <div class="item-planner">
+                            <div class="person">
+                                <div class="person-details">
+                                    <img src="/img/UserCircle.png">
+                                    <p>Person</p>
+                                </div>
+                                <div class="person-initial">
+                                    <div class="initial-AP">
+                                        <p class="initial">AP</p>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="deadline">
+                                <div class="deadline-details">
+                                    <img src="/img/CalendarCheck.png">
+                                    <p>Deadline</p>
+                                </div>
+                                <input class="calendar-box" type="date" id="calendar">
+                            </div>
+                            <div class="status">
+                                <div class="status-details">
+                                    <img src="/img/ChartLine.png">
+                                    <p>Status</p>
+                                </div>
+                                <div class="status-selection">
+                                    <select class="status-selection-dropdown" name="status" id="status">
+                                        <option class="status-select" value="none" selected disabled hidden>Select
+                                        </option>
+                                        <option class="status-stuck" value="stuck">Stuck</option>
+                                        <option class="status-in-process" value="in-process">In process</option>
+                                        <option class="status-done" value="done">Done</option>
+                                    </select>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="item">
+                        <img class="item-menu" src="/img/DotsThreeVertical.png">
+                        <div class="item-info">
+                            <h3 class="item-name">Purchase domain</h3>
+                            <p class="item-description">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed
+                                do
+                                eiusmod
+                                tempor incididunt ut labore et dolore magna aliqua.</p>
+                        </div>
+                        <div class="item-planner">
+                            <div class="person">
+                                <div class="person-details">
+                                    <img src="/img/UserCircle.png">
+                                    <p>Person</p>
+                                </div>
+                                <div class="person-initial">
+                                    <div class="initial-AC">
+                                        <p class="initial">AC</p>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="deadline">
+                                <div class="deadline-details">
+                                    <img src="/img/CalendarCheck.png">
+                                    <p>Deadline</p>
+                                </div>
+                                <input class="calendar-box" type="date" id="calendar">
+                            </div>
+                            <div class="status">
+                                <div class="status-details">
+                                    <img src="/img/ChartLine.png">
+                                    <p>Status</p>
+                                </div>
+                                <div class="status-selection">
+                                    <select class="status-selection-dropdown" name="status" id="status">
+                                        <option class="status-select" value="none" selected disabled hidden>Select
+                                        </option>
+                                        <option class="status-stuck" value="stuck">Stuck</option>
+                                        <option class="status-in-process" value="in-process">In process</option>
+                                        <option class="status-done" value="done">Done</option>
+                                    </select>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="item">
+                        <img class="item-menu" src="/img/DotsThreeVertical.png">
+                        <div class="item-info">
+                            <h3 class="item-name">Create LinkedIn Page</h3>
+                            <p class="item-description">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed
+                                do
+                                eiusmod
+                                tempor incididunt ut labore et dolore magna aliqua.</p>
+                        </div>
+                        <div class="item-planner">
+                            <div class="person">
+                                <div class="person-details">
+                                    <img src="/img/UserCircle.png">
+                                    <p>Person</p>
+                                </div>
+                                <div class="person-initial">
+                                    <div class="initial-LR">
+                                        <p class="initial">LR</p>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="deadline">
+                                <div class="deadline-details">
+                                    <img src="/img/CalendarCheck.png">
+                                    <p>Deadline</p>
+                                </div>
+                                <input class="calendar-box" type="date" id="calendar">
+                            </div>
+                            <div class="status">
+                                <div class="status-details">
+                                    <img src="/img/ChartLine.png">
+                                    <p>Status</p>
+                                </div>
+                                <div class="status-selection">
+                                    <select class="status-selection-dropdown" name="status" id="status">
+                                        <option class="status-select" value="none" selected disabled hidden>Select
+                                        </option>
+                                        <option class="status-stuck" value="stuck">Stuck</option>
+                                        <option class="status-in-process" value="in-process">In process</option>
+                                        <option class="status-done" value="done">Done</option>
+                                    </select>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="item">
+                        <img class="item-menu" src="/img/DotsThreeVertical.png">
+                        <div class="item-info">
+                            <h3 class="item-name">Pay invoices</h3>
+                            <p class="item-description">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed
+                                do
+                                eiusmod
+                                tempor incididunt ut labore et dolore magna aliqua.</p>
+                        </div>
+                        <div class="item-planner">
+                            <div class="person">
+                                <div class="person-details">
+                                    <img src="/img/UserCircle.png">
+                                    <p>Person</p>
+                                </div>
+                                <div class="person-initial">
+                                    <div class="initial-LR">
+                                        <p class="initial">LR</p>
+                                    </div>
+                                
+                                </div>
+                            </div>
+                            <div class="deadline">
+                                <div class="deadline-details">
+                                    <img src="/img/CalendarCheck.png">
+                                    <p>Deadline</p>
+                                </div>
+                                <input class="calendar-box" type="date" id="calendar">
+                            </div>
+                            <div class="status">
+                                <div class="status-details">
+                                    <img src="/img/ChartLine.png">
+                                    <p>Status</p>
+                                </div>
+                                <div class="status-selection">
+                                    <select class="status-selection-dropdown" name="status" id="status">
+                                        <option class="status-select" value="none" selected disabled hidden>Select
+                                        </option>
+                                        <option class="status-stuck" value="stuck">Stuck</option>
+                                        <option class="status-in-process" value="in-process">In process</option>
+                                        <option class="status-done" value="done">Done</option>
+                                    
+                                    </select>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="item">
+                        <div class="add">
+                            <img class="add-icon" src="/img/PlusCircle.png">
                         </div>
                     </div>
                 </div>
-            </div>
-            <div class="item">
-                <div class="add">
-                    <img class="add-icon" src="/img/PlusCircle.png">
-                </div>
-            </div>
         </div>
     </main>
 </body>
