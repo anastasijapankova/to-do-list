@@ -1,0 +1,566 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+/* selected project */
+
+.slected-project{
+  /* background-color: rgb(242, 243, 245); */
+  background-color: #F5F5F5;
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  height: 20vh;
+}
+ /* project information */
+
+.information{
+  display: flex;
+  flex-direction: row;
+  margin-top: 1em;
+ }
+
+/* Project title */
+
+.selected-project-name{
+  display: flex;
+  font-size: 2em;
+  justify-content: center;
+  align-items: center;
+  padding: 0.5em 0.2em 0.5em 0.5em;
+}
+
+/* Information button */
+
+.infor-button{
+  transform: scale(0.9);
+  width:1.5em;
+  height: 1.5em;
+  padding: auto;
+  gap:0;
+  align-self: center;
+  justify-self:center;
+}
+
+.infor-icon{
+  transform: scale(0.8);
+  width:1.5em;
+  height: 1.5em;
+}
+
+.infor-button:hover{
+  cursor: pointer;
+}
+
+
+/* fovorite projects */
+
+.favorite-projects{
+  transform: scale(0.9);
+  width:1.5em;
+  height: 1.5em;
+  padding: 0;
+  margin: 0;
+  align-self: center;
+  justify-self:center;
+  gap:0;
+}
+
+.favorite-projects:hover{
+  cursor: pointer;
+}
+
+.star-outline{
+  transform: scale(0.8);
+  width:1.5em;
+  height: 1.5em;
+}
+
+.star-fill{
+  transform: scale(0.8); 
+  width:1.5em;
+  height: 1.5em;
+  visibility: hidden;
+}
+
+
+/* Tooltip container */
+
+.tooltip {
+  position: relative;
+  display: inline-block;
+}
+
+/* Tooltip text */
+
+.tooltip .tooltiptext {
+  visibility: hidden;
+  width: 7.5em;
+  background-color: #949292;
+  color: #fff;
+  text-align: center;
+  padding: 0.5em 0;
+  border-radius: 1em;
+  opacity: 0;
+  transition: opacity 0.3s;
+
+  /* Position the tooltip text */
+  position: absolute;
+  z-index: 1;
+  bottom: 110%;
+  left: 50%;
+  margin-left: -3.5em;
+}
+
+/* Tooltip arrow */
+.tooltip .tooltiptext::after {
+  content: "";
+  position: absolute;
+  top: 100%;
+  left: 50%;
+  margin-left: -0.20em;
+  border-width: 0.25em;
+  border-style: solid;
+  border-color: #949292 transparent transparent transparent;
+}
+
+/* Show the tooltip text when you mouse over the tooltip container */
+.tooltip:hover .tooltiptext {
+  visibility: visible;
+  opacity: 1;
+}
+
+/* for the popup form */
+
+.popup-information{
+  border: 0.1em solid rgb(163, 164, 165);
+  background-color: #F5F5F5;
+  display:none;
+  width: 50vw;
+  position:relative;
+  z-index: 9;
+  border-radius: 1em;
+
+}
+
+.container-form{
+  display: flex;
+  background-color: #F5F5F5;
+  border-radius: 1em;
+}
+
+
+.form-left{
+  display: flex;
+  flex-direction: column;
+  width:40vw;
+}
+
+.project-title{
+  font-size: 2em;
+  padding: 0.5em;
+}
+
+.project-description{
+  margin: 1em;
+  margin-top: 0;
+  padding: 0.5em;
+  height: 30vh;
+  border-radius: 1em;
+  border-color: rgb(163, 164, 165);
+}
+
+.form-right{
+  display: flex;
+  flex-direction: column;
+  padding-left: 0.5em;
+  width:25vw;
+}
+
+.close-button{
+  justify-content:flex-end;
+  align-self: flex-end;
+  transform: scale(0.8);
+  height: 2.5em;
+  width:2.5em;
+  cursor: pointer;
+  opacity: 0.7;
+}
+
+.basic-info{
+  font-size: 1.5em;
+  padding: 0.2em;
+}
+
+.createby-user{
+  font-size: 1.2em;
+  padding: 0.2em;
+}
+
+.user-details{
+  display:flex;
+  flex-direction:row;
+}
+
+.create-user{
+  transform: scale(0.8);
+  height: 2em;
+  width:2em;
+  opacity: 0.7;
+}
+
+.owners{
+  display:flex;
+  flex-direction: column;
+}
+
+.owner{
+  font-size: 1em;
+  padding: 0.3em;
+  padding-left: 0.4em;
+  margin-top: 0.2em;
+}
+
+.responsible-users{
+  margin-top: 0.3em;
+  font-size: 1.2em;
+  padding: 0.2em;
+}
+.responsible{
+  transform: scale(0.8);
+  height: 2em;
+  width:2em;
+  opacity: 0.7;
+}
+
+.owner-details{
+  display:flex;
+  flex-direction:row;
+  width: 10vw;
+  
+}
+
+/* for second section */
+
+.second-section{
+  border: 0.1em solid bisque;
+  display: flex;
+  flex-direction: row;
+  width: 82%;
+  padding: 0.5em;
+  height: 8vh;
+}
+
+/* add new task button */
+
+.new-taskbutton{
+  width: 6rem;
+  height: 2rem;
+  border-radius: 1rem;
+  border: 0.1em solid #0080ff;
+  color: white;
+  background-color: #0080ff;
+  align-self: center;
+  margin-right: 2em;
+  margin-top: 0.2em;
+  font-size: 1em;
+  text-align: center;
+  cursor: pointer;
+}
+
+/* for task input popup */
+
+.task-form{
+  border: 0.1em solid rgb(163, 164, 165);
+  display:none;
+  width: 30vw;
+  position: absolute;
+  z-index: 9;
+  background-color: #F5F5F5;
+  border-radius: 1em;
+  margin-top: 0.5em;
+}
+
+.input-task{
+  display: flex;
+  flex-direction: column;
+  align-self: flex-start;
+  align-items: self-start;
+  padding: 0.5em;
+}
+
+.task-name{
+  width: 25vw;
+  font-size: 1em;
+  margin-bottom: 0.5em;
+  border-radius: 1em;
+  height: 5vh;
+  padding: 0.5em;
+  border: 0.1em solid rgb(163, 164, 165);
+}
+
+.task-description{
+  width: 25vw;
+  font-size: 1em;
+  margin-bottom: 0.5em;
+  border: 0.1em solid rgb(163, 164, 165);
+  border-radius: 1em;
+  height: 15vh;
+  padding: 0.5em;
+}
+
+.task-description::placeholder{
+  font-size: 1em;
+}
+
+.assign-name{
+font-size: 1em;
+line-height: 1em;
+display: grid;
+grid-template-columns: 1em auto;
+gap: 0.5em;
+margin-top: 0.5em;
+}
+
+.name-assign{
+  padding-left: 0.5em;
+}
+
+input[type="checkbox"] {
+  -webkit-appearance: none;
+  appearance: none;
+  background-color: #d3d3e0ef;
+  margin: 0;
+  font: inherit;
+  color: currentColor;
+  width: 1.1em;
+  height: 1.1em;
+  border-radius: 0.2em;
+  display: grid;
+  place-content: center;
+}
+
+input[type="checkbox"]::before {
+  content: "";
+  width: 0.65em;
+  height: 0.65em;
+  transform: scale(0);
+}
+
+input[type="checkbox"]:checked::before {
+  transform: scale(1);
+  background-color: #0080ff;
+  border-radius: 0.2em;
+}
+
+input.date-assign{
+    background-color: #F5F5F5;
+    width: 10em;
+    height: 2em;
+    border-radius: 1em;
+    border: none;
+    font-size: 1em;
+    padding: 0 1em;
+
+}
+
+::-webkit-calendar-picker-indicator{
+    background-color: #ffffff;
+    padding: 0.2em;
+    cursor: pointer;
+    border-radius: 0.3em;
+    margin-right: 0.2em;
+}
+
+.assign-date{
+  margin-top: 0.5em;
+  font-size: 1.1em;
+}
+
+.status-select {
+  all:unset;
+  border: 0.1em solid rgb(163, 164, 165);
+  margin-top: 0.5em;
+  margin-bottom: 0.5em;
+  height: 3.5vh;
+  width: 7em;
+  border-radius: 1em;
+  text-align: center;
+  
+
+}
+
+.submit-task{
+  background-color: #0080ff;
+  border: 0.1em solid  #0080ff;
+  font-size: 1em;
+  padding: 0.3em;
+  color: white;
+  border-radius: 1em;
+  width: 6em;
+}
+
+/* search button */
+
+.search-button{
+  display: flex;
+  flex-direction: row;
+  align-self: center;
+  border-color: rgb(163, 164, 165);
+}
+
+.search-in {
+  background-color:#F5F5F5;
+  border: 0.1em solid rgb(163, 164, 165);
+  width: 15vw;
+  height: 4vh;
+  border-radius: 1em;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+}
+
+input[type="search"]{
+  all: unset;
+  font-size: 1.1em;
+  height: 100%;
+  width: 100%;
+  padding: 0.6em 1em;
+}
+
+input::placeholder {
+  opacity: 0.7; 
+}
+
+.searchicon {
+  all: unset;
+  cursor: pointer;
+  padding-right: 0.5em;
+  width: 1.5em;
+  height: 1.5em;
+  border-radius: 1em;
+  opacity: 0.8;
+  z-index: -0.5;
+}
+
+
+/* filter button  */
+
+
+.filter-Button{
+  margin-left: 2em;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+}
+
+.button-filter{
+  display: flex;
+  /* all:unset; */
+  font-size: 1em;
+  text-align: center;
+  /* align-items: center; */
+  align-self: center;
+  width: 7em;
+  /* padding: 0; */
+  border-radius: 1em;
+  /* border:0.1em solid  rgb(163, 164, 165); */
+}
+.filtericon{
+  border: 0.1em solid rgb(39, 86, 218);
+  transform: scale(1);
+  margin-top: 0.5em;
+  width:1.5em;
+  height: 1.5em;
+  align-self: flex-end;
+  opacity: 0.7;
+  z-index: -0.5;
+}
+.filterform{
+  border: 0.1em solid rgb(163, 164, 165);
+  display:none;
+  width: 30vw;
+  position:absolute;
+  z-index: 9;
+  border-radius: 1em;
+  background-color:#F5F5F5;
+  margin-top: 14em;
+}
+
+.form-filter{
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  background-color:#F5F5F5;
+  border-radius: 1em;
+  z-index: 9;
+}
+
+.status-tasks{
+  margin: 2em;
+  width:8em;
+  height: 3em;
+  text-align: center;
+  border-radius: 1em;
+  font-size: 1em;
+  border: 0.1em solid rgb(163, 164, 165);
+  z-index: 9;
+}
+
+.user-filter{
+  margin: 2em 2em 2em 0;
+  width:8em;
+  height: 3em;
+  text-align: center;
+  border-radius: 1em;
+  font-size: 1em;
+  border: 0.1em solid rgb(163, 164, 165);
+  z-index: 9;
+}
+
+.submit-filter{
+  background-color: #0080ff;
+  border: 0.1em solid  #0080ff;
+  font-size: 1em;
+  padding: 0.3em;
+  color: white;
+  border-radius: 1em;
+  width: 6em;
+  justify-self: center;
+  margin-bottom: 2em;
+  grid-area: 2/2 span;
+}
+.sort-button{
+  /* border: 0.1em solid rgb(39, 86, 218); */
+  display: inline-flex;
+  /* flex-direction: row; */
+}
+
+.sort{
+  border: 0.1em solid rgb(39, 86, 218);
+  font-size: 1.2em;
+  align-items: center;
+  align-content: center;
+  /* width:5em; */
+}
+
+.sorticon{
+  border: 0.1em solid rgb(39, 86, 218);
+  /* transform: scale(1); */
+  width:1.5em;
+  height: 1.5em;
+  margin-top: 0.2em;
+  align-self: center;
+  z-index: -0.5;
+}
+
+/* users */
+.person-button{
+  border: 0.1em solid rgb(39, 86, 218);
+  display: flex;
+  flex-direction: row;
+}
+
+.user-filter{
+  width: 10em;
+}
