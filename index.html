@@ -46,7 +46,7 @@
 
         <div class="workspace">
             <!-- LAKMALI'S SECTION -->
-        <!-- Selected project -->
+            <!-- Selected project -->
                 <div class="slected-project">
                     <!-- first inline -->
                     <div class = information>
@@ -108,7 +108,7 @@
                   
                   
                   <!-- SECOND SECTION -->
-                  <div class="second-section">
+                <div class="second-section">
                     <div class="task-container">
                       <button class="new-taskbutton" onclick="addTaskForm()">New Task</button>
                       <!-- POPUP TASK FORM -->
@@ -147,9 +147,10 @@
                 
                     <!-- FILTERING BY STAUS AND USER -->
                     <div class ="filter-Button">
-                     <a> <p class="button-filter" onclick="filterTask()">Filter
-                      <img class="filtericon" src ="img/filter-64.png">
-                      </p></a>
+                        <button class="filter-btn" action="onclick">
+                            <span class="button-filter" onclick="filterTask()">Filter</span> 
+                            <img class="filtericon" src ="img/filter-64.png">
+                        </button>
                       <!-- POPUP FILTER WINDOW -->
                       <div class="filterform" id="filterTasks" action="onclick">
                         <form class="form-filter" action="onclick">
@@ -183,11 +184,12 @@
                 
                     <!-- SORT TASKS -->
                     <div class ="sort-button">
-                      <button class="sort" action="onclick">Sort
+                      <button class="sort" action="onclick" id="sortSelector"><span class="sort-text">Sort</span>
                         <img class="sorticon" src="img/sort-48.png"/>
                       </button>
-                      <form class="sortform">
-                      <select>
+                      <form class="sortform" onclick="sortSelector()">
+                      <select class="sotr-selector">
+                        <option class="date-selection">Sort </option>
                         <option class="status-selection">Status</option>
                         <option class="date-selection">Date</option>
                       </select>
@@ -197,11 +199,11 @@
                 
                     <!-- USERS -->
                     <div class ="person-button">
-                        <button class="dropdown-user">Person
+                        <button class="dropdown-user" id="dropUsers"><span class="person-text">Person</span>
                         <img class="personicon" src="img/male-user-64.png"/></button>
-                        <form>
+                        <form class="form-users" id="dropdownUsers">
                             <select class="user-filter">
-                                <option class="user-selection">User</option>
+                                <option class="user-selection">Person</option>
                                 <option class="user-selection">Anastasija</option>
                                 <option class="user-selection">Anh</option>
                                 <option class="user-selection">Anna</option>
@@ -214,8 +216,7 @@
                     </div>
                 
                   </div>
-
-                  </div>
+                </div>
 
                   <!-- ANASTASIJA'S SECTION -->
                 <div class="dashboard">
