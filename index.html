@@ -14,6 +14,7 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap"
         rel="stylesheet">
+    
     <title>Document</title>
 </head>
 
@@ -21,12 +22,29 @@
     <!-- ANH'S SECTION -->
     <header>
         <div class="logo">
-            <a href=""><img src="/img/logo-tidy.png"></a>
+            <a href="index.html"><img src="/img/logo-tidy.png"></a>
         </div>
         <div class="notification-account">
-            <i class="fa-solid fa-bell"></i>
-            <div class="drop-button">
-                <div class="button">Account</div>
+            <div class="bell">
+                <i class="fa-solid fa-bell"></i>
+            </div>           
+            <div class="account-btn">
+                <button onclick="accountPopup()" class="drop-btn">Account</button>
+                <div class="drop-account" id="popUp2">
+                    <div class="" id="">ACCOUNT
+                        <div class="display-name"></div>
+                        <div>Manage account</div>
+                    </div>
+                    <div class="block-ac" id="my-tidy">MY TIDY
+                        <ul>
+                            <li>Profile</li>
+                            <li>Activity</li>
+                            <li>Setting</li>
+                            <li>Help</li>
+                        </ul>
+                    </div>
+                    <div class="block-ac" id="">Log out</div>
+                </div>
             </div>
 
         </div>
@@ -460,7 +478,7 @@
                 </div>
         </div>
     </main>
-    <script src="anh.js"></script>
+<script src="anh.js"></script>
 </body>
 
 </html>
