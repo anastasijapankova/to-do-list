@@ -21,3 +21,5 @@ window.onclick = function(event) {
   function accountPopup1() {
     document.getElementById("popUp1").classList.toggle("show");
   }
+
+
