@@ -195,6 +195,31 @@ header {
     font-size: 1.5rem;
     cursor: pointer;
 }
+.bell {
+    display: inline-flex;
+    flex-direction: column;
+    align-items: flex-end;
+    height: 100%vh;
+    position: relative;
+}
+.bell-notify {
+    display: none;
+    position: absolute;
+    background-color: #FFFBF2;
+    margin-top: 3.5rem;
+    border-radius: 0.5rem;
+    padding: 1rem 0.5rem 1rem 0.5rem;
+    width: 18rem;
+    height: auto;
+    overflow: auto;
+    z-index: 1;
+}
+.bell-notify div {
+    display: block;
+}
+.show {
+    display: block;
+}
 .account-btn {
     display: inline-flex;
     flex-direction: column;
@@ -239,7 +264,7 @@ header {
     margin-top: 3.5rem;
     border-radius: 0.5rem;
     padding: 1rem 0.5rem 1rem 0.5rem;
-    width: 15rem;
+    width: 18rem;
     height: auto;
     overflow: auto;
     z-index: 1;
@@ -255,6 +280,7 @@ header {
 }
 #my-tidy li {
     list-style-type: none;
+    padding: 0.8rem 0 0.8rem 0;
 }
 .taskbar {
     background-color: #FFFBF2;

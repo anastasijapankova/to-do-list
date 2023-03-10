@@ -26,7 +26,17 @@
         </div>
         <div class="notification-account">
             <div class="bell">
-                <i class="fa-solid fa-bell"></i>
+                <i onclick="accountPopup1()" class="fa-solid fa-bell"></i>
+                <div class="bell-notify" id="popUp1">
+                    <div>Notification</div>
+                    <label class="switch">
+                        <input type="checkbox">
+                        <span class="slider round"></span>
+                    </label>
+                    <div>
+                        Message
+                    </div>
+                </div>
             </div>           
             <div class="account-btn">
                 <button onclick="accountPopup()" class="drop-btn">Account</button>
@@ -43,7 +53,7 @@
                             <li>Help</li>
                         </ul>
                     </div>
-                    <div class="block-ac" id="">Log out</div>
+                    <div class="block-ac" id=""><a href="" style="text-decoration: none;">Log out</a></div>
                 </div>
             </div>
 
