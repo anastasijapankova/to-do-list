@@ -93,14 +93,11 @@
                       
                         </div>
                       </div>
-                  
-                      <div class="favorite-projects">
+                      <!-- add to favourite project -->
+                      <div class="favourite-projects">
                         <div class="tooltip">
-                          <span class="tooltiptext">Add to favorite</span>
-                          <img onclick="myFunction1()" class="star-outline" src="img/star-64.png"/>
-                        
-                          <img onclick="myFunction1()" class="star-fill" src="img/starfill-64.png"/>
-                        
+                          <span class="tooltiptext">Add to favourite</span>
+                          <img id="outLineStar"  class="star-outline" src="img/star-64.png"/>
                         </div>
                         </div>
                       </div>
@@ -110,10 +107,10 @@
                   <!-- SECOND SECTION -->
                 <div class="second-section">
                     <div class="task-container">
-                      <button class="new-taskbutton" onclick="addTaskForm()">New Task</button>
+                      <button id="taskFormButton" class="new-taskbutton" onclick="addTaskForm()">New Task</button>
                       <!-- POPUP TASK FORM -->
                       <div class="task-form" id="taskInput">
-                        <form action="onclick" class="input-task">
+                        <form id="addNweTask" class="input-task">
                           <input class="task-name" id="taskName" type="text" placeholder="Task name">
                           <textarea class="task-description" placeholder="Task description..."></textarea>
                           <div class="person-assign">
@@ -131,7 +128,7 @@
                               <option class="initial-status">Assign</option>
                             </select>
                           </div>
-                          <button class="submit-task" action="onclick" method="post">Submit</button>
+                          <button id = "taskSubmit" class="submit-task" onclick="closeTask()" method="post">Submit</button>
                         </form>
                       </div>
                     </div>
@@ -147,13 +144,13 @@
                 
                     <!-- FILTERING BY STAUS AND USER -->
                     <div class ="filter-Button">
-                        <button class="filter-btn" action="onclick">
-                            <span class="button-filter" onclick="filterTask()">Filter</span> 
+                        <button id ="filterButton" class="filter-btn" onclick="filterTask()">
+                            <span class="button-filter" >Filter</span> 
                             <img class="filtericon" src ="img/filter-64.png">
                         </button>
                       <!-- POPUP FILTER WINDOW -->
                       <div class="filterform" id="filterTasks" action="onclick">
-                        <form class="form-filter" action="onclick">
+                        <form class="form-filter" >
                         <div class="task-status">
                           <select class="status-tasks">
                             <option class="status-filter">Task status</option>
@@ -176,7 +173,7 @@
                             <option class="user-filtering">Tami</option>
                           </select>
                         </div>
-                        <button class="submit-filter" action="onclick">Submit</button>
+                        <button id ="submitFilter" class="submit-filter" onclick="closeFilter()" method ="post">Submit</button>
                         </form>
                       </div>
                     </div>
@@ -184,22 +181,32 @@
                 
                     <!-- SORT TASKS -->
                     <div class ="sort-button">
-                      <button class="sort" action="onclick" id="sortSelector"><span class="sort-text">Sort</span>
+                      <!-- <button class="sort" onclick="sortSelector()" id="sortSelector"><span class="sort-text">Sort</span>
                         <img class="sorticon" src="img/sort-48.png"/>
                       </button>
-                      <form class="sortform" onclick="sortSelector()">
+                      <form class="sortform" onclick="">
                       <select class="sotr-selector">
                         <option class="date-selection">Sort </option>
                         <option class="status-selection">Status</option>
                         <option class="date-selection">Date</option>
                       </select>
-                      </form>
+                      </form> -->
+                      <button class="sort" onclick="sortSelector()" id="sortSelector"><span class="sort-text">Sort</span>
+                        <img class="sorticon" src="img/sort-48.png"/>
+                      </button>
+                      <div class="sortform" id="sortDropdown">
+                      <!-- <select class="sotr-selector"> -->
+                        <!-- <a class="date-selection">Sort </a> -->
+                        <a href ="#" class="status-selection">Status</a>
+                        <a href ="#" class="date-selection">Date</a>
+                      <!-- </select> -->
+                    </div>
                     </div>
                 
                 
                     <!-- USERS -->
                     <div class ="person-button">
-                        <button class="dropdown-user" id="dropUsers"><span class="person-text">Person</span>
+                        <!-- <button class="dropdown-user" id="dropUsers"><span class="person-text">Person</span>
                         <img class="personicon" src="img/male-user-64.png"/></button>
                         <form class="form-users" id="dropdownUsers">
                             <select class="user-filter">
@@ -212,7 +219,21 @@
                                 <option class="user-selection">Max</option>
                                 <option class="user-selection">Tami</option>
                             </select>
-                        </form>
+                        </form> -->
+                        <button class="dropdown-user" id="dropUsers"><span class="person-text">Person</span>
+                            <img class="personicon" src="img/male-user-64.png"/></button>
+                            <form class="form-users" id="dropdownUsers">
+                                <select class="user-filter">
+                                    <option class="user-selection">Person</option>
+                                    <option class="user-selection">Anastasija</option>
+                                    <option class="user-selection">Anh</option>
+                                    <option class="user-selection">Anna</option>
+                                    <option class="user-selection">Ahamad</option>
+                                    <option class="user-selection">Lakmali</option>
+                                    <option class="user-selection">Max</option>
+                                    <option class="user-selection">Tami</option>
+                                </select>
+                            </form>
                     </div>
                 
                   </div>
