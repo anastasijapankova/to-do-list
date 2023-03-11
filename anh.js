@@ -1,11 +1,16 @@
 /* When the user clicks on the button, 
 toggle between hiding and showing the dropdown content */
-function accountPopup() {
+function accountPopup2() {
     document.getElementById("popUp2").classList.toggle("show");
   }
 
+
+function accountPopup1() {
+    document.getElementById("popUp1").classList.toggle("show");
+  }
+
 // Close the dropdown if the user clicks outside of it
-window.onclick = function(event) {
+  window.onclick = function(event) {
     if (!event.target.matches('.drop-btn')) {
       var droppopup2 = document.getElementsByClassName("drop-account");
       var i;
@@ -15,11 +20,13 @@ window.onclick = function(event) {
           openDropdown.classList.remove('show');
         }
       }
-    }
+
+   }
+
+  if (!event.target.matches('.fa-bell')) {
+    console.log('yo', event.target)
+    const el = document.querySelector(".bell-notify")
+    if (el.classList.contains('show')) el.classList.remove('show') 
   }
 
-  function accountPopup1() {
-    document.getElementById("popUp1").classList.toggle("show");
   }
-
-
