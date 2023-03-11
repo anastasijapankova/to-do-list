@@ -25,6 +25,7 @@
   display: flex;
   flex-direction: row;
   margin-top: 1em;
+  z-index: 9999;
  }
 
 /* Project title */
@@ -87,7 +88,7 @@
   transform: scale(0.8); 
   width:1.5em;
   height: 1.5em;
-  visibility: hidden;
+  /* visibility: hidden; */
 }
 
 

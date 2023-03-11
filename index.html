@@ -53,18 +53,18 @@
                       <div class="selected-project-name">My First Project</div>
                       <div class="infor-button">
                         <div class="tooltip">
-                          <img class="infor-icon" onclick="openInfromationForm()" src="img/info-64.png" />
+                          <img id ="informationIcon" class="infor-icon" onclick="openInfromationForm()" src="img/info-64.png" />
                           <span class="tooltiptext">Information</span>
                         </div>
                         <!-- For the information pop up form -->
-                        <div action ="onclick" class="popup-information" id="informationForm">
-                          <form action ="onclick............." class="container-form">
+                        <div class="popup-information" id="informationForm" >
+                          <form class="container-form" >
                             <div class="form-left">
                               <p class="project-title">My First Project</p>
                               <textarea class="project-description" placeholder="Add project description here......"></textarea>
                             </div>
                             <div class="form-right">
-                              <img class="close-button" onclick="closeInformationForm()" src="img/close-64.png"/>
+                              <img id="closeButtonInfor" class="close-button" onclick="closeInformationForm()" src="img/close-64.png"/>
                               <p class="basic-info">Basic information</p>
                               <div class="created">
                                 <p class="createby-user">Created by</p> 
@@ -461,6 +461,7 @@
                 </div>
         </div>
     </main>
+    <script src="lakmali.js"></script>
 </body>
 
 </html>
