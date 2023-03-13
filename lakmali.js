@@ -60,30 +60,35 @@
 
 //   sorting data
 
-//   let sortDrop = document.getElementById('sortDropdown')
-  
   function sortSelector(){
     document.getElementById('sortDropdown').classList.toggle('show')
-    // sortDrop.classList.toggle('show')
   }
 
 
-  /* When the user clicks on the button,
-toggle between hiding and showing the dropdown content */
-// function myFunction() {
-//     document.getElementById("myDropdown").classList.toggle("show");
-//   }
+// user selection
+
+function personSelection(){
+  document.getElementById('dropdownUsers').classList.toggle('show')
+  
+}
+
   
 //   // Close the dropdown menu if the user clicks outside of it
-//   window.onclick = function(event) {
-//     if (!event.target.matches('.dropbtn')) {
-//       var dropdowns = document.getElementsByClassName("dropdown-content");
-//       var i;
-//       for (i = 0; i < dropdowns.length; i++) {
-//         var openDropdown = dropdowns[i];
-//         if (openDropdown.classList.contains('show')) {
-//           openDropdown.classList.remove('show');
-//         }
-//       }
-//     }
-//   }
+  window.onclick = function(event) {
+    if (!event.target.matches('.dropdown-user')) {
+      let userDropdowns = document.getElementsByClassName("formUsers");
+      let i;
+      for (i = 0; i <  userDropdowns.length; i++) {
+        let openUserDropdown = userDropdowns[i];
+        if (openUserDropdown.classList.contains('show')) {
+          openUserDropdown.classList.remove('show');
+        }
+      }
+    }
+    if (!event.target.matches('.sort')){
+      console.log('', event.target)
+      let sortClose = document.querySelector('.sortForm')
+      if(sortClose.classList.contains('show'))sortClose.classList.remove('show')
+    }
+  }
+  

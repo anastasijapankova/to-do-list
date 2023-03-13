@@ -577,6 +577,10 @@ input::placeholder {
   height: 3vh;
 }
 
+.sort:hover{
+  cursor: pointer;
+}
+
 .sorticon{
   transform: scale(0.8);
   margin-left: 0.7em;
@@ -587,7 +591,7 @@ input::placeholder {
   z-index: 1;
 }
 
-.sortform{
+.sortForm{
   display: none;
   width: 6em;
   height: 3vh;
@@ -595,18 +599,34 @@ input::placeholder {
   z-index: 9;
   border-radius: 1em;
   background-color:#F5F5F5;
+  margin-top: 4em;
+  
 }
 
 .sotr-selector{
   font-size: 1em;
-  background-color:#F5F5F5;
+  background-color:#e4e0e0;
   color: #868585;
   align-self:center;
   text-align: center;
   width: 6em;
-  height: 3vh;
+  height: auto;
   border-radius: 1em;
-  
+  z-index: 9;
+  position: absolute;
+}
+
+#sortDropdown li{
+  list-style-type: none;
+  border-radius: 1em;
+  padding: 0.3em;
+}
+
+#sortDropdown li:hover{
+  background-color: #0080ff;
+  color: #ffffff;
+  border-radius: 1em;
+  cursor: pointer;
 }
 
 /* users */
@@ -619,8 +639,10 @@ input::placeholder {
     border-radius: 1em;
 }
 
+
+
 .dropdown-user{
-  border: 0.1em solid rgb(163, 164, 165);;
+  border: 0.1em solid rgb(163, 164, 165);
   background-color:#F5F5F5;
   text-align: center;
   align-items: center;
@@ -630,8 +652,13 @@ input::placeholder {
   height: 3vh;
 }
 
+.dropdown-user:hover{
+  cursor: pointer;
+}
+
 .person-text{
   font-size: 1em;
+  padding-left: 0.5em;
 }
 
 .personicon{
@@ -644,24 +671,46 @@ input::placeholder {
   z-index: 1;
 }
 
-.form-users{
+.formUsers{
   display: none;
   width: 6em;
   height: 3vh;
   position:absolute;
-  z-index: 9;
+  z-index: 1;
   border-radius: 1em;
-  background-color:#F5F5F5;
-  margin-bottom: 2em;
+  padding-top: 1em;
+  margin-top: 2em;
 }
 
-.user-filter{  
+#dropdownUsers li{
+  list-style-type: none;
+  border-radius: 1em;
+}
+
+#dropdownUsers li:hover{
+  background-color: #0080ff;
+  color: #ffffff;
+  border-radius: 1em;
+  cursor: pointer;
+}
+.user-selection{
+  text-decoration: none;
+  padding: 0.3em;
+}
+
+
+.selectUser{  
   font-size: 1em;
-  background-color:#F5F5F5;
+  background-color:#e4e0e0;
   color: #868585;
   align-self:center;
   text-align: center;
   width: 6em;
-  height: 3vh;
+  height: auto;
   border-radius: 1em;
+  z-index: 9;
+}
+
+.show{
+  display: block;
 }

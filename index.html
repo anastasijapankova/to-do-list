@@ -181,59 +181,38 @@
                 
                     <!-- SORT TASKS -->
                     <div class ="sort-button">
-                      <!-- <button class="sort" onclick="sortSelector()" id="sortSelector"><span class="sort-text">Sort</span>
+                      <button class="sort" onclick="sortSelector()" id="sortSelector">
+                        <span class="sort-text">Sort</span>
                         <img class="sorticon" src="img/sort-48.png"/>
                       </button>
-                      <form class="sortform" onclick="">
-                      <select class="sotr-selector">
-                        <option class="date-selection">Sort </option>
-                        <option class="status-selection">Status</option>
-                        <option class="date-selection">Date</option>
-                      </select>
-                      </form> -->
-                      <button class="sort" onclick="sortSelector()" id="sortSelector"><span class="sort-text">Sort</span>
-                        <img class="sorticon" src="img/sort-48.png"/>
-                      </button>
-                      <div class="sortform" id="sortDropdown">
-                      <!-- <select class="sotr-selector"> -->
-                        <!-- <a class="date-selection">Sort </a> -->
-                        <a href ="#" class="status-selection">Status</a>
-                        <a href ="#" class="date-selection">Date</a>
-                      <!-- </select> -->
-                    </div>
+                      <div class="sortForm" id="sortDropdown">
+                        <ul class="sotr-selector">
+                          <li class="date-selection">Sort </li>
+                          <li class="status-selection">Status</li>
+                          <li class="date-selection">Date</li>
+                        </ul>
+                      </div>
                     </div>
                 
                 
                     <!-- USERS -->
                     <div class ="person-button">
-                        <!-- <button class="dropdown-user" id="dropUsers"><span class="person-text">Person</span>
-                        <img class="personicon" src="img/male-user-64.png"/></button>
-                        <form class="form-users" id="dropdownUsers">
-                            <select class="user-filter">
-                                <option class="user-selection">Person</option>
-                                <option class="user-selection">Anastasija</option>
-                                <option class="user-selection">Anh</option>
-                                <option class="user-selection">Anna</option>
-                                <option class="user-selection">Ahamad</option>
-                                <option class="user-selection">Lakmali</option>
-                                <option class="user-selection">Max</option>
-                                <option class="user-selection">Tami</option>
-                            </select>
-                        </form> -->
-                        <button class="dropdown-user" id="dropUsers"><span class="person-text">Person</span>
-                            <img class="personicon" src="img/male-user-64.png"/></button>
-                            <form class="form-users" id="dropdownUsers">
-                                <select class="user-filter">
-                                    <option class="user-selection">Person</option>
-                                    <option class="user-selection">Anastasija</option>
-                                    <option class="user-selection">Anh</option>
-                                    <option class="user-selection">Anna</option>
-                                    <option class="user-selection">Ahamad</option>
-                                    <option class="user-selection">Lakmali</option>
-                                    <option class="user-selection">Max</option>
-                                    <option class="user-selection">Tami</option>
-                                </select>
-                            </form>
+                        <button class="dropdown-user" id="dropUsers" onclick="personSelection()">
+                            <span class="person-text">Person</span>
+                            <img class="personicon" src="img/male-user-64.png"/>
+                        </button>
+                            <div class="formUsers" id="dropdownUsers"> 
+                                <ul class="selectUser">
+                                    <li class="user-selection">Person    </li>      
+                                    <li class="user-selection">Anastasija</li>      
+                                    <li class="user-selection">Anh       </li>      
+                                    <li class="user-selection">Anna      </li>      
+                                    <li class="user-selection">Ahamad    </li>      
+                                    <li class="user-selection">Lakmali   </li>      
+                                    <li class="user-selection">Max       </li>      
+                                    <li class="user-selection">Tami      </li>       
+                                </ul>
+                            </div>
                     </div>
                 
                   </div>
