@@ -14,20 +14,44 @@
   informationIcon.addEventListener('click', openInfromationForm);
 
 
+// get data from local storage for popup form
+
+
 //   favourite projects toggle stars
 
-  let star = document.getElementById('outLineStar');
+  // let star = document.getElementById('outLineStar');
 
-  let toggleStar = true;
+  // let toggleStar = true;
 
-  star.addEventListener('click', function(){
-    toggleStar = !toggleStar;
-    if (toggleStar){
-        star.src = "img/star-64.png";
-    } else{
-        star.src = "img/starfill-64.png";}
+  // star.addEventListener('click', function(){
+  //   toggleStar = !toggleStar;
+  //   if (toggleStar){
+  //       star.src = "img/star-64.png";
+  //   } else{
+  //       star.src = "img/starfill-64.png";}
     
-  })
+  // })
+
+// add favourite projrcts to local storage
+
+let star = document.getElementById('outLineStar');
+let isProjectFavoriute = false;
+
+if (localStorage.getItem('isProjectFavoriute') === 'true') {
+  isProjectFavoriute = true;
+  star.src = "img/starfill-64.png";
+}
+
+star.addEventListener('click', function() {
+  isProjectFavoriute = !isProjectFavoriute;
+  if (isProjectFavoriute) {
+    star.src = "img/starfill-64.png";
+    localStorage.setItem('isProjectFavoriute', 'true');
+  } else {
+    star.src = "img/star-64.png";
+    localStorage.removeItem('isProjectFavoriute');
+  }
+});
 
 
   // openning of new task form
@@ -43,6 +67,33 @@
     newTaskAddition.style.display = 'none';
   }
   taskForm.addEventListener('click', addTaskForm);
+
+  //search data from the storage
+
+  // let formSearch = document.getElementById('formSearch');
+  // let searchInput = document.getElementById('searchInput');
+  // let searchResults = document.getElementById('searchResult');
+
+  // formSearch.addEventListener('submit', function(event) {
+  //   event.preventDefault();
+  //   const inputSearch = searchInput.value.toLowerCase();
+  //   const dataSearch = JSON.parse(localStorage.getItem('myData'));
+
+  //   const filteredDataSearch = dataSearch.filter(function(item) {
+  //     return item.name.toLowerCase().includes(inputSearch) ||
+  //            item.description.toLowerCase().includes(inputSearch);
+  //   });
+
+    // Display the search results
+    // if (filteredDataSearch.length > 0) {
+    //   const html = '<ul>' + filteredDataSearch.map(function(item) {
+    //     return '<li>' + item.name + ': ' + item.description + '</li>';
+    //   }).join('') + '</ul>';
+    //   searchResults.textContent = html;
+    // } else {
+    //   searchResults.textContent = 'No results found.';
+    // }
+  // });
 
   //openning the filtering popup
 
@@ -92,3 +143,44 @@ function personSelection(){
     }
   }
   
+
+// storing and getting data from information popup
+
+// let projectName = document.getElementsByClassName('selected-project-name')
+// projectName.textContent = '..............'
+
+
+// let ProjectDetails = document.getElementsByClassName('project-description')
+
+// let 
+
+//////////////////////////////////////////////////////////////
+// <script>
+  // const formSearch = document.getElementById('formSearch');
+  // const searchInput = document.getElementById('searchInput');
+  // const searchResults = document.getElementById('searchResults'); */}
+
+  // formSearch.addEventListener('submit', function(event) {
+  //   event.preventDefault();
+  //   const query = searchInput.value.toLowerCase();
+
+    // Retrieve data from local storage
+    // const data = JSON.parse(localStorage.getItem('myData'));
+
+    // Filter the data based on search query
+    // const filteredData = data.filter(function(item) {
+    //   return item.name.toLowerCase().includes(query) ||
+    //          item.description.toLowerCase().includes(query);
+    // });
+
+    // Display the search results
+    // if (filteredData.length > 0) {
+    //   const html = '<ul>' + filteredData.map(function(item) {
+    //     return '<li>' + item.name + ': ' + item.description + '</li>';
+    //   }).join('') + '</ul>';
+    //   searchResults.innerHTML = html;
+    // } else {
+    //   searchResults.innerHTML = 'No results found.';
+    // }
+  // });
+// </script>
