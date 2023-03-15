@@ -90,10 +90,10 @@ star.addEventListener('click', function() {
 // (task name, task details, asign person, date asign and status)
 const taskForm = document.getElementById('addNewTask');
 const inputTaskName = document.getElementById('taskName');
-const inputDescription = document.getElementById('taskDetails')
-const dateAssign = document.getElementById('assignDate')
-const taskStatus = document.getElementById('status')
-
+const inputDescription = document.getElementById('taskDetails');
+const dateAssign = document.getElementById('assignDate');
+const taskStatus = document.getElementById('status');
+// const assingPerson = document.getElementsByClassName('assign-person').length;
 const taskList = document.getElementById('taskList');
 
 // Get the task name, description from local storage or create an empty array
@@ -101,6 +101,7 @@ let newTasks =  [];
 let addedDescription = [];
 let taskAssignDate = [];
 let assignStatus = [];
+// let taskAssingPerson = [];
 
 // Function to add a task to the list and update local storage
 function addTask(taskName) {
@@ -123,6 +124,7 @@ function taskAssignStatus(status){
   localStorage.setItem('status', JSON.stringify(assignStatus))
 }
 
+
 // Add an event listener to the task form
 taskForm.addEventListener('submit', event => {
   event.preventDefault();
@@ -144,19 +146,68 @@ taskForm.addEventListener('submit', event => {
   taskStatus.value ='';
 });
 
+document.getElementById("taskSubmit").addEventListener("click", function() {
+  const owners = [];
+  let checkboxes = document.querySelectorAll(".assign-person");
+  checkboxes.forEach(function(checkbox) {
+    // If checkbox is checked, add its value to owners array
+    if (checkbox.checked) {
+      owners.push(checkbox.nextElementSibling.textContent);
+    }
+  });
 
+  // Store owners array in local storage
+  localStorage.setItem("owners", JSON.stringify(owners));
 
-//
+  // Retrieve owners array from local storage
+  var retrievedOwners = JSON.parse(localStorage.getItem("owners"));
 
+  // Loop through retrievedOwners and create owner-details div for each value
+    var ownersDiv = document.querySelector(".owners");
+    retrievedOwners.forEach(function(owner) {
+    var ownerDetailsDiv = document.createElement("div");
+    ownerDetailsDiv.classList.add("owner-details");
+    var ownerImage = document.createElement("img");
+    ownerImage.classList.add("responsible");
+    ownerImage.setAttribute("src", "img/male-user-64.png");
+    var ownerParagraph = document.createElement("p");
+    ownerParagraph.classList.add("owner");
+    ownerParagraph.textContent = owner;
+    ownerDetailsDiv.appendChild(ownerImage);
+    ownerDetailsDiv.appendChild(ownerParagraph);
+    ownersDiv.appendChild(ownerDetailsDiv);
+  });
+});
 
+  //search data from the local storage
 
+  const formSearch = document.getElementById('formSearch');
+  const searchInput = document.getElementById('searchInput');
+  const searchResults = document.getElementById('searchResults'); 
 
+  formSearch.addEventListener('submit', function(eventSubmit) {
+    eventSubmit.preventDefault();
+    const userSerchInput = searchInput.value.toLowerCase();
 
+    // Retrieve data from local storage
+    const dataFromStorage = JSON.parse(localStorage.getItem('taskDescription'));
 
+    // Filter the data based on search query
+    const filteredData = dataFromStorage.filter(function(resultItem) {
+      return resultItem.name.toLowerCase().includes(userSerchInput) ||
+      resultItem.description.toLowerCase().includes(userSerchInput);
+    });
 
-
-
-  //search data from the storage
+    // Display the search results
+    if (filteredData.length > 0) {
+      const serachDiv = '<div>' + filteredData.map(function(resultItem) {
+        return '<li>' + resultItem.name + ': ' + resultItem.description + '</li>';
+      }).join('') + '</div>';
+      searchResults.textContent = serachDiv;
+    } else {
+      searchResults.textContent = 'No results found.';
+    }
+  });
 
   // let formSearch = document.getElementById('formSearch');
   // let searchInput = document.getElementById('searchInput');
@@ -242,32 +293,4 @@ function personSelection(){
 
 // let 
 
-//////////////////////////////////////////////////////////////
-// <script>
-  // const formSearch = document.getElementById('formSearch');
-  // const searchInput = document.getElementById('searchInput');
-  // const searchResults = document.getElementById('searchResults'); */}
 
-  // formSearch.addEventListener('submit', function(event) {
-  //   event.preventDefault();
-  //   const query = searchInput.value.toLowerCase();
-
-    // Retrieve data from local storage
-    // const data = JSON.parse(localStorage.getItem('myData'));
-
-    // Filter the data based on search query
-    // const filteredData = data.filter(function(item) {
-    //   return item.name.toLowerCase().includes(query) ||
-    //          item.description.toLowerCase().includes(query);
-    // });
-
-    // Display the search results
-    // if (filteredData.length > 0) {
-    //   const html = '<ul>' + filteredData.map(function(item) {
-    //     return '<li>' + item.name + ': ' + item.description + '</li>';
-    //   }).join('') + '</ul>';
-    //   searchResults.innerHTML = html;
-    // } else {
-    //   searchResults.innerHTML = 'No results found.';
-    // }
-  // });
