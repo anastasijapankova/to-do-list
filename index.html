@@ -6,9 +6,9 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="lakmali.css">
-    <link rel="stylesheet" href="/style.css" />
-    <link rel="stylesheet" media="screen and (min-width: 786px)" href="tablet-display.css">
-    <link rel="stylesheet" media="screen and (max-width: 430px)" href="mobile.css">
+    <link rel="stylesheet" href="style.css" />
+    <!-- <link rel="stylesheet" media="screen and (min-width: 786px)" href="tablet-display.css">
+    <link rel="stylesheet" media="screen and (max-width: 430px)" href="mobile.css"> -->
     <script src="https://kit.fontawesome.com/571ecca289.js" crossorigin="anonymous"></script>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -110,19 +110,19 @@
                       <button id="taskFormButton" class="new-taskbutton" onclick="addTaskForm()">New Task</button>
                       <!-- POPUP TASK FORM -->
                       <div class="task-form" id="taskInput">
-                        <form id="addNweTask" class="input-task">
+                        <form id="addNewTask" class="input-task">
                           <input class="task-name" id="taskName" type="text" placeholder="Task name">
-                          <textarea class="task-description" placeholder="Task description..."></textarea>
+                          <textarea id="taskDetails" class="task-description" placeholder="Task description..."></textarea>
                           <div class="person-assign">
-                            <p class="assign-name"><input class="asign-person" type="checkbox"><span class="name-assign">Lakmali</span></p>
-                            <p class="assign-name"><input class="asign-person" type="checkbox"><span class="name-assign">Anastasija</span></p>
-                            <p class="assign-name"><input class="asign-person" type="checkbox"><span class="name-assign">Anh</span></p>
-                            <p class="assign-name"><input class="asign-person" type="checkbox"><span class="name-assign">Anna</span></p>
-                            <p class="assign-name"><input class="asign-person" type="checkbox"><span class="name-assign">Max</span></p>
+                            <p class="assign-name"><input class="assign-person" type="checkbox"><span class="name-assign">Lakmali</span></p>
+                            <p class="assign-name"><input class="assign-person" type="checkbox"><span class="name-assign">Anastasija</span></p>
+                            <p class="assign-name"><input class="assign-person" type="checkbox"><span class="name-assign">Anh</span></p>
+                            <p class="assign-name"><input class="assign-person" type="checkbox"><span class="name-assign">Anna</span></p>
+                            <p class="assign-name"><input class="assign-person" type="checkbox"><span class="name-assign">Max</span></p>
                             </div>
-                          <lable class="assign-date">Date assign:<input class="date-assign" type="date"></lable>
+                          <lable class="assign-date">Date assign:<input id="assignDate" class="date-assign" type="date"></lable>
                           <div class="status">
-                            <select class="status-select">
+                            <select id="status" class="status-select">
                               <option class="initial-status">Status</option>
                               <option class="initial-status">In progress</option>
                               <option class="initial-status">Assign</option>

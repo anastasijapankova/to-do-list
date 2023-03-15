@@ -1,3 +1,19 @@
+// To add name to the board
+let projectName = localStorage.getItem('..............')
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 // To open the popup information form 
 
   let informationIcon = document.getElementById('informationIcon');
@@ -56,7 +72,7 @@ star.addEventListener('click', function() {
 
   // openning of new task form
 
-  let taskForm = document.getElementById('taskFormButton') ;
+  let newTaskForm = document.getElementById('taskFormButton') ;
   let newTaskAddition = document.getElementById('taskInput');
 
   function addTaskForm(){
@@ -66,7 +82,79 @@ star.addEventListener('click', function() {
   function closeTask() {
     newTaskAddition.style.display = 'none';
   }
-  taskForm.addEventListener('click', addTaskForm);
+  newTaskForm .addEventListener('click', addTaskForm);
+
+// storing data from new task popup
+
+// Get the task form, input fields 
+// (task name, task details, asign person, date asign and status)
+const taskForm = document.getElementById('addNewTask');
+const inputTaskName = document.getElementById('taskName');
+const inputDescription = document.getElementById('taskDetails')
+const dateAssign = document.getElementById('assignDate')
+const taskStatus = document.getElementById('status')
+
+const taskList = document.getElementById('taskList');
+
+// Get the task name, description from local storage or create an empty array
+let newTasks =  [];
+let addedDescription = [];
+let taskAssignDate = [];
+let assignStatus = [];
+
+// Function to add a task to the list and update local storage
+function addTask(taskName) {
+  newTasks.push(taskName);
+  localStorage.setItem('tasksName', JSON.stringify(newTasks));
+}
+
+function descriptionTask(taskDetails){
+  addedDescription.push(taskDetails);
+  localStorage.setItem('taskDescription', JSON.stringify(addedDescription));
+}
+
+function dateOfAssign(assignDate){
+  taskAssignDate.push(assignDate);
+  localStorage.setItem('assignDate', JSON.stringify(taskAssignDate));
+}
+
+function taskAssignStatus(status){
+  assignStatus.push(status);
+  localStorage.setItem('status', JSON.stringify(assignStatus))
+}
+
+// Add an event listener to the task form
+taskForm.addEventListener('submit', event => {
+  event.preventDefault();
+
+  const taskName = inputTaskName.value;
+  addTask(taskName);
+  inputTaskName.value = '';
+
+  const taskDetails = inputDescription.value;
+  descriptionTask(taskDetails);
+  inputDescription.value = '';
+
+  const assignDate = dateAssign.value;
+  dateOfAssign(assignDate);
+  dateAssign.value = '';
+
+  const status = taskStatus.value;
+  taskAssignStatus(status);
+  taskStatus.value ='';
+});
+
+
+
+//
+
+
+
+
+
+
+
+
 
   //search data from the storage
 
@@ -183,4 +271,3 @@ function personSelection(){
     //   searchResults.innerHTML = 'No results found.';
     // }
   // });
-// </script>
