@@ -29,22 +29,32 @@
             <div class="bell">
                 <div onclick="accountPopup1()" class="bell-btn"><i class="fa-solid fa-bell"></i></div>
                 <div class="bell-notify" id="popUp1">
-                    <div>Notification</div>
-                    <label class="switch">
-                        <input type="checkbox">
-                        <span class="slider round"></span>
-                    </label>
-                    <div>
-                        Message
+                    
+                    <div class="notifyBlk">
+                        <div>Notification</div>
+                        <p>Only show unread</p>
+                        <label class="switch">
+                            <input type="checkbox">
+                            <span class="slider round"></span>
+                        </label>
+                    </div>
+                    <div class="message">
+                        
+                        <img src="./img/robot-message.png">
+                        <p>No unread notifications</p>
+
+                        
                     </div>
                 </div>
-            </div>           
+            </div>
+                      
             <div class="account-btn">
                 <button onclick="accountPopup2()" class="drop-btn">Account</button>
                 <div class="drop-account" id="popUp2">
                     <div class="" id="">ACCOUNT
-                        <div class="display-name"></div>
-                        <div>Manage account</div>
+                        <button onclick="document.getElementById('login001').style.display='block'" class="loginbtn">Login</button>
+                        <!--<div class="display-name"></div>
+                        <div>Manage account</div>-->
                     </div>
                     <div class="block-ac" id="my-tidy">MY TIDY
                         <ul>
@@ -54,24 +64,56 @@
                             <li>Help</li>
                         </ul>
                     </div>
-                    <div class="block-ac" id=""><a href="" style="text-decoration: none;">Log out</a></div>
+                    <div class="block-ac" id="">Log out</div>
                 </div>
             </div>
 
         </div>
     </header>
+    <!--Login popup-->
+    <div id="login001" class="login">
+        <form class="login-content" action="/action_page.php" method="post">
+            <div class="imgcontainer">
+                <span onclick="document.getElementById('id01').style.display='none'" class="close" title="Close Modal">&times;</span>
+                <img src="./img/user-profile.png" class="avatar">
+            </div>
+      
+            <div class="container">
+                <label for="uname"><b>Username</b></label>
+                <input type="text" placeholder="Enter Username" name="uname" required>
+      
+                <label for="psw"><b>Password</b></label>
+                <input type="password" placeholder="Enter Password" name="psw" required>
+              
+                <button type="submit">Login</button>
+                <label><input type="checkbox" checked="checked" name="remember"> Remember me</label>
+            </div>
+      
+            <div class="container"  >
+                <button type="button" onclick="document.getElementById('id01').style.display='none'" class="cancelbtn">Cancel</button>
+                <span class="psw">Forgot <a href="#">password?</a></span>
+            </div>
+        </form>
+    </div>
     <main>
         <div class="taskbar">
             <ul>
                 <li><a id="active"><i class="fa-solid fa-folder"></i>My Boards</a>
                 </li>
-                <li>
-                    <div class="act-add"><i class="fa-solid fa-pen-nib"></i>Add</div>
-                    <div class="add-board">
-                        <div>Create board</div>
-                        <div>Board title</div>
-                        <div>Visiblity</div>
-                        <div><button>create</button></div>
+                <li >
+                    <div class="act-add" onclick="addBoard()"><i class="fa-solid fa-pen-nib"></i>Add</div>
+                    <div class="add-board" id="popUp3">
+                        <div id="adbHead">Add new board</div>
+                        <div class="themePicker">Choose theme: <br>
+                            <div id="theme1"></div>
+                            <div id="theme2"></div>
+                            <div id="theme3"></div>
+                        </div>
+                        <form action="">
+                            <label>Add title: <input type="text" id="board-title" name="title"></label>
+                            <label>Author: <input type="text" id="board-author"></label>
+                        </form>
+                        <div><button>Create</button></div>
                     </div>
                 </li>
                 <li><a><i class="fa-solid fa-people-group"></i>People</a>
@@ -82,7 +124,7 @@
                 <li><a><i class="fa-solid fa-calendar-days"></i>Views</a>
                 </li>
             </ul>
-            <img class="help-icon" src="/img/help-img.png">
+            
         </div>
 
         <div class="workspace">
