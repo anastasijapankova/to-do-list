@@ -42,6 +42,6 @@ let taskNameInput = document.getElementById('taskName');
 let taskNameValue = taskNameInput.value;
 
 // Add the value to local storage
-localStorage.setItem('taskName', taskNameValue);
+// localStorage.setItem('taskName', taskNameValue);
 
-let taskNameValue = localStorage.getItem('taskName');
+// let taskNameValue = localStorage.getItem('taskName');
