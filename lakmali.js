@@ -160,17 +160,17 @@ document.getElementById("taskSubmit").addEventListener("click", function() {
   localStorage.setItem("owners", JSON.stringify(owners));
 
   // Retrieve owners array from local storage
-  var retrievedOwners = JSON.parse(localStorage.getItem("owners"));
+  let retrievedOwners = JSON.parse(localStorage.getItem("owners"));
 
   // Loop through retrievedOwners and create owner-details div for each value
-    var ownersDiv = document.querySelector(".owners");
+    let ownersDiv = document.querySelector(".owners");
     retrievedOwners.forEach(function(owner) {
-    var ownerDetailsDiv = document.createElement("div");
+    let ownerDetailsDiv = document.createElement("div");
     ownerDetailsDiv.classList.add("owner-details");
-    var ownerImage = document.createElement("img");
+    let ownerImage = document.createElement("img");
     ownerImage.classList.add("responsible");
     ownerImage.setAttribute("src", "img/male-user-64.png");
-    var ownerParagraph = document.createElement("p");
+    let ownerParagraph = document.createElement("p");
     ownerParagraph.classList.add("owner");
     ownerParagraph.textContent = owner;
     ownerDetailsDiv.appendChild(ownerImage);
@@ -190,18 +190,18 @@ document.getElementById("taskSubmit").addEventListener("click", function() {
     const userSerchInput = searchInput.value.toLowerCase();
 
     // Retrieve data from local storage
-    const dataFromStorage = JSON.parse(localStorage.getItem('taskDescription'));
+    const dataFromStorage = JSON.parse(localStorage.getItem('key'));
 
     // Filter the data based on search query
     const filteredData = dataFromStorage.filter(function(resultItem) {
-      return resultItem.name.toLowerCase().includes(userSerchInput) ||
+      return resultItem.name.toLowerCase().includes(userSerchInput) || []
       resultItem.description.toLowerCase().includes(userSerchInput);
     });
 
     // Display the search results
     if (filteredData.length > 0) {
       const serachDiv = '<div>' + filteredData.map(function(resultItem) {
-        return '<li>' + resultItem.name + ': ' + resultItem.description + '</li>';
+        return '<p>' + resultItem.name + ': ' + resultItem.description + '</p>';
       }).join('') + '</div>';
       searchResults.textContent = serachDiv;
     } else {
@@ -209,30 +209,7 @@ document.getElementById("taskSubmit").addEventListener("click", function() {
     }
   });
 
-  // let formSearch = document.getElementById('formSearch');
-  // let searchInput = document.getElementById('searchInput');
-  // let searchResults = document.getElementById('searchResult');
 
-  // formSearch.addEventListener('submit', function(event) {
-  //   event.preventDefault();
-  //   const inputSearch = searchInput.value.toLowerCase();
-  //   const dataSearch = JSON.parse(localStorage.getItem('myData'));
-
-  //   const filteredDataSearch = dataSearch.filter(function(item) {
-  //     return item.name.toLowerCase().includes(inputSearch) ||
-  //            item.description.toLowerCase().includes(inputSearch);
-  //   });
-
-    // Display the search results
-    // if (filteredDataSearch.length > 0) {
-    //   const html = '<ul>' + filteredDataSearch.map(function(item) {
-    //     return '<li>' + item.name + ': ' + item.description + '</li>';
-    //   }).join('') + '</ul>';
-    //   searchResults.textContent = html;
-    // } else {
-    //   searchResults.textContent = 'No results found.';
-    // }
-  // });
 
   //openning the filtering popup
 
