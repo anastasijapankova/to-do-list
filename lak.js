@@ -51,16 +51,17 @@ star.addEventListener('click', function() {
 
 // Retrieve the form and submit button elements
 
-let taskBoard = {
+let taskBoard = JSON.parse(localStorage.getItem('taskBoard')) ||{
+
     tasks: []
   }
-  
-const form = document.getElementById('addNewTask');
+
+const taskForm = document.getElementById('addNewTask');
 const submitButton = document.getElementById('taskSubmit');
 
 // Add an event listener to the submit button
 submitButton.addEventListener('click', function(event) {
-  event.preventDefault(); // Prevent the default form submission
+  event.preventDefault(); 
   
   // Retrieve the values of the form input elements
   const taskName = document.getElementById('taskName').value;
@@ -83,8 +84,9 @@ submitButton.addEventListener('click', function(event) {
   taskBoard.tasks.push(task);
   localStorage.setItem('taskBoard', JSON.stringify(taskBoard));
   
+  
   // Reset the form inputs
-  form.reset();
+  taskForm.reset();
 });
 
 // Helper function to retrieve the selected owners
@@ -117,7 +119,7 @@ collaborators.forEach((person) => {
 })
 
 
-//  create owner-details div for each value
+//  create owner-details div for each value for collaborators
     let ownersDiv = document.querySelector(".owners");
     uniqeCollaborators.forEach(function(owner) {
     let ownerDetailsDiv = document.createElement("div");
@@ -132,5 +134,109 @@ collaborators.forEach((person) => {
     ownerDetailsDiv.appendChild(ownerParagraph);
     ownersDiv.appendChild(ownerDetailsDiv);
 });
+
+
+// search data from the storage
+
+// const searchButton = document.getElementById('searchSubmit');
+
+// Add an event listener to the submit button
+// submitButton.addEventListener('click', function(event) {
+//   event.preventDefault();
+//   taskForm.reset();
+// }); 
+
+const formSearch = document.getElementById('formSearch');
+const searchInput = document.getElementById('searchInput');
+const searchResults = document.getElementById('searchResults'); 
+
+// formSearch.addEventListener('submit', function(event) {
+//   event.preventDefault();
+//   const inputSearch = searchInput.value.toLowerCase();
+// //   // Retrieve data from local storage
+//   const searchData = JSON.parse(localStorage.getItem('taskBoard'));
+// console.log(searchData)
+//   // Filter the data based on search input
+
+// const filteredData = searchData.tasks.filter(function(item) {
+//   return item.name.toLowerCase().includes(inputSearch ) ||
+//          item.description.toLowerCase().includes(inputSearch );
+// });
+
+
+  // const filteredData = searchData.task.filter(function(item) {
+  //   for (const property in item) {
+  //     if (typeof item[property] === 'string' && item[property].toLowerCase().includes(inputSearch)) {
+  //       return true;
+  //     }
+  //   }
+  //   return false;
+  // });
+
+//   // Display the search results
+  // if (filteredData.length > 0) {
+  //   const searchResultDiv = '<ul>' + filteredData.map(function(item) {
+  //     return '<li>' + item.name + ': ' + item.description + '</li>';
+  //   }).join('') + '</ul>';
+  //   searchResults.textContent = searchResultDiv;
+  // } else {
+  //   searchResults.textContent = 'No results found.';
+  // }
+// });
+
+ //openning the filtering popup
+
+ let filteringButton = document.getElementById('filterButton');
+ let filterForm = document.getElementById('filterTasks');
+
+ function filterTask(){
+   filterForm.style.display = 'block'
+ }
+ function closeFilter() {
+   filterForm.style.display = 'none';
+ }
+ 
+ filteringButton.addEventListener('click', filterTask)
+
+//   sorting data
+
+ function sortSelector(){
+   document.getElementById('sortDropdown').classList.toggle('show')
+ }
+
+
+// user selection
+
+function personSelection(){
+ document.getElementById('dropdownUsers').classList.toggle('show')
+ 
+}
+
+const assignedTasks = document.getElementById('dropdownUsers').value;
+const tasksStored = JSON.parse(localStorage.getItem('tasks'));
+
+// const tasksAssignedToPerson = tasksStored.tasksStored.filter(tasksStored => tasksStored.owners.includes(assignedTasks));
+
+
+ 
+//  Close the dropdown menu if the user clicks outside of it
+window.onclick = function(event) {
+  if (!event.target.matches('.dropdown-user')) {
+    let userDropdowns = document.getElementsByClassName("formUsers");
+    let i;
+    for (i = 0; i <  userDropdowns.length; i++) {
+      let openUserDropdown = userDropdowns[i];
+      if (openUserDropdown.classList.contains('show')) {
+        openUserDropdown.classList.remove('show');
+      }
+    }
+  }
+  if (!event.target.matches('.sort')){
+    console.log('', event.target)
+    let sortClose = document.querySelector('.sortForm')
+    if(sortClose.classList.contains('show'))sortClose.classList.remove('show')
+  }
+}
+ 
 
   

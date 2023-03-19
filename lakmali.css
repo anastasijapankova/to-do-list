@@ -436,9 +436,20 @@ input[type="search"]{
   font-size: 1em;
   height: 100%;
   width: 100%;
-  padding: 0.2em 1em;
+  padding-left: 1em;
+  /* padding: 0.2em 1em; */
+  border-radius: 1em;
+  background-color: #F5F5F5;
 }
 
+/* #serachInput{
+  all: unset;
+  font-size: 1em;
+  height: 100%;
+  width: 100%;
+  padding: 0.2em 1em;
+  background-color: #929090;
+} */
 input::placeholder {
   opacity: 0.7; 
   font-size: 1em;
@@ -460,6 +471,7 @@ input::placeholder {
 /* search result */
 #searchResult{
   display: block;
+  background-color: #F5F5F5;
 }
 
 
