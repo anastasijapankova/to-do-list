@@ -13,6 +13,15 @@ function closeInformationForm() {
 
 informationIcon.addEventListener('click', openInfromationForm);
 
+// Add description to the project
+
+let projectDescription = document.getElementById('taskDetails').value;
+let boardDescription = []
+
+function addProjectDescription (newBoardDescription){
+  boardDescription.push(newBoardDescription)
+localStorage.setItem('projectDescription', JSON.stringify(projectDescription ))
+}
 
 // add favourite projrcts to local storage
 
@@ -51,8 +60,8 @@ star.addEventListener('click', function() {
 
 // Retrieve the form and submit button elements
 
-let taskBoard = JSON.parse(localStorage.getItem('taskBoard')) ||{
-
+let taskBoard = JSON.parse(localStorage.getItem('taskBoard'))||{
+  
     tasks: []
   }
 
@@ -138,13 +147,6 @@ collaborators.forEach((person) => {
 
 // search data from the storage
 
-// const searchButton = document.getElementById('searchSubmit');
-
-// Add an event listener to the submit button
-// submitButton.addEventListener('click', function(event) {
-//   event.preventDefault();
-//   taskForm.reset();
-// }); 
 
 const formSearch = document.getElementById('formSearch');
 const searchInput = document.getElementById('searchInput');
@@ -190,13 +192,40 @@ const searchResults = document.getElementById('searchResults');
  let filterForm = document.getElementById('filterTasks');
 
  function filterTask(){
-   filterForm.style.display = 'block'
- }
- function closeFilter() {
-   filterForm.style.display = 'none';
- }
+  filterForm.style.display = 'block'
  
- filteringButton.addEventListener('click', filterTask)
+// get input to filter
+// let inputStatusToFilter = document.getElementById('tasksStatus')
+// let inputUserToFilter = document.getElementById('selectedUser')
+ 
+
+// Retrieve filterdata
+  let filterData = JSON.parse(localStorage.getItem('taskBoard'));
+
+// event listener
+let formFilter = document.querySelector('.form-filter');
+formFilter.addEventListener('submit', function(event) {
+  event.preventDefault();
+  let filterStatus = document.getElementById('tasksStatus').value;
+  let filterUsers = document.getElementById('selectedUser').value;
+
+  let filteredData = filterData.tasks.filter(tasks => tasks.owners.includes(filterUsers) && tasks.status === filterStatus);
+  console.log(filteredData);
+ 
+})
+}
+
+  function closeFilter() {
+    filterForm.style.display = 'none';
+  }
+  
+  filteringButton.addEventListener('click', filterTask);
+
+
+ 
+ 
+
+
 
 //   sorting data
 
@@ -239,4 +268,3 @@ window.onclick = function(event) {
 }
  
 
-  

@@ -519,7 +519,7 @@ input::placeholder {
 
 .filterform{
   display:none;
-  width: 25vw;
+  width: 22%;
   height: 100px;
   position:absolute;
   z-index: 9;
@@ -558,6 +558,15 @@ input::placeholder {
   font-size: 1em;
   border: 0.1em solid rgb(163, 164, 165);
   z-index: 9;
+}
+
+/* .user-filtering{
+  margin-left:5px;
+
+} */
+
+.user-filtering:hover{
+  background-color: #0080ff;
 }
 
 .submit-filter{
@@ -732,3 +741,4 @@ input::placeholder {
 .show{
   display: block;
 }
+
