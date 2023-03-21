@@ -146,35 +146,29 @@ collaborators.forEach((person) => {
 });
 
 
-// SEARCH DATA FROM THE LOCAL STORAGE
+// SEARCH DATA FROM THE LOCAL STORAGE BASED ON TASK OR TASK
 
 
 const formSearch = document.getElementById('formSearch');
 const searchInput = document.getElementById('searchInput');
 const searchResults = document.getElementById('searchResults'); 
 
-// formSearch.addEventListener('submit', function(event) {
-//   event.preventDefault();
-//   const inputSearch = searchInput.value.toLowerCase();
-// //   // Retrieve data from local storage
-//   const searchData = JSON.parse(localStorage.getItem('taskBoard'));
+formSearch.addEventListener('submit', function(event) {
+  event.preventDefault();
+  const inputSearch = searchInput.value.toLowerCase();
+  // Retrieve data from local storage
+  const searchData = JSON.parse(localStorage.getItem('taskBoard'));
 // console.log(searchData)
-//   // Filter the data based on search input
+  // Filter the data based on search input
 
-// const filteredData = searchData.tasks.filter(function(item) {
-//   return item.name.toLowerCase().includes(inputSearch ) ||
-//          item.description.toLowerCase().includes(inputSearch );
-// });
+const filteredData = searchData.tasks.filter(function(tasks) {
+  return tasks.name.toLowerCase().includes(inputSearch ) ||
+         tasks.description.toLowerCase().includes(inputSearch );
+});
 
-
-  // const filteredData = searchData.task.filter(function(item) {
-  //   for (const property in item) {
-  //     if (typeof item[property] === 'string' && item[property].toLowerCase().includes(inputSearch)) {
-  //       return true;
-  //     }
-  //   }
-  //   return false;
-  // });
+  console.log(filteredData)
+  });
+  
 
 //   // Display the search results
   // if (filteredData.length > 0) {
@@ -248,62 +242,6 @@ sortFormDrop.addEventListener('click', function(event){
   }
 
 });
-
-// TO CRATE POPUP FOR SORTED TASKS
-
-// let sortedDiv = document.getElementById('sort-by-date');
-// sortedTasks.forEach(function(sortedTasks){
-// let sortDetailDiv = document.createElement('div');
-// sortDetailDiv.classList.add('sorted-task-details');
-// let titleElement = document.createElement('h3');
-// titleElement.classList.add('task-name')
-// titleElement.textContent = tasks.name;
-
-
-// sortedDiv.appendChild(titleElement)
-// });
-
-
-// console.log(sortByDate())
-
-//  function sortSelector(){
-//   document.getElementById('sortDropdown').classList.toggle('show')
-// }
-
-// let sortButton = document.getElementById('sortSelectorButton');
-// let sortFormDrop = document.getElementById('sortDropdown')
-
-// function sortByDate() {
-//   let sortData = JSON.parse(localStorage.getItem('taskBoard'));
-//   return sortData.tasks.sort((a, b) => new Date(a.date) - new Date(b.date));
-// }
-
-// sortFormDrop.addEventListener('click', function(event){
-//   event.preventDefault();
-//   let statusSelection = document.getElementById('sortSelector').value;
-//   if (statusSelection == 'Date') {
-//     let sortedTasks = sortByDate();
-//     console.log(sortedTasks);
-    // do something with sortedTasks
-//   }
-// });
-// console.log(sortByDate)
-   // sort tasks array based on date
-// sortData.sort((a, b) => new Date(a.date) - new Date(b.date));
-
-// store the sorted tasks array in local storage
-// localStorage.setItem('tasks', JSON.stringify(tasks));
-
-
-  // let statusSelection = document.getElementsByClassName('sotr-selector').value
-  //   let sortDataSelect = sortData.tasks.filter(tasks =>tasks.date === statusSelection);
-
-  // let sortDataSelect = sortData.tasks.includes(statusSelection);
-  // console.log(sortDataSelect);
-
-  //   let sortDataSelect = sortData.tasks.filter(tasks => tasks.status === statusSelection || tasks.date === statusSelection);
-  // console.log(sortDataSelect);
-//  })
 
 
 
