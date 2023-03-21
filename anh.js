@@ -8,13 +8,15 @@ function accountPopup1() {
     document.getElementById("popUp1").classList.toggle("show");
   }
 
-
-
-function addBoard() {
-    document.getElementById("popUp3").classList.toggle("show");
+function addBoardPopup() {
+    document.getElementByClass("add-board").classList.toggle("show");
 }
 
-var loginpopup = document.getElementById('login001');
+
+
+var loginPopup = document.getElementById('login001');
+var addBoard = document.getElementById("popUp3");
+
 
 // When the user clicks anywhere outside of the login box, close it
 
@@ -30,7 +32,6 @@ var loginpopup = document.getElementById('login001');
           openDropdown.classList.remove('show');
         }
       }
-
    }
 
   if (!event.target.matches('.fa-bell')) {
@@ -39,8 +40,9 @@ var loginpopup = document.getElementById('login001');
     if (el.classList.contains('show')) el.classList.remove('show') 
   }
 
-  if (event.target == loginpopup) {
-    loginpopup.style.display = "none";
+  if (event.target == loginPopup) {
+    loginPopup.style.display = "none"
   }
 
-  }
+
+}
