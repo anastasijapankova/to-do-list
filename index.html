@@ -180,23 +180,8 @@
                         <button id ="submitFilter" class="submit-filter" onclick="closeFilter()" method ="post">Submit</button>
                         </form>
                       </div>
-                      <!-- <div id ="filterDtails">
-                        <form id = "filterPopup" class = "filter-popup">
-                            <h3 id="taskNameFilter1" class="taskNameFilter">fgdfggg</h3>
-                            <p id =" taskDescriptionFilter" class="filter-task-description">Lorem ipsum dolor sit amet consectetur adipisicing elit. Vero magnam aliquid delectus sequi explicabo iste excepturi expedita quas, doloremque nam a deserunt ullam nesciunt animi distinctio blanditiis, voluptate voluptatum vitae?</p>
-                            <div class ="user-details">
-                                <img class="task-owner-image" src="img/male-user-64.png"/>
-                                <p class="task-owner">Lakmali </p>
-                                <div class="task-filter-status">
-                                <img id ="statusBar" src="/img/ChartLine.png">
-                                <p class="status-filteredtasks">Status</p>
-                                <p class="taskSatatus"></p>
-                                </div>
-                              </div>
-                        </form>
-
-                      </div> -->
                     </div>
+
                 
                 
                     <!-- SORT TASKS -->
@@ -206,8 +191,8 @@
                         <img class="sorticon" src="img/sort-48.png"/>
                       </button>
                       <div class="sortForm" id="sortDropdown">
-                        <ul class="sotr-selector">
-                          <li class="date-selection">Sort </li>
+                        <ul class="sotr-selector" action="onclick">
+                          <li class="sort-selection">Sort </li>
                           <li class="status-selection">Status</li>
                           <li class="date-selection">Date</li>
                         </ul>
@@ -222,7 +207,7 @@
                             <img class="personicon" src="img/male-user-64.png"/>
                         </button>
                             <div class="formUsers" id="dropdownUsers"> 
-                                <ul class="selectUser">
+                                <ul class="selectUser" action="onclick">
                                     <li class="user-selection">Person    </li>      
                                     <li class="user-selection">Anastasija</li>      
                                     <li class="user-selection">Anh       </li>      
@@ -236,6 +221,23 @@
                     </div>
                 
                   </div>
+                </div>
+
+                <div id ="filterDtails">
+                    <form id = "filterPopup" class = "filter-popup">
+                        <h3 id="taskNameFilter1" class="taskNameFilter">fgdfggg</h3>
+                        <p id =" taskDescriptionFilter" class="filter-task-description">Lorem ipsum dolor sit amet consectetur adipisicing elit. Vero magnam aliquid delectus sequi explicabo iste excepturi expedita quas, doloremque nam a deserunt ullam nesciunt animi distinctio blanditiis, voluptate voluptatum vitae?</p>
+                        <div class ="user-details">
+                            <img class="task-owner-image" src="img/male-user-64.png"/>
+                            <p class="task-owner">Lakmali </p>
+                            <div class="task-filter-status">
+                            <img id ="statusBar" src="/img/ChartLine.png">
+                            <p class="status-filteredtasks">Status</p>
+                            <p class="taskSatatus"></p>
+                            </div>
+                          </div>
+                    </form>
+
                 </div>
 
                   <!-- ANASTASIJA'S SECTION -->

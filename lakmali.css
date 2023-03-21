@@ -743,7 +743,7 @@ input::placeholder {
 }
 
 #filterPopup{
-  display: flex;
+  display: none;
   flex-direction: column;
   z-index: 10;
   position:unset;
@@ -754,7 +754,7 @@ input::placeholder {
 }
 
 .filter-popup{
-  /* display: none; */
+  display: none;
   background-color: #F5F5F5;
   width: 320px;
   height: 320px;

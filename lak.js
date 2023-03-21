@@ -227,6 +227,24 @@ filteringButton.addEventListener('click', filterTask);
    document.getElementById('sortDropdown').classList.toggle('show')
  }
 
+ let sortButton = document.getElementById('sortSelector');
+ let sortForm = document.getElementById('sortDropdown')
+ let sortData = JSON.parse(localStorage.getItem('taskBoard'))
+
+ let sortFormData = document.querySelector('.sotr-selector');
+
+ sortForm.addEventListener('click', function(event){
+  event.preventDefault();
+  let statusSelection = document.getElementsByClassName('sotr-selector').value
+
+  // let sortDataSelect = sortData.tasks.includes(statusSelection);
+  // console.log(sortDataSelect);
+
+  //   let sortDataSelect = sortData.tasks.filter(tasks => tasks.status === statusSelection || tasks.date === statusSelection);
+  // console.log(sortDataSelect);
+ })
+
+
 
 // user selection
 
@@ -236,7 +254,11 @@ function personSelection(){
 }
 
 const assignedTasks = document.getElementById('dropdownUsers').value;
-const tasksStored = JSON.parse(localStorage.getItem('tasks'));
+const tasksStored = JSON.parse(localStorage.getItem('taskBoard'));
+
+function taskByPerson (task){
+
+}
 
 // const tasksAssignedToPerson = tasksStored.tasksStored.filter(tasksStored => tasksStored.owners.includes(assignedTasks));
 
