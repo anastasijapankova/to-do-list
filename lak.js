@@ -1,4 +1,4 @@
-// To open the popup information form 
+// TO OPEN THE POPUP INFORMATION FORM
 
 let informationIcon = document.getElementById('informationIcon');
 let informationForm = document.getElementById('informationForm');
@@ -13,7 +13,7 @@ function closeInformationForm() {
 
 informationIcon.addEventListener('click', openInfromationForm);
 
-// Add description to the project
+// ADD DESCRTIPTION TO THE PROJECT
 
 let projectDescription = document.getElementById('taskDetails').value;
 let boardDescription = []
@@ -23,7 +23,7 @@ function addProjectDescription (newBoardDescription){
 localStorage.setItem('projectDescription', JSON.stringify(projectDescription))
 }
 
-// add favourite projrcts to local storage
+// ADD FOVOURITE PROJECT TO THE LOCAL STORGE
 
 let star = document.getElementById('outLineStar');
 let isProjectFavoriute = false;
@@ -44,7 +44,7 @@ star.addEventListener('click', function() {
   }
 });
 
-  // openning of new task form
+  // OPENNING A NEW TASK FORM
 
   let newTaskForm = document.getElementById('taskFormButton') ;
   let newTaskAddition = document.getElementById('taskInput');
@@ -58,7 +58,7 @@ star.addEventListener('click', function() {
   }
   newTaskForm .addEventListener('click', addTaskForm);
 
-// Retrieve the form and submit button elements
+// RETRIEVE THE FORM AND SUBMIT BUTTON ELEMENTS
 
 let taskBoard = JSON.parse(localStorage.getItem('taskBoard'))||{
   
@@ -68,18 +68,19 @@ let taskBoard = JSON.parse(localStorage.getItem('taskBoard'))||{
 const taskForm = document.getElementById('addNewTask');
 const submitButton = document.getElementById('taskSubmit');
 
-// Add an event listener to the submit button
+// ADD AN EVENT LISTENER TO THE SUBMIT BUTTON
+
 submitButton.addEventListener('click', function(event) {
   event.preventDefault(); 
   
-  // Retrieve the values of the form input elements
+// RETRIEVE THE VALUES OF THE FORM INPUT ELEMENTS
   const taskName = document.getElementById('taskName').value;
   const taskDesc = document.getElementById('taskDetails').value;
   const owners = getOwners();
   const date = document.getElementById('assignDate').value;
   const status = document.getElementById('status').value;
   
-  // Create a new task object with the form values
+// CREATE A NEW TASK OBJECT USING FORM INPUT
   const task = {
     boardId: 1,
     name: taskName,
@@ -89,16 +90,16 @@ submitButton.addEventListener('click', function(event) {
     status: status
   };
   
-  // Add the new task to the task board and store it in local storage
+  // ADD THE NEW TASK TO THE TASK BOARD AND STORE IT IN THE LOCAL STORAGE
   taskBoard.tasks.push(task);
   localStorage.setItem('taskBoard', JSON.stringify(taskBoard));
   
   
-  // Reset the form inputs
+  // RESET NEW TASK FORM
   taskForm.reset();
 });
 
-// Helper function to retrieve the selected owners
+// RETRIEVE THE SELECTED OWNERS FROM THE CHECKBOX
 function getOwners() {
   const owners = [];
   const checkboxes = document.querySelectorAll('.assign-person');
@@ -110,7 +111,7 @@ function getOwners() {
   return owners;
 }
 
-// Retrieve owners array from local storage
+// RETRIEVE THE OWNERS FROM THE LOCAL STORAGE TO AN ARRY
 let retrievedOwners = localStorage.getItem("taskBoard");
 let projectCollaborators = JSON.parse(retrievedOwners);
 
@@ -128,7 +129,7 @@ collaborators.forEach((person) => {
 })
 
 
-//  create owner-details div for each value for collaborators
+// CREATE OWNER-DETAILS DIVS FOR EACH VALUE FOR COLLABORATORS
     let ownersDiv = document.querySelector(".owners");
     uniqeCollaborators.forEach(function(owner) {
     let ownerDetailsDiv = document.createElement("div");
@@ -145,7 +146,7 @@ collaborators.forEach((person) => {
 });
 
 
-// search data from the storage
+// SEARCH DATA FROM THE LOCAL STORAGE
 
 
 const formSearch = document.getElementById('formSearch');
@@ -186,7 +187,9 @@ const searchResults = document.getElementById('searchResults');
   // }
 // });
 
- //openning the filtering popup and retrive filtered data
+
+
+//  OPENNNG THE FILTERING POPUP AND RETRIEVE FILTERED DATA
 
 let filteringButton = document.getElementById('filterButton');
 let filterForm = document.getElementById('filterTasks');
@@ -201,7 +204,7 @@ function closeFilter() {
 }
 
 
-// event listener
+// EVENT LISTENER FOR FILTER FORM
 let formFilter = document.querySelector('.form-filter');
 
 formFilter.addEventListener('submit', function(event) {
@@ -220,13 +223,48 @@ filteringButton.addEventListener('click', filterTask);
 
 
 
-
- 
- 
+//   SORTING DATA BASED ON ASSIGN DATE
 
 
 
-//   sorting data
+function sortSelector() {
+  document.getElementById('sortDropdown').classList.toggle('show');
+}
+
+let sortButton = document.getElementById('sortSelectorButton');
+let sortFormDrop = document.getElementById('sortDropdown');
+
+function sortByDate() {
+  let sortData = JSON.parse(localStorage.getItem('taskBoard'));
+  return sortData.tasks.sort((a, b) => new Date(a.date) - new Date(b.date));
+}
+
+sortFormDrop.addEventListener('click', function(event){
+  event.preventDefault();
+  let statusSelection = event.target.id;
+  if (statusSelection === 'optionSelect') {
+    let sortedTasks = sortByDate();
+    console.log(sortedTasks);
+  }
+
+});
+
+// TO CRATE POPUP FOR SORTED TASKS
+
+// let sortedDiv = document.getElementById('sort-by-date');
+// sortedTasks.forEach(function(sortedTasks){
+// let sortDetailDiv = document.createElement('div');
+// sortDetailDiv.classList.add('sorted-task-details');
+// let titleElement = document.createElement('h3');
+// titleElement.classList.add('task-name')
+// titleElement.textContent = tasks.name;
+
+
+// sortedDiv.appendChild(titleElement)
+// });
+
+
+// console.log(sortByDate())
 
 //  function sortSelector(){
 //   document.getElementById('sortDropdown').classList.toggle('show')
@@ -249,53 +287,6 @@ filteringButton.addEventListener('click', filterTask);
     // do something with sortedTasks
 //   }
 // });
-
-function sortSelector() {
-  document.getElementById('sortDropdown').classList.toggle('show');
-}
-
-let sortButton = document.getElementById('sortSelectorButton');
-let sortFormDrop = document.getElementById('sortDropdown');
-
-function sortByDate() {
-  let sortData = JSON.parse(localStorage.getItem('taskBoard'));
-  return sortData.tasks.sort((a, b) => new Date(a.date) - new Date(b.date));
-}
-
-sortFormDrop.addEventListener('click', function(event){
-  event.preventDefault();
-  let statusSelection = event.target.id;
-  if (statusSelection === 'optionSelect') {
-    let sortedTasks = sortByDate();
-    console.log(sortedTasks);
-  }
-});
-
-
-
-
-
-
-// console.log(sortByDate())
-
-
-
-
-
-// function sortingData (){
-//   let sortFormData = document.querySelector('.sort-selector');
-//    let statusSelection = sortFormData.getElementsByTagName('li')[sortFormData.selectedIndex].value;
-
-//    let sortByDate = [];
-  //  let sortByStatus = [];
-  //  if(statusSelection === 'Date'){
-  //  sortByDate = sortData.sort((a, b) => new Date(a.date) - new Date(b.date));
-  //  } else if (statusSelection === 'Status'){
-//  sortData.sort((a, b) => (a.status > b.status) ? 1 : -1);
-//    }
-//    console.log(sortByDate)
-// }
-
 // console.log(sortByDate)
    // sort tasks array based on date
 // sortData.sort((a, b) => new Date(a.date) - new Date(b.date));
@@ -316,25 +307,30 @@ sortFormDrop.addEventListener('click', function(event){
 
 
 
-// user selection
+// SELECT TASKS BASED ON USERS
 
 function personSelection(){
  document.getElementById('dropdownUsers').classList.toggle('show')
  
 }
+const personFilterForm = document.getElementById('dropdownUsers')
 
-const assignedTasks = document.getElementById('dropdownUsers').value;
-const tasksStored = JSON.parse(localStorage.getItem('taskBoard'));
 
-function taskByPerson (task){
+personFilterForm.addEventListener('click', function(event){
+  event.preventDefault();
+  const assignedTasks = event.target.textContent.trim();
+  function taskByPerson (){
+    const tasksStored = JSON.parse(localStorage.getItem('taskBoard'));
+    let filtereUserdData = tasksStored.tasks.filter(tasks => tasks.owners.includes(assignedTasks));
+    return filtereUserdData
+  }
+  console.log(taskByPerson())
 
-}
-
-// const tasksAssignedToPerson = tasksStored.tasksStored.filter(tasksStored => tasksStored.owners.includes(assignedTasks));
+})
 
 
  
-//  Close the dropdown menu if the user clicks outside of it
+//CLOSE THE DROPDOWN WHEN USER CLICK OUTSIDE OF THE DROPDOWN
 window.onclick = function(event) {
   if (!event.target.matches('.dropdown-user')) {
     let userDropdowns = document.getElementsByClassName("formUsers");
@@ -351,6 +347,6 @@ window.onclick = function(event) {
     let sortClose = document.querySelector('.sortForm')
     if(sortClose.classList.contains('show'))sortClose.classList.remove('show')
   }
+
 }
  
-
