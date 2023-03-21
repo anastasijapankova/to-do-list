@@ -186,15 +186,15 @@
                 
                     <!-- SORT TASKS -->
                     <div class ="sort-button">
-                      <button class="sort" onclick="sortSelector()" id="sortSelector">
+                      <button class="sort" onclick="sortSelector()" id="sortSelectorButton">
                         <span class="sort-text">Sort</span>
                         <img class="sorticon" src="img/sort-48.png"/>
                       </button>
                       <div class="sortForm" id="sortDropdown">
-                        <ul class="sotr-selector" action="onclick">
+                        <ul class="sort-selector" action="onclick" id="sortSelector">
                           <li class="sort-selection">Sort </li>
                           <li class="status-selection">Status</li>
-                          <li class="date-selection">Date</li>
+                          <li id="optionSelect" class="date-selection">Date</li>
                         </ul>
                       </div>
                     </div>

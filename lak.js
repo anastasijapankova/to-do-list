@@ -20,7 +20,7 @@ let boardDescription = []
 
 function addProjectDescription (newBoardDescription){
   boardDescription.push(newBoardDescription)
-localStorage.setItem('projectDescription', JSON.stringify(projectDescription ))
+localStorage.setItem('projectDescription', JSON.stringify(projectDescription))
 }
 
 // add favourite projrcts to local storage
@@ -200,6 +200,7 @@ function closeFilter() {
     filterForm.style.display = 'none';
 }
 
+
 // event listener
 let formFilter = document.querySelector('.form-filter');
 
@@ -210,10 +211,14 @@ formFilter.addEventListener('submit', function(event) {
 
   let filteredData = filterData.tasks.filter(tasks => tasks.owners.includes(filterUsers) && tasks.status === filterStatus);
   console.log(filteredData);
+
+formFilter.reset()
  
 })
  
 filteringButton.addEventListener('click', filterTask);
+
+
 
 
  
@@ -223,26 +228,91 @@ filteringButton.addEventListener('click', filterTask);
 
 //   sorting data
 
- function sortSelector(){
-   document.getElementById('sortDropdown').classList.toggle('show')
- }
+//  function sortSelector(){
+//   document.getElementById('sortDropdown').classList.toggle('show')
+// }
 
- let sortButton = document.getElementById('sortSelector');
- let sortForm = document.getElementById('sortDropdown')
- let sortData = JSON.parse(localStorage.getItem('taskBoard'))
+// let sortButton = document.getElementById('sortSelectorButton');
+// let sortFormDrop = document.getElementById('sortDropdown')
 
- let sortFormData = document.querySelector('.sotr-selector');
+// function sortByDate() {
+//   let sortData = JSON.parse(localStorage.getItem('taskBoard'));
+//   return sortData.tasks.sort((a, b) => new Date(a.date) - new Date(b.date));
+// }
 
- sortForm.addEventListener('click', function(event){
+// sortFormDrop.addEventListener('click', function(event){
+//   event.preventDefault();
+//   let statusSelection = document.getElementById('sortSelector').value;
+//   if (statusSelection == 'Date') {
+//     let sortedTasks = sortByDate();
+//     console.log(sortedTasks);
+    // do something with sortedTasks
+//   }
+// });
+
+function sortSelector() {
+  document.getElementById('sortDropdown').classList.toggle('show');
+}
+
+let sortButton = document.getElementById('sortSelectorButton');
+let sortFormDrop = document.getElementById('sortDropdown');
+
+function sortByDate() {
+  let sortData = JSON.parse(localStorage.getItem('taskBoard'));
+  return sortData.tasks.sort((a, b) => new Date(a.date) - new Date(b.date));
+}
+
+sortFormDrop.addEventListener('click', function(event){
   event.preventDefault();
-  let statusSelection = document.getElementsByClassName('sotr-selector').value
+  let statusSelection = event.target.id;
+  if (statusSelection === 'optionSelect') {
+    let sortedTasks = sortByDate();
+    console.log(sortedTasks);
+  }
+});
+
+
+
+
+
+
+// console.log(sortByDate())
+
+
+
+
+
+// function sortingData (){
+//   let sortFormData = document.querySelector('.sort-selector');
+//    let statusSelection = sortFormData.getElementsByTagName('li')[sortFormData.selectedIndex].value;
+
+//    let sortByDate = [];
+  //  let sortByStatus = [];
+  //  if(statusSelection === 'Date'){
+  //  sortByDate = sortData.sort((a, b) => new Date(a.date) - new Date(b.date));
+  //  } else if (statusSelection === 'Status'){
+//  sortData.sort((a, b) => (a.status > b.status) ? 1 : -1);
+//    }
+//    console.log(sortByDate)
+// }
+
+// console.log(sortByDate)
+   // sort tasks array based on date
+// sortData.sort((a, b) => new Date(a.date) - new Date(b.date));
+
+// store the sorted tasks array in local storage
+// localStorage.setItem('tasks', JSON.stringify(tasks));
+
+
+  // let statusSelection = document.getElementsByClassName('sotr-selector').value
+  //   let sortDataSelect = sortData.tasks.filter(tasks =>tasks.date === statusSelection);
 
   // let sortDataSelect = sortData.tasks.includes(statusSelection);
   // console.log(sortDataSelect);
 
   //   let sortDataSelect = sortData.tasks.filter(tasks => tasks.status === statusSelection || tasks.date === statusSelection);
   // console.log(sortDataSelect);
- })
+//  })
 
 
 
