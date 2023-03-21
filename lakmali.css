@@ -742,3 +742,26 @@ input::placeholder {
   display: block;
 }
 
+#filterPopup{
+  display: flex;
+  flex-direction: column;
+  z-index: 10;
+  position:unset;
+  background-color: #F5F5F5;
+  width: 60%;
+  height: 70%;
+  
+}
+
+.filter-popup{
+  /* display: none; */
+  background-color: #F5F5F5;
+  width: 320px;
+  height: 320px;
+  justify-content: center;
+  padding: 1rem;
+  gap: 1rem;
+  border-radius: 1rem;
+  z-index: 10;
+  margin-top: 200px;
+}

@@ -186,24 +186,23 @@ const searchResults = document.getElementById('searchResults');
   // }
 // });
 
- //openning the filtering popup
+ //openning the filtering popup and retrive filtered data
 
- let filteringButton = document.getElementById('filterButton');
- let filterForm = document.getElementById('filterTasks');
+let filteringButton = document.getElementById('filterButton');
+let filterForm = document.getElementById('filterTasks');
+let filterData = JSON.parse(localStorage.getItem('taskBoard'));
 
- function filterTask(){
+function filterTask(){
   filterForm.style.display = 'block'
- 
-// get input to filter
-// let inputStatusToFilter = document.getElementById('tasksStatus')
-// let inputUserToFilter = document.getElementById('selectedUser')
- 
+}
 
-// Retrieve filterdata
-  let filterData = JSON.parse(localStorage.getItem('taskBoard'));
+function closeFilter() {
+    filterForm.style.display = 'none';
+}
 
 // event listener
 let formFilter = document.querySelector('.form-filter');
+
 formFilter.addEventListener('submit', function(event) {
   event.preventDefault();
   let filterStatus = document.getElementById('tasksStatus').value;
@@ -213,13 +212,8 @@ formFilter.addEventListener('submit', function(event) {
   console.log(filteredData);
  
 })
-}
-
-  function closeFilter() {
-    filterForm.style.display = 'none';
-  }
-  
-  filteringButton.addEventListener('click', filterTask);
+ 
+filteringButton.addEventListener('click', filterTask);
 
 
  
