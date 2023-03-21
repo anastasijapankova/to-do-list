@@ -6,14 +6,15 @@ header {
     background-color: #125A8E;
     display: flex;
     flex-direction: row;
-    justify-content: space-around;
-    gap: 55rem;
+    justify-content: flex-start;
+    gap: 59rem;
 }
 
 .logo img {
     height: 4rem;
     width: auto;
     cursor: pointer;
+    padding-left: 2rem;
 }
 
 .notification-account {
@@ -135,6 +136,7 @@ header {
     height: auto;
     overflow: auto;
     z-index: 1;
+    border-style: outset;
 }
 .drop-account div {
     display: block;
@@ -145,49 +147,48 @@ header {
     padding: 0.5rem 0 0.5rem 0;
     margin-top: 1rem;
 }
+#signin {
+    display: block;
+    
+    
+}
 #my-tidy li {
     list-style-type: none;
     padding: 0.8rem 0 0.8rem 0;
 }
+#signinBtn {
+    background: none;
+    padding: 0.5rem 0 0.5rem 0;
+    margin: none;
+    text-align: left;
+    width: 50%;
+    border-radius: 0;
+    font-weight: 700;
+    color: #125A8E;
+}
+
 .taskbar {
     background-color: #FFFBF2;
     width: 35%;
     height: auto;
     display: flex;
     flex-direction: column;
-    justify-content: center;
+    justify-content: flex-start;
     align-items: flex-start;
     border-right: 2px solid #c5c5c5;
-
-}
-
-.taskbar ul {
-    list-style-type: none;
-    margin: none;
-    width: 100%;
-    text-align: left;
-    height: 100%;
-    padding-top: 1rem;
-}
-
-.taskbar>ul>li  {
-    font-family: 'Poppins', sans-serif;
-    font-size: 1.3rem;
-    font-weight: 700;
-    color: #125A8E;
-    padding: 0.8rem 3rem 0.8rem;
-    display: block;
-    text-decoration: none;
     
-
 }
-
-.taskbar i {
-    padding-right: 1rem;
-
+.taskbar > .list-task {
+    font-family: 'Poppins', sans-serif;
+    font-size: 1.2rem;
+    font-weight: 700;
+    color:#125A8E;
+    padding: 0.5rem 0 0.5rem 2.5rem;
 }
-
-
+.taskbar > button {
+    background: none;
+    border: none;
+}
 
 .add-board {
     /*display: none;*/

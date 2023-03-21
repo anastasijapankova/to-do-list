@@ -51,10 +51,10 @@
             <div class="account-btn">
                 <button onclick="accountPopup2()" class="drop-btn">Account</button>
                 <div class="drop-account" id="popUp2">
-                    <div class="" id="">ACCOUNT
-                        <button onclick="document.getElementById('login001').style.display='block'" class="loginbtn">Login</button>
-                        <!--<div class="display-name"></div>
-                        <div>Manage account</div>-->
+                    <div class="" id="signin">
+                        <button onclick="document.getElementById('login001').style.display='block'" id="signinBtn">Sign in</button>
+                        <div class="display-name">Hello</div>
+                        
                     </div>
                     <div class="block-ac" id="my-tidy">MY TIDY
                         <ul>
@@ -74,62 +74,56 @@
     <div id="login001" class="login">
         <form class="login-content" action="/action_page.php" method="post">
             <div class="imgcontainer">
-                <span onclick="document.getElementById('id01').style.display='none'" class="close" title="Close Modal">&times;</span>
+                <span onclick="document.getElementById('login001').style.display='none'" class="close" title="Close Modal">&times;</span>
                 <img src="./img/user-profile.png" class="avatar">
             </div>
       
             <div class="container">
-                <label for="uname"><b>Username</b></label>
-                <input type="text" placeholder="Enter Username" name="uname" required>
+                <label for="uname"><b>Email</b></label>
+                <input type="text" placeholder="Enter Email" name="uemail" required>
       
                 <label for="psw"><b>Password</b></label>
                 <input type="password" placeholder="Enter Password" name="psw" required>
               
-                <button type="submit">Login</button>
+                <button type="submit">Sign in</button>
                 <label><input type="checkbox" checked="checked" name="remember"> Remember me</label>
             </div>
       
             <div class="container"  >
-                <button type="button" onclick="document.getElementById('id01').style.display='none'" class="cancelbtn">Cancel</button>
+                <button type="button" onclick="document.getElementById('login001').style.display='none'" class="cancelbtn">Cancel</button>
                 <span class="psw">Forgot <a href="#">password?</a></span>
             </div>
         </form>
     </div>
     <main>
         <div class="taskbar">
-            <a class="list-task">My Boards</a>
-            <a class="list-task">Add Board</a>
-            <a class="list-task">People</a>
-            <a class="list-task">Manage</a>
-            <a class="list-task">Archive</a>
-            <a class="list-task">View</a>
-            <ul class="listTask">
-                <li><a href="#"><i class="fa-solid fa-folder"></i>My Boards</a>
-                </li>
-                <li >
-                    <div class="act-add" onclick="addBoard()"><i class="fa-solid fa-pen-nib"></i>Add</div>
-                    <div class="add-board" id="popUp3">
-                        <div id="adbHead">Add new board</div>
-                        <div class="themePicker">Choose theme: <br>
-                            <div id="theme1"></div>
-                            <div id="theme2"></div>
-                            <div id="theme3"></div>
-                        </div>
-                        <form action="">
-                            <label>Add title: <input type="text" id="board-title" name="title"></label>
-                            <label>Author: <input type="text" id="board-author"></label>
-                        </form>
-                        <div><button>Create</button></div>
-                    </div>
-                </li>
-                <li><a><i class="fa-solid fa-people-group"></i>People</a>
-                </li>
-                <li><a><i class="fa-solid fa-gear"></i>Manage</a></li>
-                <li><a><i class="fa-solid fa-box-archive"></i>Archive</a>
-                </li>
-                <li><a><i class="fa-solid fa-calendar-days"></i>Views</a>
-                </li>
-            </ul>
+            <button class="list-task"><i class="fa-solid fa-folder"></i>My Boards</button>
+            <div class="drop-myboard">
+                <a></a>
+                <a></a>
+                <a></a>
+                <a></a>
+            </div>
+            <button class="list-task"><i class="fa-solid fa-pen-nib"></i>Add Board</button>
+            <div class="add-board" id="popUp3">
+                <div id="adbHead">Add new board</div>
+                <div class="themePicker">Choose background: <br>
+                    <div id="theme1"></div>
+                    <div id="theme2"></div>
+                    <div id="theme3"></div>
+                </div>
+                <form action="">
+                    <label>Add title: <input type="text" id="board-title" name="title"></label>
+                    <label>Author: <input type="text" id="board-author"></label>
+                </form>
+                <div><button>Create</button></div>
+            </div>
+            <a class="list-task"><i class="fa-solid fa-people-group"></i>People</a>
+            <a class="list-task"><i class="fa-solid fa-gear"></i>Manage</a>
+            <a class="list-task"><i class="fa-solid fa-box-archive"></i>Archive</a>
+            <a class="list-task"><i class="fa-solid fa-calendar-days"></i>View</a>
+        
+                
             
         </div>
 
