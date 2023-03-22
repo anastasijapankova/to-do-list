@@ -178,7 +178,7 @@ header {
     border-right: 2px solid #c5c5c5;
     
 }
-.taskbar > .list-task {
+.taskbar > .list-task, .for-board, .list-board {
     font-family: 'Poppins', sans-serif;
     font-size: 1.2rem;
     font-weight: 700;
@@ -189,9 +189,19 @@ header {
     background: none;
     border: none;
 }
-
+.taskbar >.active {
+    background-color: #ffd15e;
+    color: #125A8E;
+    width: 100%;
+}
+.taskbar i {
+    padding-right: 1rem;
+}
+.drop-myboard {
+    display: none;
+}
 .add-board {
-    /*display: none;*/
+    display: none;
     position: absolute;
     background-color: #FFFBF2;
     margin-left: 12.5rem;
@@ -203,6 +213,9 @@ header {
     overflow: auto;
     z-index: 1;
     font-size: 1rem;
+}
+.add-board > form {
+    display: block;
 }
 
 #adbHead {

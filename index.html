@@ -97,14 +97,14 @@
     </div>
     <main>
         <div class="taskbar">
-            <button class="list-task"><i class="fa-solid fa-folder"></i>My Boards</button>
+            <button class="list-board"><i class="fa-solid fa-folder"></i>My Boards</button>
             <div class="drop-myboard">
-                <a></a>
-                <a></a>
-                <a></a>
-                <a></a>
+                <a>1</a>
+                <a>2</a>
+                <a>3</a>
+                <a>4</a>
             </div>
-            <button class="list-task"><i class="fa-solid fa-pen-nib"></i>Add Board</button>
+            <button class="for-board"><i class="fa-solid fa-pen-nib"></i>Add Board</button>
             <div class="add-board" id="popUp3">
                 <div id="adbHead">Add new board</div>
                 <div class="themePicker">Choose background: <br>
@@ -112,11 +112,18 @@
                     <div id="theme2"></div>
                     <div id="theme3"></div>
                 </div>
-                <form action="">
-                    <label>Add title: <input type="text" id="board-title" name="title"></label>
-                    <label>Author: <input type="text" id="board-author"></label>
+                <form action="" onsubmit="boardfunct(event)">
+                    <label>Add title: <input type="text" id="brd-title" name="title"></label>
+                    <label>Author: <input type="text" id="brd-author"></label>
+                    <label>Visibility: </label><br>
+                    <select id="visibility" name="visibility">
+                        <option value="private">Private</option>
+                        <option value="workspace">Workspace</option>
+                        <option value="public">Public</option>
+                    </select>
+                    <button onclick="saveBoardTitle()">Create</button>
                 </form>
-                <div><button>Create</button></div>
+                
             </div>
             <a class="list-task"><i class="fa-solid fa-people-group"></i>People</a>
             <a class="list-task"><i class="fa-solid fa-gear"></i>Manage</a>
