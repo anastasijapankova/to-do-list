@@ -196,12 +196,105 @@ formFilter.addEventListener('submit', function(event) {
   console.log(filteredData);
 
 formFilter.reset()
+
+// CREATING FILTER RESULT POPUP FORM 
+
+for (let i = 0; i < filteredData.length; i++){
+  createTaskFilters(i)
+}
+function createTaskFilters(i){
+  let popupFilterForm = document.querySelector('.filter-popup');
+  let filterResultItemDiv = document.createElement('div');
+  filterResultItemDiv.classList.add('filter-result-items');
+  let filterTaskName = document.createElement('h3');
+  filterTaskName.classList.add('filter-task-name');
+  let filterTaskDescription = document.createElement('p');
+  filterTaskDescription.classList.add('filter-task-description');
+  filterTaskName.textContent = filteredData[i].name;
+  filterTaskDescription.textContent = filteredData[i].description;
+  // let filterTaskPlanner = document.querySelector('.filter-tasks-planner');
+  let filterTaskOwners = document.createElement('div');
+  filterTaskOwners.classList.add('filter-task-owners');
+  let personDetails = document.createElement('div');
+  personDetails.classList.add('person-details');
+  let personImageFilterResult = document.createElement('img');
+  personImageFilterResult.classList.add('person-image-filter-result');
+  personImageFilterResult.setAttribute("src", "img/male-user-64.png");
+  let personFilterColl = document.createElement('p');
+  personFilterColl.classList.add('person-filter-coll');
+  personFilterColl.textContent = 'Person';
+  let personFilterTasksOwner = document.createElement('p');
+  personFilterTasksOwner.classList.add('person-filtertasks-owner');
+  personFilterTasksOwner.textContent = filteredData[i].owners;
+  let dateFilterTask = document.createElement('div');
+  dateFilterTask.classList.add('date-filter-task');
+  let calanderFilter = document.createElement('img');
+  calanderFilter.classList.add('calander-filter');
+  calanderFilter.setAttribute('src', "/img/CalendarCheck.png");
+  let nameDateFilter = document.createElement('p');
+  nameDateFilter.classList.add('name-date-filter');
+  nameDateFilter.textContent = 'Date';
+  let dateTaskFilter = document.createElement('p');
+  dateTaskFilter.classList.add('date-task-filter');
+  dateTaskFilter.textContent = filteredData[i].date;
+  let statusFliterTask = document.createElement('div');
+  statusFliterTask.classList.add('status-filter-tasks');
+  let statusDetailsFilter = document.createElement('div');
+  statusDetailsFilter.classList.add('status-details-filter');
+  let chartFilter = document.createElement('img');
+  chartFilter.classList.add('chart-filter');
+  chartFilter.setAttribute('src', "/img/ChartLine.png");
+  let statusFilterTaskName = document.createElement('p');
+  statusFilterTaskName.classList.add('status-filter-taskname');
+  statusFilterTaskName.textContent = 'Status';
+  let statusFilterTask = document.createElement('p');
+  statusFilterTask.classList.add('status-filter-task');
+  popupFilterForm.appendChild( filterResultItemDiv);
+  // popupFilterForm.appendChild( filterTaskPlanner);
+  statusFilterTask.textContent = filteredData[i].status
+  filterResultItemDiv.appendChild(filterTaskName);
+  filterResultItemDiv.appendChild(filterTaskDescription);
+  filterResultItemDiv.appendChild(filterTaskOwners);
+  filterTaskOwners.appendChild(personDetails);
+  personDetails.appendChild(personImageFilterResult);
+  personDetails.appendChild(personFilterColl);
+  personDetails.appendChild(personFilterTasksOwner);
+  filterResultItemDiv.appendChild(dateFilterTask);
+  dateFilterTask.appendChild(calanderFilter);
+  dateFilterTask.appendChild(nameDateFilter);
+  dateFilterTask.appendChild(dateTaskFilter);
+  filterResultItemDiv.appendChild(statusFliterTask);
+  statusFliterTask.appendChild(statusDetailsFilter);
+  statusDetailsFilter.appendChild(chartFilter);
+  statusDetailsFilter.appendChild(statusFilterTaskName);
+  statusDetailsFilter.appendChild(statusFilterTask );
+
+}
  
 })
  
 filteringButton.addEventListener('click', filterTask);
 
 
+
+
+
+// filteredData[i].
+
+
+// let ownersDiv = document.querySelector(".owners");
+//     retrievedOwners.forEach(function(owner) {
+//     let ownerDetailsDiv = document.createElement("div");
+//     ownerDetailsDiv.classList.add("owner-details");
+//     let ownerImage = document.createElement("img");
+//     ownerImage.classList.add("responsible");
+//     ownerImage.setAttribute("src", "img/male-user-64.png");
+//     let ownerParagraph = document.createElement("p");
+//     ownerParagraph.classList.add("owner");
+//     ownerParagraph.textContent = owner;
+//     ownerDetailsDiv.appendChild(ownerImage);
+//     ownerDetailsDiv.appendChild(ownerParagraph);
+//     ownersDiv.appendChild(ownerDetailsDiv);
 
 //   SORTING DATA BASED ON ASSIGN DATE
 
