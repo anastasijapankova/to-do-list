@@ -169,20 +169,6 @@ const filteredData = searchData.tasks.filter(function(tasks) {
   console.log(filteredData)
   });
   
-
-//   // Display the search results
-  // if (filteredData.length > 0) {
-  //   const searchResultDiv = '<ul>' + filteredData.map(function(item) {
-  //     return '<li>' + item.name + ': ' + item.description + '</li>';
-  //   }).join('') + '</ul>';
-  //   searchResults.textContent = searchResultDiv;
-  // } else {
-  //   searchResults.textContent = 'No results found.';
-  // }
-// });
-
-
-
 //  OPENNNG THE FILTERING POPUP AND RETRIEVE FILTERED DATA
 
 let filteringButton = document.getElementById('filterButton');

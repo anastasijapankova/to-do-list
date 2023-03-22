@@ -223,27 +223,160 @@
                   </div>
                 </div>
 
-                <div id ="filterDtails">
+
+                <!-- Popup for local storage data display -->
+                <div id="searchResult" class="searchResult-popup">
+                 <form id="serachResultForm" class="searchResult-form">
+                    <img id="closeButtonSearchResult" class="close-button-searchResult" onclick="closeSearchResultForm()" src="img/close-64.png"/>
+                 </form>   
+                </div>
+
+
+                <div id ="filterResult" class="filterResult-popup">
                     <form id = "filterPopup" class = "filter-popup">
-                        <h3 id="taskNameFilter1" class="taskNameFilter">fgdfggg</h3>
-                        <p id =" taskDescriptionFilter" class="filter-task-description">Lorem ipsum dolor sit amet consectetur adipisicing elit. Vero magnam aliquid delectus sequi explicabo iste excepturi expedita quas, doloremque nam a deserunt ullam nesciunt animi distinctio blanditiis, voluptate voluptatum vitae?</p>
-                        <div class ="user-details">
-                            <img class="task-owner-image" src="img/male-user-64.png"/>
-                            <p class="task-owner">Lakmali </p>
-                            <div class="task-filter-status">
-                            <img id ="statusBar" src="/img/ChartLine.png">
-                            <p class="status-filteredtasks">Status</p>
-                            <p class="taskSatatus"></p>
+                        <img id="closeButtonFilter" class="close-button-filter" onclick="closeFilterResultForm()" src="img/close-64.png"/>
+                        <div class="filter-result-items">
+                            <h3 class="filter-task-name">Business Plan</h3>
+                            <p class="filter-task-description">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed
+                                do
+                                eiusmod
+                                tempor incididunt ut labore et dolore magna aliqua.</p>
+                        </div>
+                        <div class="filter-tasks-planner">
+                            <div class="filter-task-owners">
+                                <div class="person-details">
+                                    <img class="person-filter-result" src="/img/UserCircle.png">
+                                    <p class="person-filter-coll">Person</p>
+                                </div>
+                                <div class="person-filter-names">
+                                        <p class="petson-filtertasks-name">LR</p>
+                                        <p class="petson-filtertasks-name">AC</p>
+                                        <p class="petson-filtertasks-name">AP</p>
+                                </div>
                             </div>
-                          </div>
+                            <div class="date-filter-task">
+                                    <img class="calander-filter" src="/img/CalendarCheck.png">
+                                    <p class="name-date-filter">Date</p>
+                                    <p class="date-task-filter">vhhvv</p>
+                            </div>
+                            <div class="status-filter-tasks">
+                                <div class="status-details-filter">
+                                    <img class="chart-filter" src="/img/ChartLine.png">
+                                    <p class="status-filter-taskname">Status</p>
+                                    <p class="status-filter-task">jgjgjgjgj</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="filter-result-items">
+                            <h3 class="filter-task-name">Business Plan</h3>
+                            <p class="filter-task-description">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed
+                                do
+                                eiusmod
+                                tempor incididunt ut labore et dolore magna aliqua.</p>
+                        </div>
+                        <div class="filter-tasks-planner">
+                            <div class="filter-task-owners">
+                                <div class="person-details">
+                                    <img class="person-filter-result" src="/img/UserCircle.png">
+                                    <p class="person-filter-coll">Person</p>
+                                </div>
+                                <div class="person-filter-names">
+                                        <p class="petson-filtertasks-name">LR</p>
+                                        <p class="petson-filtertasks-name">AC</p>
+                                        <p class="petson-filtertasks-name">AP</p>
+                                </div>
+                            </div>
+                            <div class="date-filter-task">
+                                    <img class="calander-filter" src="/img/CalendarCheck.png">
+                                    <p class="name-date-filter">Date</p>
+                                    <p class="date-task-filter">vhhvv</p>
+                            </div>
+                            <div class="status-filter-tasks">
+                                <div class="status-details-filter">
+                                    <img class="chart-filter" src="/img/ChartLine.png">
+                                    <p class="status-filter-taskname">Status</p>
+                                    <p class="status-filter-task">jgjgjgjgj</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="filter-result-items">
+                            <h3 class="filter-task-name">Business Plan</h3>
+                            <p class="filter-task-description">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed
+                                do
+                                eiusmod
+                                tempor incididunt ut labore et dolore magna aliqua.</p>
+                        </div>
+                        <div class="filter-tasks-planner">
+                            <div class="filter-task-owners">
+                                <div class="person-details">
+                                    <img class="person-filter-result" src="/img/UserCircle.png">
+                                    <p class="person-filter-coll">Person</p>
+                                </div>
+                                <div class="person-filter-names">
+                                        <p class="petson-filtertasks-name">LR</p>
+                                        <p class="petson-filtertasks-name">AC</p>
+                                        <p class="petson-filtertasks-name">AP</p>
+                                </div>
+                            </div>
+                            <div class="date-filter-task">
+                                    <img class="calander-filter" src="/img/CalendarCheck.png">
+                                    <p class="name-date-filter">Date</p>
+                                    <p class="date-task-filter">vhhvv</p>
+                            </div>
+                            <div class="status-filter-tasks">
+                                <div class="status-details-filter">
+                                    <img class="chart-filter" src="/img/ChartLine.png">
+                                    <p class="status-filter-taskname">Status</p>
+                                    <p class="status-filter-task">jgjgjgjgj</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="filter-result-items">
+                            <h3 class="filter-task-name">Business Plan</h3>
+                            <p class="filter-task-description">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed
+                                do
+                                eiusmod
+                                tempor incididunt ut labore et dolore magna aliqua.</p>
+                        </div>
+                        <div class="filter-tasks-planner">
+                            <div class="filter-task-owners">
+                                <div class="person-details">
+                                    <img class="person-filter-result" src="/img/UserCircle.png">
+                                    <p class="person-filter-coll">Person</p>
+                                </div>
+                                <div class="person-filter-names">
+                                        <p class="petson-filtertasks-name">LR</p>
+                                        <p class="petson-filtertasks-name">AC</p>
+                                        <p class="petson-filtertasks-name">AP</p>
+                                </div>
+                            </div>
+                            <div class="date-filter-task">
+                                    <img class="calander-filter" src="/img/CalendarCheck.png">
+                                    <p class="name-date-filter">Date</p>
+                                    <p class="date-task-filter">vhhvv</p>
+                            </div>
+                            <div class="status-filter-tasks">
+                                <div class="status-details-filter">
+                                    <img class="chart-filter" src="/img/ChartLine.png">
+                                    <p class="status-filter-taskname">Status</p>
+                                    <p class="status-filter-task">jgjgjgjgj</p>
+                                </div>
+                            </div>
+                        </div>
                     </form>
 
                 </div>
 
-                <div class="sorted-data" id="sort-by-date">
+                <div class="sortResult-popup" id="sortResult"> 
+                <form id = "sortPopup" class = "sort-popup">
+                    <img id="closeButtonSort" class="close-button-sort" onclick="closeSortResultForm()" src="img/close-64.png"/>
+                </form>  
+                </div>
 
-
-                    
+                <div id="personResult" claass="personResult-popup">
+                    <form id = "personPopup" class = "person-popup">
+                        <img id="closeButtonPerson" class="close-button-person" onclick="closePersonResultForm()" src="img/close-64.png"/>
+                    </form>
                 </div>
 
                   <!-- ANASTASIJA'S SECTION -->

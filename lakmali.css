@@ -742,19 +742,28 @@ input::placeholder {
   display: block;
 }
 
+
+
+/* Serach Result Popup */
+
+
+
+
+/* Filter Result popup */
+
 #filterPopup{
-  display: none;
+  /* display: flex; */
   flex-direction: column;
   z-index: 10;
   position:unset;
-  background-color: #F5F5F5;
+  background-color: #dbdada;
   width: 60%;
   height: 70%;
   
 }
 
 .filter-popup{
-  display: none;
+  /* display: none; */
   background-color: #F5F5F5;
   width: 320px;
   height: 320px;
@@ -765,3 +774,13 @@ input::placeholder {
   z-index: 10;
   margin-top: 200px;
 }
+
+
+
+
+/* Sort Result popup */
+
+
+
+
+/* Person Result popup */
