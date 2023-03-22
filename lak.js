@@ -167,6 +167,78 @@ const filteredData = searchData.tasks.filter(function(tasks) {
 });
 
   console.log(filteredData)
+
+  for (let i = 0; i < filteredData.length; i++){
+    createTaskSearch(i)
+  }
+  function createTaskSearch(i){
+    let popupSearchForm = document.querySelector('.searchResult-form');
+    let searchResultItemDiv = document.createElement('div');
+    searchResultItemDiv.classList.add('search-result-items');
+    let searchTaskName = document.createElement('h3');
+    searchTaskName.classList.add('search-task-name');
+    let searchTaskDescription = document.createElement('p');
+    searchTaskDescription.classList.add('search-task-description');
+    searchTaskName.textContent = filteredData[i].name;
+    searchTaskDescription.textContent = filteredData[i].description;
+    // let filterTaskPlanner = document.querySelector('.filter-tasks-planner');
+    let searchTaskOwners = document.createElement('div');
+    searchTaskOwners.classList.add('search-task-owners');
+    let searchPersonDetails = document.createElement('div');
+    searchPersonDetails.classList.add('search-person-details');
+    let personImageSearchResult = document.createElement('img');
+    personImageSearchResult.classList.add('person-image-search-result');
+    personImageSearchResult.setAttribute("src", "img/male-user-64.png");
+    let personSearchColl = document.createElement('p');
+    personSearchColl.classList.add('person-search-coll');
+    personSearchColl.textContent = 'Person';
+    let personSearchTasksOwner = document.createElement('p');
+    personSearchTasksOwner.classList.add('person-searchtasks-owner');
+    personSearchTasksOwner.textContent = filteredData[i].owners;
+    let dateSearchTask = document.createElement('div');
+    dateSearchTask.classList.add('date-search-task');
+    let calanderSearch = document.createElement('img');
+    calanderSearch.classList.add('calander-search');
+    calanderSearch.setAttribute('src', "/img/CalendarCheck.png");
+    let nameDateSearch = document.createElement('p');
+    nameDateSearch.classList.add('name-date-search');
+    nameDateSearch.textContent = 'Date';
+    let dateTaskSearch = document.createElement('p');
+    dateTaskSearch.classList.add('date-task-search');
+    dateTaskSearch.textContent = filteredData[i].date;
+    let statusSearchTasks = document.createElement('div');
+    statusSearchTasks.classList.add('status-search-tasks');
+    let statusDetailsSearch = document.createElement('div');
+    statusDetailsSearch.classList.add('status-details-search');
+    let chartSearch = document.createElement('img');
+    chartSearch.classList.add('chart-search');
+    chartSearch.setAttribute('src', "/img/ChartLine.png");
+    let statusSearchTaskName = document.createElement('p');
+    statusSearchTaskName.classList.add('status-search-taskname');
+    statusSearchTaskName.textContent = 'Status';
+    let statusSearchTask = document.createElement('p');
+    statusSearchTask.classList.add('status-search-task');
+    popupSearchForm.appendChild( searchResultItemDiv);
+    // popupFilterForm.appendChild( searchTaskPlanner);
+    statusSearchTask.textContent = filteredData[i].status
+    searchResultItemDiv.appendChild(searchTaskName);
+    searchResultItemDiv.appendChild(searchTaskDescription);
+    searchResultItemDiv.appendChild(searchTaskOwners);
+    searchTaskOwners.appendChild(searchPersonDetails);
+    searchPersonDetails.appendChild(personImageSearchResult);
+    searchPersonDetails.appendChild(personSearchColl);
+    searchPersonDetails.appendChild(personSearchTasksOwner);
+    searchResultItemDiv.appendChild(dateSearchTask);
+    dateSearchTask.appendChild(calanderSearch);
+    dateSearchTask.appendChild(nameDateSearch);
+    dateSearchTask.appendChild(dateTaskSearch);
+    searchResultItemDiv.appendChild(statusSearchTasks);
+    statusSearchTasks.appendChild(statusDetailsSearch);
+    statusDetailsSearch.appendChild(chartSearch);
+    statusDetailsSearch.appendChild(statusSearchTaskName);
+    statusDetailsSearch.appendChild(statusSearchTask);
+  
+  }
   });
   
 //  OPENNNG THE FILTERING POPUP AND RETRIEVE FILTERED DATA
@@ -202,6 +274,7 @@ formFilter.reset()
 for (let i = 0; i < filteredData.length; i++){
   createTaskFilters(i)
 }
+
 function createTaskFilters(i){
   let popupFilterForm = document.querySelector('.filter-popup');
   let filterResultItemDiv = document.createElement('div');
