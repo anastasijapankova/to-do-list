@@ -168,6 +168,8 @@ const filteredData = searchData.tasks.filter(function(tasks) {
 
   console.log(filteredData)
 
+  // CREATING SEARCH RESULT POPUP FORM 
+
   for (let i = 0; i < filteredData.length; i++){
     createTaskSearch(i)
   }
@@ -218,9 +220,9 @@ const filteredData = searchData.tasks.filter(function(tasks) {
     statusSearchTaskName.textContent = 'Status';
     let statusSearchTask = document.createElement('p');
     statusSearchTask.classList.add('status-search-task');
-    popupSearchForm.appendChild( searchResultItemDiv);
-    // popupFilterForm.appendChild( searchTaskPlanner);
     statusSearchTask.textContent = filteredData[i].status
+    popupSearchForm.appendChild( searchResultItemDiv);
+    // popupSearchForm.appendChild( searchTaskPlanner);
     searchResultItemDiv.appendChild(searchTaskName);
     searchResultItemDiv.appendChild(searchTaskDescription);
     searchResultItemDiv.appendChild(searchTaskOwners);
@@ -310,8 +312,8 @@ function createTaskFilters(i){
   let dateTaskFilter = document.createElement('p');
   dateTaskFilter.classList.add('date-task-filter');
   dateTaskFilter.textContent = filteredData[i].date;
-  let statusFliterTask = document.createElement('div');
-  statusFliterTask.classList.add('status-filter-tasks');
+  let statusFilterTasks = document.createElement('div');
+  statusFilterTasks.classList.add('status-filter-tasks');
   let statusDetailsFilter = document.createElement('div');
   statusDetailsFilter.classList.add('status-details-filter');
   let chartFilter = document.createElement('img');
@@ -322,9 +324,9 @@ function createTaskFilters(i){
   statusFilterTaskName.textContent = 'Status';
   let statusFilterTask = document.createElement('p');
   statusFilterTask.classList.add('status-filter-task');
+  statusFilterTask.textContent = filteredData[i].status
   popupFilterForm.appendChild( filterResultItemDiv);
   // popupFilterForm.appendChild( filterTaskPlanner);
-  statusFilterTask.textContent = filteredData[i].status
   filterResultItemDiv.appendChild(filterTaskName);
   filterResultItemDiv.appendChild(filterTaskDescription);
   filterResultItemDiv.appendChild(filterTaskOwners);
@@ -336,8 +338,8 @@ function createTaskFilters(i){
   dateFilterTask.appendChild(calanderFilter);
   dateFilterTask.appendChild(nameDateFilter);
   dateFilterTask.appendChild(dateTaskFilter);
-  filterResultItemDiv.appendChild(statusFliterTask);
-  statusFliterTask.appendChild(statusDetailsFilter);
+  filterResultItemDiv.appendChild(statusFilterTasks);
+  statusFilterTasks.appendChild(statusDetailsFilter);
   statusDetailsFilter.appendChild(chartFilter);
   statusDetailsFilter.appendChild(statusFilterTaskName);
   statusDetailsFilter.appendChild(statusFilterTask );
@@ -349,25 +351,6 @@ function createTaskFilters(i){
 filteringButton.addEventListener('click', filterTask);
 
 
-
-
-
-// filteredData[i].
-
-
-// let ownersDiv = document.querySelector(".owners");
-//     retrievedOwners.forEach(function(owner) {
-//     let ownerDetailsDiv = document.createElement("div");
-//     ownerDetailsDiv.classList.add("owner-details");
-//     let ownerImage = document.createElement("img");
-//     ownerImage.classList.add("responsible");
-//     ownerImage.setAttribute("src", "img/male-user-64.png");
-//     let ownerParagraph = document.createElement("p");
-//     ownerParagraph.classList.add("owner");
-//     ownerParagraph.textContent = owner;
-//     ownerDetailsDiv.appendChild(ownerImage);
-//     ownerDetailsDiv.appendChild(ownerParagraph);
-//     ownersDiv.appendChild(ownerDetailsDiv);
 
 //   SORTING DATA BASED ON ASSIGN DATE
 
@@ -390,8 +373,84 @@ sortFormDrop.addEventListener('click', function(event){
   let statusSelection = event.target.id;
   if (statusSelection === 'optionSelect') {
     let sortedTasks = sortByDate();
-    console.log(sortedTasks);
-  }
+    
+  console.log(sortedTasks);
+// CREATING SORTED RESULT POPUP FORM 
+
+for (let i = 0; i < sortedTasks.length; i++){
+  createTaskSort(i)
+}
+
+function createTaskSort(i){
+  let popupSortForm = document.querySelector('.sort-popup');
+  let sortResultItemDiv = document.createElement('div');
+  sortResultItemDiv.classList.add('sort-result-items');
+  let sortTaskName = document.createElement('h3');
+  sortTaskName.classList.add('sort-task-name');
+  let sortTaskDescription = document.createElement('p');
+  sortTaskDescription.classList.add('sort-task-description');
+  sortTaskName.textContent = sortedTasks[i].name;
+  sortTaskDescription.textContent = sortedTasks[i].description;
+  // let sortTaskPlanner = document.querySelector('.sort-tasks-planner');
+  let sortTaskOwners = document.createElement('div');
+  sortTaskOwners.classList.add('sort-task-owners');
+  let personSortDetails = document.createElement('div');
+  personSortDetails.classList.add('person-details');
+  let personImageSortResult = document.createElement('img');
+  personImageSortResult.classList.add('person-image-sort-result');
+  personImageSortResult.setAttribute("src", "img/male-user-64.png");
+  let personSortColl = document.createElement('p');
+  personSortColl.classList.add('person-sort-coll');
+  personSortColl.textContent = 'Person';
+  let personSortTasksOwner = document.createElement('p');
+  personSortTasksOwner.classList.add('person-sorttasks-owner');
+  personSortTasksOwner.textContent = sortedTasks[i].owners;
+  let dateSortTask = document.createElement('div');
+  dateSortTask.classList.add('date-sort-task');
+  let calanderSort = document.createElement('img');
+  calanderSort.classList.add('calander-sort');
+  calanderSort.setAttribute('src', "/img/CalendarCheck.png");
+  let nameDateSort= document.createElement('p');
+  nameDateSort.classList.add('name-date-sort');
+  nameDateSort.textContent = 'Date';
+  let dateTaskSort = document.createElement('p');
+  dateTaskSort.classList.add('date-task-sort');
+  dateTaskSort.textContent = sortedTasks[i].date;
+  let statusSortTasks = document.createElement('div');
+  statusSortTasks.classList.add('status-sort-tasks');
+  let statusDetailsSort = document.createElement('div');
+  statusDetailsSort.classList.add('status-details-sort');
+  let chartSort= document.createElement('img');
+  chartSort.classList.add('chart-sort');
+  chartSort.setAttribute('src', "/img/ChartLine.png");
+  let statusSortTaskName = document.createElement('p');
+  statusSortTaskName.classList.add('status-sort-taskname');
+  statusSortTaskName.textContent = 'Status';
+  let statusSortTask = document.createElement('p');
+  statusSortTask.classList.add('status-sort-task');
+  statusSortTask.textContent = sortedTasks[i].status
+  popupSortForm.appendChild( sortResultItemDiv);
+  // popupSortForm.appendChild( sortTaskPlanner);
+  sortResultItemDiv.appendChild(sortTaskName);
+  sortResultItemDiv.appendChild(sortTaskDescription);
+  sortResultItemDiv.appendChild(sortTaskOwners);
+  sortTaskOwners.appendChild(personSortDetails);
+  personSortDetails.appendChild(personImageSortResult);
+  personSortDetails.appendChild(personSortColl);
+  personSortDetails.appendChild(personSortTasksOwner);
+  sortResultItemDiv.appendChild(dateSortTask);
+  dateSortTask.appendChild(calanderSort);
+  dateSortTask.appendChild(nameDateSort);
+  dateSortTask.appendChild(dateTaskSort);
+  sortResultItemDiv.appendChild(statusSortTasks);
+  statusSortTasks.appendChild(statusDetailsSort);
+  statusDetailsSort.appendChild(chartSort);
+  statusDetailsSort.appendChild(statusSortTaskName);
+  statusDetailsSort.appendChild(statusSortTask );
+
+}
+ 
+}
 
 });
 
@@ -410,12 +469,85 @@ personFilterForm.addEventListener('click', function(event){
   event.preventDefault();
   const assignedTasks = event.target.textContent.trim();
   function taskByPerson (){
-    const tasksStored = JSON.parse(localStorage.getItem('taskBoard'));
-    let filtereUserdData = tasksStored.tasks.filter(tasks => tasks.owners.includes(assignedTasks));
-    return filtereUserdData
+    let tasksStored = JSON.parse(localStorage.getItem('taskBoard'));
+    let filteredUserData = tasksStored.tasks.filter(tasks => tasks.owners.includes(assignedTasks));
+    return filteredUserData;
+    
   }
   console.log(taskByPerson())
+let userFilterData= taskByPerson ()
+// CREATING USER ASSIGN TASK RESULT POPUP FORM 
 
+
+  for (let i = 0; i < userFilterData.length; i++){
+  let popupPersonForm = document.querySelector('.person-popup');
+  let personResultItemDiv = document.createElement('div');
+  personResultItemDiv.classList.add('person-result-items');
+  let personTaskName = document.createElement('h3');
+  personTaskName.classList.add('person-task-name');
+  let personTaskDescription = document.createElement('p');
+  personTaskDescription.classList.add('person-task-description');
+  personTaskName.textContent =  userFilterData[i].name;
+  personTaskDescription.textContent = userFilterData[i].description;
+  // let personTaskPlanner = document.querySelector('.person-tasks-planner');
+  let personTaskOwners = document.createElement('div');
+  personTaskOwners.classList.add('person-task-owners');
+  let personPersonDetails = document.createElement('div');
+  personPersonDetails.classList.add('person-details');
+  let personImagePersonResult = document.createElement('img');
+  personImagePersonResult.classList.add('person-image-person-result');
+  personImagePersonResult.setAttribute("src", "img/male-user-64.png");
+  let personPersonColl = document.createElement('p');
+  personPersonColl.classList.add('person-person-coll');
+  personPersonColl.textContent = 'Person';
+  let personPersonTasksOwner = document.createElement('p');
+  personPersonTasksOwner.classList.add('person-persontasks-owner');
+  personPersonTasksOwner.textContent = userFilterData[i].owners;
+  let datePersonTask = document.createElement('div');
+  datePersonTask.classList.add('date-person-task');
+  let calanderPerson = document.createElement('img');
+  calanderPerson.classList.add('calander-person');
+  calanderPerson.setAttribute('src', "/img/CalendarCheck.png");
+  let nameDatePerson= document.createElement('p');
+  nameDatePerson.classList.add('name-date-person');
+  nameDatePerson.textContent = 'Date';
+  let dateTaskPerson = document.createElement('p');
+  dateTaskPerson.classList.add('date-task-person');
+  dateTaskPerson.textContent = userFilterData[i].date;
+  let statusPersonTasks = document.createElement('div');
+  statusPersonTasks.classList.add('status-person-tasks');
+  let statusDetailsPerson= document.createElement('div');
+  statusDetailsPerson.classList.add('status-details-person');
+  let chartPerson= document.createElement('img');
+  chartPerson.classList.add('chart-person');
+  chartPerson.setAttribute('src', "/img/ChartLine.png");
+  let statusPersonTaskName = document.createElement('p');
+  statusPersonTaskName.classList.add('status-person-taskname');
+  statusPersonTaskName.textContent = 'Status';
+  let statusPersonTask = document.createElement('p');
+  statusPersonTask.classList.add('status-person-task');
+  statusPersonTask.textContent = userFilterData[i].status
+  popupPersonForm.appendChild( personResultItemDiv);
+  // popupPersonForm.appendChild( personaskPlanner);
+  personResultItemDiv.appendChild(personTaskName);
+  personResultItemDiv.appendChild(personTaskDescription);
+  personResultItemDiv.appendChild(personTaskOwners);
+  personTaskOwners.appendChild(personPersonDetails);
+  personPersonDetails.appendChild(personImagePersonResult);
+  personPersonDetails.appendChild(personPersonColl);
+  personPersonDetails.appendChild(personPersonTasksOwner);
+  personResultItemDiv.appendChild(datePersonTask);
+  datePersonTask.appendChild(calanderPerson);
+  datePersonTask.appendChild(nameDatePerson);
+  datePersonTask.appendChild(dateTaskPerson);
+  personResultItemDiv.appendChild(statusPersonTasks);
+  statusPersonTasks.appendChild(statusDetailsPerson);
+  statusDetailsPerson.appendChild(chartPerson);
+  statusDetailsPerson.appendChild(statusPersonTaskName);
+  statusDetailsPerson.appendChild(statusPersonTask );
+
+}
+ 
 })
 
 
