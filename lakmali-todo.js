@@ -15,13 +15,13 @@ informationIcon.addEventListener('click', openInfromationForm);
 
 // ADD DESCRTIPTION TO THE PROJECT
 
-let projectDescription = document.querySelector('project-description').textContent;
-let boardDescription = []
+// let projectDescription = document.querySelector('project-description').textContent;
+// let boardDescription = []
 
-function addProjectDescription (projectDescription ){
-  boardDescription.push(projectDescription)
-localStorage.setItem('projectDescription', JSON.stringify(boardDescription))
-}
+// function addProjectDescription (projectDescription ){
+//   boardDescription.push(projectDescription)
+// localStorage.setItem('projectDescription', JSON.stringify(boardDescription))
+// }
 
 // ADD FOVOURITE PROJECT TO THE LOCAL STORGE
 
