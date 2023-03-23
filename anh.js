@@ -81,3 +81,11 @@ function boardfunct(event) {
   localStorage.setItem('get_board_author', board_author);
   localStorage.setItem('get_visibility', board_visible)
 }
+
+/*const addBoardTitle = localStorage.getItem('get_board_title');
+const addBoardAuthor = localStorage.getItem('get_board_author');
+const addBoardVisible = localStorage.getItem('get_visibility');*/
+
+
+//localStorage.clear()
+
