@@ -15,13 +15,13 @@ informationIcon.addEventListener('click', openInfromationForm);
 
 // ADD DESCRTIPTION TO THE PROJECT
 
-let projectDescription = document.querySelector('project-description').textContent;
-let boardDescription = []
+// let projectDescription = document.querySelector('project-description').textContent;
+// let boardDescription = []
 
-function addProjectDescription (projectDescription ){
-  boardDescription.push(projectDescription)
-localStorage.setItem('projectDescription', JSON.stringify(boardDescription))
-}
+// function addProjectDescription (projectDescription ){
+//   boardDescription.push(projectDescription)
+// localStorage.setItem('projectDescription', JSON.stringify(boardDescription))
+// }
 
 // ADD FOVOURITE PROJECT TO THE LOCAL STORGE
 
@@ -578,6 +578,7 @@ let userFilterData= taskByPerson ()
     popupPersonForm.style.display = 'none';
   }
   popupPersonForm.addEventListener('click', closePersonResultForm);
+
  
 //CLOSE THE DROPDOWN WHEN USER CLICK OUTSIDE OF THE DROPDOWN
 window.onclick = function(event) {
@@ -596,6 +597,27 @@ window.onclick = function(event) {
     let sortClose = document.querySelector('.sortForm')
     if(sortClose.classList.contains('show'))sortClose.classList.remove('show')
   }
+
+  if (!event.target.matches('.drop-btn')) {
+    var droppopup2 = document.getElementsByClassName("drop-account");
+    var i;
+    for (i = 0; i < droppopup2.length; i++) {
+      var openDropdown = droppopup2[i];
+      if (openDropdown.classList.contains('show')) {
+        openDropdown.classList.remove('show');
+      }
+    }
+ }
+
+if (!event.target.matches('.fa-bell')) {
+  console.log('yo', event.target)
+  const el = document.querySelector(".bell-notify")
+  if (el.classList.contains('show')) el.classList.remove('show') 
+}
+// When the user clicks anywhere outside of the login box, close it
+if (event.target == loginPopup) {
+  loginPopup.style.display = "none"
+}
 
 }
  

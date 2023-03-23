@@ -47,26 +47,26 @@ var loginPopup = document.getElementById('login001');
 // Close the dropdown if the user clicks outside of it
 
   window.onclick = function(event) {
-    if (!event.target.matches('.drop-btn')) {
-      var droppopup2 = document.getElementsByClassName("drop-account");
-      var i;
-      for (i = 0; i < droppopup2.length; i++) {
-        var openDropdown = droppopup2[i];
-        if (openDropdown.classList.contains('show')) {
-          openDropdown.classList.remove('show');
-        }
-      }
-   }
+  //   if (!event.target.matches('.drop-btn')) {
+  //     var droppopup2 = document.getElementsByClassName("drop-account");
+  //     var i;
+  //     for (i = 0; i < droppopup2.length; i++) {
+  //       var openDropdown = droppopup2[i];
+  //       if (openDropdown.classList.contains('show')) {
+  //         openDropdown.classList.remove('show');
+  //       }
+  //     }
+  //  }
 
-  if (!event.target.matches('.fa-bell')) {
-    console.log('yo', event.target)
-    const el = document.querySelector(".bell-notify")
-    if (el.classList.contains('show')) el.classList.remove('show') 
-  }
-  // When the user clicks anywhere outside of the login box, close it
-  if (event.target == loginPopup) {
-    loginPopup.style.display = "none"
-  }
+  // if (!event.target.matches('.fa-bell')) {
+  //   console.log('yo', event.target)
+  //   const el = document.querySelector(".bell-notify")
+  //   if (el.classList.contains('show')) el.classList.remove('show') 
+  // }
+  // // When the user clicks anywhere outside of the login box, close it
+  // if (event.target == loginPopup) {
+  //   loginPopup.style.display = "none"
+  // }
 
 }
 
