@@ -9,12 +9,14 @@
 main {
     display: flex;
     flex-direction: row;
+
     height: 100%vh;
     background-size: cover;
     background-repeat: no-repeat;
     background-position: center;
     margin: auto;
     background-color: rgb(211, 208, 208);
+
 }
 
 .dashboard {
@@ -23,6 +25,7 @@ main {
     flex-wrap: wrap;
     gap: 2rem;
     padding: 2rem;
+    
 
 }
 
@@ -41,6 +44,7 @@ img {
     padding: 1rem;
     gap: 1rem;
     border-radius: 1rem;
+   
 }
 
 .item-menu {
