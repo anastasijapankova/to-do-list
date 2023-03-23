@@ -25,7 +25,7 @@
   display: flex;
   flex-direction: row;
   margin-top: 1em;
-  z-index: 9999;
+  z-index: 1000;
  }
 
 /* Project title */
@@ -468,12 +468,6 @@ input::placeholder {
   z-index: 1;
 }
 
-/* search result */
-#searchResult{
-  display: block;
-  background-color: #F5F5F5;
-}
-
 
 /* filter button  */
 
@@ -751,28 +745,10 @@ input::placeholder {
 
 /* Filter Result popup */
 
-#filterPopup{
-  /* display: flex; */
+.filterResult-popup{
+  display:flex;
   flex-direction: column;
-  z-index: 10;
-  position:unset;
-  background-color: #dbdada;
-  width: 60%;
-  height: 70%;
-  
-}
-
-.filter-popup{
-  /* display: none; */
-  background-color: #F5F5F5;
-  width: 320px;
-  height: 320px;
-  justify-content: center;
-  padding: 1rem;
-  gap: 1rem;
-  border-radius: 1rem;
-  z-index: 10;
-  margin-top: 200px;
+  flex-wrap: wrap;
 }
 
 

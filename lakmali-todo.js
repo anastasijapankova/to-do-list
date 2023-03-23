@@ -23,6 +23,32 @@ informationIcon.addEventListener('click', openInfromationForm);
 // localStorage.setItem('projectDescription', JSON.stringify(boardDescription))
 // }
 
+function addProjectDescription(projectDescription) {
+  let boardDescription = JSON.parse(localStorage.getItem('projectDescription')) || []
+  boardDescription.push(projectDescription)
+  localStorage.setItem('projectDescription', JSON.stringify(boardDescription))
+}
+
+let projectDescription = document.querySelector('.project-description')
+
+// you can call the addProjectDescription function when the user submits the form or clicks a button, like this:
+addProjectDescription(projectDescription.value)
+
+
+function addProjectDescription(projectDescription) {
+  let boardDescription = []
+  boardDescription.push(projectDescription)
+  localStorage.setItem('projectDescription', JSON.stringify(boardDescription))
+}
+
+
+function addProjectDescription(projectDescription) {
+  let boardDescription = JSON.parse(localStorage.getItem('projectDescription')) || []
+  boardDescription.push(projectDescription)
+  localStorage.setItem('projectDescription', JSON.stringify(boardDescription))
+}
+
+
 // ADD FOVOURITE PROJECT TO THE LOCAL STORGE
 
 let star = document.getElementById('outLineStar');
