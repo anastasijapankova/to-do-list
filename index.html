@@ -7,6 +7,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="lakmali.css">
     <link rel="stylesheet" href="/style.css" />
+    <link rel="stylesheet" href="anhst.css">
     <link rel="stylesheet" media="screen and (min-width: 786px)" href="tablet-display.css">
     <link rel="stylesheet" media="screen and (max-width: 430px)" href="mobile.css">
     <script src="https://kit.fontawesome.com/571ecca289.js" crossorigin="anonymous"></script>
@@ -14,6 +15,7 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap"
         rel="stylesheet">
+    
     <title>Document</title>
 </head>
 
@@ -21,27 +23,115 @@
     <!-- ANH'S SECTION -->
     <header>
         <div class="logo">
-            <a href=""><img src="/img/logo-tidy.png"></a>
+            <a href="index.html"><img src="/img/logo-tidy.png"></a>
         </div>
         <div class="notification-account">
-            <i class="fa-solid fa-bell"></i>
-            <div class="drop-button">
-                <div class="button">Account</div>
+            <div class="bell">
+                <div onclick="accountPopup1()" class="bell-btn"><i class="fa-solid fa-bell"></i></div>
+                <div class="bell-notify" id="popUp1">
+                    
+                    <div class="notifyBlk">
+                        <div>Notification</div>
+                        <p>Only show unread</p>
+                        <label class="switch">
+                            <input type="checkbox">
+                            <span class="slider round"></span>
+                        </label>
+                    </div>
+                    <div class="message">
+                        
+                        <img src="./img/robot-message.png">
+                        <p>No unread notifications</p>
+
+                        
+                    </div>
+                </div>
+            </div>
+                      
+            <div class="account-btn">
+                <button onclick="accountPopup2()" class="drop-btn">Account</button>
+                <div class="drop-account" id="popUp2">
+                    <div class="" id="signin">
+                        <button onclick="document.getElementById('login001').style.display='block'" id="signinBtn">Sign in</button>
+                        <div class="display-name">Hello</div>
+                        
+                    </div>
+                    <div class="block-ac" id="my-tidy">MY TIDY
+                        <ul>
+                            <li>Profile</li>
+                            <li>Activity</li>
+                            <li>Setting</li>
+                            <li>Help</li>
+                        </ul>
+                    </div>
+                    <div class="block-ac" id="">Log out</div>
+                </div>
             </div>
 
         </div>
     </header>
+    <!--Login popup-->
+    <div id="login001" class="login">
+        <form class="login-content" action="/action_page.php" method="post">
+            <div class="imgcontainer">
+                <span onclick="document.getElementById('login001').style.display='none'" class="close" title="Close Modal">&times;</span>
+                <img src="./img/user-profile.png" class="avatar">
+            </div>
+      
+            <div class="container">
+                <label for="uname"><b>Email</b></label>
+                <input type="text" placeholder="Enter Email" name="uemail" required>
+      
+                <label for="psw"><b>Password</b></label>
+                <input type="password" placeholder="Enter Password" name="psw" required>
+              
+                <button type="submit">Sign in</button>
+                <label><input type="checkbox" checked="checked" name="remember"> Remember me</label>
+            </div>
+      
+            <div class="container"  >
+                <button type="button" onclick="document.getElementById('login001').style.display='none'" class="cancelbtn">Cancel</button>
+                <span class="psw">Forgot <a href="#">password?</a></span>
+            </div>
+        </form>
+    </div>
     <main>
         <div class="taskbar">
-            <ul>
-                <li><a id="active"><i class="fa-solid fa-folder"></i>My Boards</a></li>
-                <li><a><i class="fa-solid fa-pen-nib"></i>Add</a></li>
-                <li><a><i class="fa-solid fa-people-group"></i>People</a></li>
-                <li><a><i class="fa-solid fa-gear"></i>Manage</a></li>
-                <li><a><i class="fa-solid fa-box-archive"></i>Archive</a></li>
-                <li><a><i class="fa-solid fa-calendar-days"></i>Views</a></li>
-            </ul>
-            <img class="help-icon" src="/img/help-img.png">
+            <button class="list-board"><i class="fa-solid fa-folder"></i>My Boards</button>
+            <div class="drop-myboard">
+                <a>1</a>
+                <a>2</a>
+                <a>3</a>
+                <a>4</a>
+            </div>
+            <button class="for-board"><i class="fa-solid fa-pen-nib"></i>Add Board</button>
+            <div class="add-board" id="popUp3">
+                <div id="adbHead">Add new board</div>
+                <div class="themePicker">Choose background: <br>
+                    <div id="theme1"></div>
+                    <div id="theme2"></div>
+                    <div id="theme3"></div>
+                </div>
+                <form action="" onsubmit="boardfunct(event)">
+                    <label>Add title: <input type="text" id="brd-title" name="title"></label>
+                    <label>Author: <input type="text" id="brd-author"></label>
+                    <label>Visibility: </label><br>
+                    <select id="visibility" name="visibility">
+                        <option value="private">Private</option>
+                        <option value="workspace">Workspace</option>
+                        <option value="public">Public</option>
+                    </select>
+                    <button onclick="saveBoardTitle()">Create</button>
+                </form>
+                
+            </div>
+            <a class="list-task"><i class="fa-solid fa-people-group"></i>People</a>
+            <a class="list-task"><i class="fa-solid fa-gear"></i>Manage</a>
+            <a class="list-task"><i class="fa-solid fa-box-archive"></i>Archive</a>
+            <a class="list-task"><i class="fa-solid fa-calendar-days"></i>View</a>
+        
+                
+            
         </div>
 
         <div class="workspace">
@@ -460,6 +550,7 @@
                 </div>
         </div>
     </main>
+<script src="anh.js"></script>
 </body>
 
 </html>
