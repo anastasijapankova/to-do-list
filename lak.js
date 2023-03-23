@@ -15,12 +15,12 @@ informationIcon.addEventListener('click', openInfromationForm);
 
 // ADD DESCRTIPTION TO THE PROJECT
 
-let projectDescription = document.getElementById('taskDetails').value;
+let projectDescription = document.getElementById('taskDetails').textContent;
 let boardDescription = []
 
-function addProjectDescription (newBoardDescription){
-  boardDescription.push(newBoardDescription)
-localStorage.setItem('projectDescription', JSON.stringify(projectDescription))
+function addProjectDescription (projectDescription ){
+  boardDescription.push(projectDescription)
+localStorage.setItem('projectDescription', JSON.stringify(boardDescription))
 }
 
 // ADD FOVOURITE PROJECT TO THE LOCAL STORGE
@@ -196,7 +196,7 @@ const filteredData = searchData.tasks.filter(function(tasks) {
     personSearchColl.textContent = 'Person';
     let personSearchTasksOwner = document.createElement('p');
     personSearchTasksOwner.classList.add('person-searchtasks-owner');
-    personSearchTasksOwner.textContent = filteredData[i].owners;
+    personSearchTasksOwner.textContent = (filteredData[i].owners).join(' ');
     let dateSearchTask = document.createElement('div');
     dateSearchTask.classList.add('date-search-task');
     let calanderSearch = document.createElement('img');
@@ -242,6 +242,13 @@ const filteredData = searchData.tasks.filter(function(tasks) {
   
   }
   });
+  // ADD EVENT LISTENERS FOR CLOSES SEARCH POPUP
+
+  let popupSearchForm = document.querySelector('.searchResult-form');
+  function closeSearchResultForm() {
+    popupSearchForm.style.display = 'none';
+  }
+  popupSearchForm.addEventListener('click', closeSearchResultForm);
   
 //  OPENNNG THE FILTERING POPUP AND RETRIEVE FILTERED DATA
 
@@ -300,7 +307,7 @@ function createTaskFilters(i){
   personFilterColl.textContent = 'Person';
   let personFilterTasksOwner = document.createElement('p');
   personFilterTasksOwner.classList.add('person-filtertasks-owner');
-  personFilterTasksOwner.textContent = filteredData[i].owners;
+  personFilterTasksOwner.textContent = (filteredData[i].owners).join(' ');
   let dateFilterTask = document.createElement('div');
   dateFilterTask.classList.add('date-filter-task');
   let calanderFilter = document.createElement('img');
@@ -351,6 +358,14 @@ function createTaskFilters(i){
 filteringButton.addEventListener('click', filterTask);
 
 
+
+  // ADD EVENT LISTENERS FOR CLOSES FILTER POPUP
+  
+  let popupFilterForm = document.querySelector('.filter-popup');
+  function closeFilterResultForm() {
+    popupFilterForm.style.display = 'none';
+  }
+  popupFilterForm.addEventListener('click', closeFilterResultForm);
 
 //   SORTING DATA BASED ON ASSIGN DATE
 
@@ -404,7 +419,7 @@ function createTaskSort(i){
   personSortColl.textContent = 'Person';
   let personSortTasksOwner = document.createElement('p');
   personSortTasksOwner.classList.add('person-sorttasks-owner');
-  personSortTasksOwner.textContent = sortedTasks[i].owners;
+  personSortTasksOwner.textContent = (sortedTasks[i].owners).join('  ');
   let dateSortTask = document.createElement('div');
   dateSortTask.classList.add('date-sort-task');
   let calanderSort = document.createElement('img');
@@ -454,7 +469,13 @@ function createTaskSort(i){
 
 });
 
-
+  // ADD EVENT LISTENERS FOR CLOSES SORT POPUP
+  
+  let popupSortForm = document.querySelector('.sort-popup');
+  function closeSortResultForm() {
+    popupSortForm.style.display = 'none';
+  }
+  popupSortForm.addEventListener('click', closeSortResultForm);
 
 // SELECT TASKS BASED ON USERS
 
@@ -502,7 +523,7 @@ let userFilterData= taskByPerson ()
   personPersonColl.textContent = 'Person';
   let personPersonTasksOwner = document.createElement('p');
   personPersonTasksOwner.classList.add('person-persontasks-owner');
-  personPersonTasksOwner.textContent = userFilterData[i].owners;
+  personPersonTasksOwner.textContent = (userFilterData[i].owners).join(' ');
   let datePersonTask = document.createElement('div');
   datePersonTask.classList.add('date-person-task');
   let calanderPerson = document.createElement('img');
@@ -550,7 +571,13 @@ let userFilterData= taskByPerson ()
  
 })
 
-
+  // ADD EVENT LISTENERS FOR CLOSES USER POPUP
+  
+  let popupPersonForm = document.querySelector('.person-popup');
+  function closePersonResultForm() {
+    popupPersonForm.style.display = 'none';
+  }
+  popupPersonForm.addEventListener('click', closePersonResultForm);
  
 //CLOSE THE DROPDOWN WHEN USER CLICK OUTSIDE OF THE DROPDOWN
 window.onclick = function(event) {
