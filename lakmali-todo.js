@@ -15,7 +15,7 @@ informationIcon.addEventListener('click', openInfromationForm);
 
 // ADD DESCRTIPTION TO THE PROJECT
 
-let projectDescription = document.getElementById('taskDetails').textContent;
+let projectDescription = document.querySelector('project-description').textContent;
 let boardDescription = []
 
 function addProjectDescription (projectDescription ){
@@ -158,7 +158,7 @@ formSearch.addEventListener('submit', function(event) {
   const inputSearch = searchInput.value.toLowerCase();
   // Retrieve data from local storage
   const searchData = JSON.parse(localStorage.getItem('taskBoard'));
-// console.log(searchData)
+console.log(searchData)
   // Filter the data based on search input
 
 const filteredData = searchData.tasks.filter(function(tasks) {
