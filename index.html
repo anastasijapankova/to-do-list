@@ -113,7 +113,7 @@
                     <div id="theme2"></div>
                     <div id="theme3"></div>
                 </div>
-                <form action="" onsubmit="boardfunct(event)">
+                <form action="" class="add-board-popup-form" onsubmit="boardfunct(event)">
                     <label>Add title: <input type="text" id="brd-title" name="title"></label>
                     <label>Author: <input type="text" id="brd-author"></label>
                     <label>Visibility: </label><br>
@@ -122,7 +122,7 @@
                         <option value="workspace">Workspace</option>
                         <option value="public">Public</option>
                     </select>
-                    <button onclick="saveBoardTitle()">Create</button>
+                    <button id="addBoardPopup" class="add-board-popup" onclick="saveBoardTitle()">Create</button>
                 </form>
                 
             </div>
@@ -166,18 +166,6 @@
                               </div>
                               <div class="owners">
                                 <p class="responsible-users">Collaborators</p> 
-                                <!-- <div class ="owner-details">
-                                  <img class="responsible" src="img/male-user-64.png"/>
-                                  <p class="owner"></p>
-                                </div> -->
-                                <!-- <div class ="owner-details">
-                                  <img class="responsible" src="img/male-user-64.png"/>
-                                  <p class="owner">Anh </p>
-                                </div>
-                                <div class ="owner-details">
-                                  <img class="responsible" src="img/male-user-64.png"/>
-                                  <p class="owner">Lakmali </p>
-                                </div> -->
                               </div>
                             </div>
                           </form>
@@ -231,10 +219,7 @@
                       <button id="searchSubmit" class="searchicon" type="submit"><img class="searchicon" src="img/search-64.png"/></button>
                     </form>
                     </div>
-                    <!-- SEARCH RESULTS -->
-                    <div id="searchResult" class="search-result">
-
-                    </div>
+                   
                 
                 
                     <!-- FILTERING BY STAUS AND USER -->

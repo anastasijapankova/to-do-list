@@ -81,3 +81,12 @@ function boardfunct(event) {
   localStorage.setItem('get_board_author', board_author);
   localStorage.setItem('get_visibility', board_visible)
 }
+
+
+  // ADD EVENT LISTENERS FOR CLOSES ADD BOARD POPUP
+  
+  let addBoardPopupForm = document.querySelector('.add-board');
+  function saveBoardTitle() {
+    addBoardPopupForm.style.display = 'none';
+  }
+  addBoardPopupForm.addEventListener('click', saveBoardTitle);
