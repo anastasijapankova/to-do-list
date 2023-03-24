@@ -8,6 +8,8 @@
 .workspace{
   background-color: rgb(220, 217, 217);
   height: 100%;
+  display: flex;
+  flex-direction:column;
 }
 
 .slected-project{
@@ -254,8 +256,10 @@
 .second-section{
   display: flex;
   flex-direction: row;
+  flex-wrap: wrap;
   width: 100%;
   padding: 0.5em;
+  justify-content: space-evenly;
   /* height: 8px; */
 }
 
@@ -740,23 +744,441 @@ input::placeholder {
 
 /* Serach Result Popup */
 
+.searchResult-popup{
+  display: none;
+
+}
+
+.searchResult-form{
+  background-color: #eeebeb;
+  /* height: 70%; */
+  /* width: 100%; */
+  /* z-index: 9999; */
+  display: flex;
+  justify-content: flex-start;
+  flex-wrap: wrap;
+  gap: 2rem;
+  padding: 2rem;
+  position: relative;
+  
+}
+.close-button-searchResult{
+  justify-content:flex-end;
+  align-self: flex-end;
+  transform: scale(0.8);
+  height: 2.5em;
+  width:2.5em;
+  cursor: pointer;
+  opacity: 0.7;
+}
+.working-search{
+  background-color: #ffffff;
+  height: 70%;
+  /* width: 70%; */
+  /* border: 1px solid red; */
+  margin: 20px;
+  display:flex;
+  flex-direction: column;
+  border-radius: 10px;
+}
+
+
+.search-task-name{
+  padding-bottom: 10px;
+}
+
+
+.search-task-owners{
+  /* border: 1px solid blue; */
+  padding: 10px;
+}
+
+.date-search-task{
+  /* border: 1px solid blue; */
+  padding: 10px;
+}
+.status-search-tasks{
+  padding: 10px;
+}
+
+
+
+.working-search{
+  display: flex;
+  flex-direction: column;
+  background-color: #F5F5F5;
+  width: 320px;
+  height: 320px;
+  justify-content: center;
+  padding: 1rem;
+  gap: 1rem;
+  border-radius: 1rem;
+}
+
+.search-person-details {
+  display: flex;
+}
+
+.person-image-search-result{
+  margin-right: 20px;
+}
+
+.person-search-coll{
+  margin-right: 43px;
+}
+
+.date-search-task{
+  display: flex;
+}
+
+.calander-search{
+  margin-right: 20px;
+}
+
+.name-date-search{
+  margin-right: 57px;
+}
+
+.status-details-search{
+  display: flex;
+}
+
+.chart-search{
+  margin-right: 20px;
+}
+
+.status-search-taskname{
+  margin-right: 50px;
+}
 
 
 
 /* Filter Result popup */
 
 .filterResult-popup{
+  display: none;
+}
+
+.filter-popup{
+  background-color: #eeebeb;
+  /* height: 70%; */
+  /* width: 100%; */
+  /* z-index: 9999; */
+  display: flex;
+  justify-content: flex-start;
+  flex-wrap: wrap;
+  gap: 2rem;
+  padding: 2rem;
+  position: relative;
+  
+}
+
+.close-button-filter{
+  justify-content:flex-end;
+  align-self: flex-end;
+  transform: scale(0.8);
+  height: 2.5em;
+  width:2.5em;
+  cursor: pointer;
+  opacity: 0.7;
+}
+.working-filters{
+  background-color: #ffffff;
+  height: 70%;
+  /* width: 70%; */
+  /* border: 1px solid red; */
+  margin: 20px;
   display:flex;
   flex-direction: column;
-  flex-wrap: wrap;
+  border-radius: 10px;
+}
+
+
+.filter-task-name{
+  padding-bottom: 10px;
+}
+
+
+.filter-task-owners{
+  /* border: 1px solid blue; */
+  padding: 10px;
+}
+
+.date-filter-task{
+  /* border: 1px solid blue; */
+  padding: 10px;
+}
+.status-filter-tasks{
+  padding: 10px;
 }
 
 
 
+.working-filters{
+  display: flex;
+  flex-direction: column;
+  background-color: #F5F5F5;
+  width: 320px;
+  height: 320px;
+  justify-content: center;
+  padding: 1rem;
+  gap: 1rem;
+  border-radius: 1rem;
+ 
+}
+
+.person-details-filter {
+  display: flex;
+}
+
+.person-image-filter-result{
+  margin-right: 20px;
+}
+
+.person-filter-coll{
+  margin-right: 43px;
+}
+
+.date-filter-task{
+  display: flex;
+}
+
+.calander-filter{
+  margin-right: 20px;
+}
+
+.name-date-filter{
+  margin-right: 57px;
+}
+
+.status-details-filter{
+  display: flex;
+}
+
+.chart-filter{
+  margin-right: 20px;
+}
+
+.status-filter-taskname{
+  margin-right: 50px;
+}
+
 
 /* Sort Result popup */
 
+.sortResult-popup{
+  display: none;
 
+}
+
+.sort-popup{
+  background-color: #eeebeb;
+  /* height: 70%; */
+  /* width: 100%; */
+  /* z-index: 9999; */
+  display: flex;
+  justify-content: flex-start;
+  flex-wrap: wrap;
+  gap: 2rem;
+  padding: 2rem;
+  position: relative;
+  
+}
+/* .close-button-sort{
+  justify-content:flex-end;
+  align-self: flex-end;
+  transform: scale(0.8);
+  height: 2.5em;
+  width:2.5em;
+  cursor: pointer;
+  opacity: 0.7;
+} */
+
+
+.sort-task-name{
+  padding-bottom: 10px;
+}
+
+
+.sort-task-owners{
+  /* border: 1px solid blue; */
+  padding: 10px;
+}
+
+.date-sort-task{
+  /* border: 1px solid blue; */
+  padding: 10px;
+}
+.status-sort-tasks{
+  padding: 10px;
+}
+
+
+
+.working-sort{
+  display: flex;
+  flex-direction: column;
+  background-color: #F5F5F5;
+  width: 320px;
+  height: 320px;
+  justify-content: center;
+  padding: 1rem;
+  gap: 1rem;
+  border-radius: 1rem;
+ 
+}
+
+.person-details-sort {
+  display: flex;
+}
+
+.person-image-sort-result{
+  margin-right: 20px;
+}
+
+.person-sort-coll{
+  margin-right: 43px;
+}
+
+.date-sort-task{
+  display: flex;
+}
+
+.calander-sort{
+  margin-right: 20px;
+}
+
+.name-date-sort{
+  margin-right: 57px;
+}
+
+.status-details-sort{
+  display: flex;
+}
+
+.chart-sort{
+  margin-right: 20px;
+}
+
+.status-sort-taskname{
+  margin-right: 50px;
+}
 
 
 /* Person Result popup */
+
+.personResult-popup{
+  display: flex;
+  flex-direction: column;
+
+}
+.person-popup{
+  background-color: #eeebeb;
+  display: none;
+  gap: 2rem;
+  padding: 2rem;
+  position: relative;
+  background-color: #eeebeb; 
+}
+
+/* .popupUser-PersonForm{
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  flex-wrap: wrap;
+  gap: 2rem;
+  padding: 2rem;
+  position: relative;
+  background-color: #eeebeb;
+} */
+
+
+
+
+.close-button-person{
+  justify-content:flex-end;
+  align-self: flex-end;
+  transform: scale(0.8);
+  height: 2.5em;
+  width:2.5em;
+  cursor: pointer;
+  opacity: 0.7;
+}
+
+
+.person-task-name{
+  padding-bottom: 10px;
+}
+
+
+.person-task-owners{
+  /* border: 1px solid blue; */
+  padding: 10px;
+}
+
+.date-person-task{
+  /* border: 1px solid blue; */
+  padding: 10px;
+}
+.status-person-tasks{
+  padding: 10px;
+}
+
+
+
+.working-person{
+  display: flex;
+  flex-direction: column;
+  background-color: #F5F5F5;
+  width: 320px;
+  height: 320px;
+  justify-content: center;
+  padding: 1rem;
+  gap: 1rem;
+  border-radius: 1rem;
+  margin-bottom: 2rem;
+ 
+}
+
+.person-details-users {
+  display: flex;
+}
+
+.person-image-person-result{
+  margin-right: 20px;
+}
+
+.person-person-coll{
+  margin-right: 43px;
+}
+
+.date-person-task{
+  display: flex;
+}
+
+.calander-person{
+  margin-right: 20px;
+}
+
+.name-date-person{
+  margin-right: 57px;
+}
+
+.status-details-person{
+  display: flex;
+}
+
+.chart-person{
+  margin-right: 20px;
+}
+
+.status-person-taskname{
+  margin-right: 50px;
+}
+
+
+.rigth-work{
+  /* display: flex; */
+  /* flex-direction: row; */
+  height: 100%;
+}

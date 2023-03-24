@@ -84,9 +84,9 @@ function boardfunct(event) {
 
 
   // ADD EVENT LISTENERS FOR CLOSES ADD BOARD POPUP
-  
-  let addBoardPopupForm = document.querySelector('.add-board');
+  let addBoardPopupForm = document.querySelector('.add-board')
+  let addBoardPopupButton = document.querySelector('.add-board-popup');
   function saveBoardTitle() {
     addBoardPopupForm.style.display = 'none';
   }
-  addBoardPopupForm.addEventListener('click', saveBoardTitle);
+  addBoardPopupButton.addEventListener('click', saveBoardTitle);
