@@ -15,38 +15,7 @@ informationIcon.addEventListener('click', openInfromationForm);
 
 // ADD DESCRTIPTION TO THE PROJECT
 
-// let projectDescription = document.querySelector('project-description').textContent;
-// let boardDescription = []
 
-// function addProjectDescription (projectDescription ){
-//   boardDescription.push(projectDescription)
-// localStorage.setItem('projectDescription', JSON.stringify(boardDescription))
-// }
-
-function addProjectDescription(projectDescription) {
-  let boardDescription = JSON.parse(localStorage.getItem('projectDescription')) || []
-  boardDescription.push(projectDescription)
-  localStorage.setItem('projectDescription', JSON.stringify(boardDescription))
-}
-
-let projectDescription = document.querySelector('.project-description')
-
-// you can call the addProjectDescription function when the user submits the form or clicks a button, like this:
-addProjectDescription(projectDescription.value)
-
-
-function addProjectDescription(projectDescription) {
-  let boardDescription = []
-  boardDescription.push(projectDescription)
-  localStorage.setItem('projectDescription', JSON.stringify(boardDescription))
-}
-
-
-function addProjectDescription(projectDescription) {
-  let boardDescription = JSON.parse(localStorage.getItem('projectDescription')) || []
-  boardDescription.push(projectDescription)
-  localStorage.setItem('projectDescription', JSON.stringify(boardDescription))
-}
 
 
 // ADD FOVOURITE PROJECT TO THE LOCAL STORGE
@@ -74,8 +43,7 @@ star.addEventListener('click', function() {
 
   let newTaskForm = document.getElementById('taskFormButton') ;
   let newTaskAddition = document.getElementById('taskInput');
-  let closeNewTaskAddPopup = document.querySelector('.task-form');
-  
+
   function addTaskForm(){
     newTaskAddition.style.display = 'block';
   }
