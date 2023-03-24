@@ -442,8 +442,8 @@ for (let i = 0; i < sortedTasks.length; i++){
 }
 
 function createTaskSort(i){
-  // let popupSortForm = document.querySelector('.sort-popup');
-  let popupSortFormIn= document.querySelector('.popupUser-PersonForm');
+  let popupSortForm = document.querySelector('.sort-popup');
+  // let popupSortFormIn= document.querySelector('.popupUser-PersonForm');
   let workingSortDiv= document.createElement('div');
   workingSortDiv.classList.add('working-sort')
   let sortResultItemDiv = document.createElement('div');
@@ -492,7 +492,7 @@ function createTaskSort(i){
   let statusSortTask = document.createElement('p');
   statusSortTask.classList.add('status-sort-task');
   statusSortTask.textContent = sortedTasks[i].status
-  popupSortFormIn.appendChild( workingSortDiv);
+  popupSortForm.appendChild( workingSortDiv);
   workingSortDiv.appendChild( sortResultItemDiv);
   // popupSortForm.appendChild( sortTaskPlanner);
   sortResultItemDiv.appendChild(sortTaskName);
@@ -516,15 +516,13 @@ function createTaskSort(i){
  
 }
 
-// function accountPopup1() {
-//   document.getElementById("sortResult").classList.toggle("show");
-// }
+
 
 
 });
 
 
-  // ADD EVENT LISTENERS FOR CLOSES SORT POPUP
+  // ADD EVENT LISTENERS FOR CLOSE SORT POPUP
   
   let popupSortForm = document.querySelector('.sort-popup');
   function closeSortResultForm() {
