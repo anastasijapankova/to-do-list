@@ -74,7 +74,8 @@ star.addEventListener('click', function() {
 
   let newTaskForm = document.getElementById('taskFormButton') ;
   let newTaskAddition = document.getElementById('taskInput');
-
+  let closeNewTaskAddPopup = document.querySelector('.task-form');
+  
   function addTaskForm(){
     newTaskAddition.style.display = 'block';
   }
@@ -185,11 +186,14 @@ formSearch.addEventListener('submit', function(event) {
   // Retrieve data from local storage
   const searchData = JSON.parse(localStorage.getItem('taskBoard'));
 console.log(searchData)
+
+document.getElementById('searchResult').classList.toggle('show')
   // Filter the data based on search input
 
 const filteredData = searchData.tasks.filter(function(tasks) {
   return tasks.name.toLowerCase().includes(inputSearch ) ||
          tasks.description.toLowerCase().includes(inputSearch );
+        
 });
 
   console.log(filteredData)
@@ -201,6 +205,8 @@ const filteredData = searchData.tasks.filter(function(tasks) {
   }
   function createTaskSearch(i){
     let popupSearchForm = document.querySelector('.searchResult-form');
+    let workingSearchDiv= document.createElement('div');
+    workingSearchDiv.classList.add('working-search')
     let searchResultItemDiv = document.createElement('div');
     searchResultItemDiv.classList.add('search-result-items');
     let searchTaskName = document.createElement('h3');
@@ -247,7 +253,8 @@ const filteredData = searchData.tasks.filter(function(tasks) {
     let statusSearchTask = document.createElement('p');
     statusSearchTask.classList.add('status-search-task');
     statusSearchTask.textContent = filteredData[i].status
-    popupSearchForm.appendChild( searchResultItemDiv);
+    popupSearchForm.appendChild(workingSearchDiv);
+    workingSearchDiv.appendChild( searchResultItemDiv);
     // popupSearchForm.appendChild( searchTaskPlanner);
     searchResultItemDiv.appendChild(searchTaskName);
     searchResultItemDiv.appendChild(searchTaskDescription);
@@ -301,6 +308,7 @@ formFilter.addEventListener('submit', function(event) {
 
   let filteredData = filterData.tasks.filter(tasks => tasks.owners.includes(filterUsers) && tasks.status === filterStatus);
   console.log(filteredData);
+  document.getElementById('filterResult').classList.toggle('show') 
 
 formFilter.reset()
 
@@ -312,6 +320,8 @@ for (let i = 0; i < filteredData.length; i++){
 
 function createTaskFilters(i){
   let popupFilterForm = document.querySelector('.filter-popup');
+  let workingFiltersDiv= document.createElement('div');
+  workingFiltersDiv.classList.add('working-filters')
   let filterResultItemDiv = document.createElement('div');
   filterResultItemDiv.classList.add('filter-result-items');
   let filterTaskName = document.createElement('h3');
@@ -323,8 +333,8 @@ function createTaskFilters(i){
   // let filterTaskPlanner = document.querySelector('.filter-tasks-planner');
   let filterTaskOwners = document.createElement('div');
   filterTaskOwners.classList.add('filter-task-owners');
-  let personDetails = document.createElement('div');
-  personDetails.classList.add('person-details');
+  let personDetailsFilter  = document.createElement('div');
+  personDetailsFilter .classList.add('person-details-filter');
   let personImageFilterResult = document.createElement('img');
   personImageFilterResult.classList.add('person-image-filter-result');
   personImageFilterResult.setAttribute("src", "img/male-user-64.png");
@@ -358,15 +368,16 @@ function createTaskFilters(i){
   let statusFilterTask = document.createElement('p');
   statusFilterTask.classList.add('status-filter-task');
   statusFilterTask.textContent = filteredData[i].status
-  popupFilterForm.appendChild( filterResultItemDiv);
+  popupFilterForm.appendChild(workingFiltersDiv)
+  workingFiltersDiv.appendChild( filterResultItemDiv);
   // popupFilterForm.appendChild( filterTaskPlanner);
   filterResultItemDiv.appendChild(filterTaskName);
   filterResultItemDiv.appendChild(filterTaskDescription);
   filterResultItemDiv.appendChild(filterTaskOwners);
-  filterTaskOwners.appendChild(personDetails);
-  personDetails.appendChild(personImageFilterResult);
-  personDetails.appendChild(personFilterColl);
-  personDetails.appendChild(personFilterTasksOwner);
+  filterTaskOwners.appendChild(personDetailsFilter);
+  personDetailsFilter.appendChild(personImageFilterResult);
+  personDetailsFilter.appendChild(personFilterColl);
+  personDetailsFilter.appendChild(personFilterTasksOwner);
   filterResultItemDiv.appendChild(dateFilterTask);
   dateFilterTask.appendChild(calanderFilter);
   dateFilterTask.appendChild(nameDateFilter);
@@ -387,7 +398,7 @@ filteringButton.addEventListener('click', filterTask);
 
   // ADD EVENT LISTENERS FOR CLOSES FILTER POPUP
   
-  let popupFilterForm = document.querySelector('.filter-popup');
+  let popupFilterForm = document.querySelector('.filterResult-popup');
   function closeFilterResultForm() {
     popupFilterForm.style.display = 'none';
   }
@@ -414,8 +425,16 @@ sortFormDrop.addEventListener('click', function(event){
   let statusSelection = event.target.id;
   if (statusSelection === 'optionSelect') {
     let sortedTasks = sortByDate();
-    
+    document.getElementById("sortResult").classList.toggle("show");
   console.log(sortedTasks);
+
+  // sortFormDrop.addEventListener('click', function(event){
+  //   event.preventDefault();
+  //   let statusSelection = event.target.id;
+  //   if (statusSelection === 'optionSelect') {
+  //     let sortedTasks = sortByDate();}})
+
+
 // CREATING SORTED RESULT POPUP FORM 
 
 for (let i = 0; i < sortedTasks.length; i++){
@@ -423,7 +442,10 @@ for (let i = 0; i < sortedTasks.length; i++){
 }
 
 function createTaskSort(i){
-  let popupSortForm = document.querySelector('.sort-popup');
+  // let popupSortForm = document.querySelector('.sort-popup');
+  let popupSortFormIn= document.querySelector('.popupUser-PersonForm');
+  let workingSortDiv= document.createElement('div');
+  workingSortDiv.classList.add('working-sort')
   let sortResultItemDiv = document.createElement('div');
   sortResultItemDiv.classList.add('sort-result-items');
   let sortTaskName = document.createElement('h3');
@@ -436,7 +458,7 @@ function createTaskSort(i){
   let sortTaskOwners = document.createElement('div');
   sortTaskOwners.classList.add('sort-task-owners');
   let personSortDetails = document.createElement('div');
-  personSortDetails.classList.add('person-details');
+  personSortDetails.classList.add('person-details-sort');
   let personImageSortResult = document.createElement('img');
   personImageSortResult.classList.add('person-image-sort-result');
   personImageSortResult.setAttribute("src", "img/male-user-64.png");
@@ -470,7 +492,8 @@ function createTaskSort(i){
   let statusSortTask = document.createElement('p');
   statusSortTask.classList.add('status-sort-task');
   statusSortTask.textContent = sortedTasks[i].status
-  popupSortForm.appendChild( sortResultItemDiv);
+  popupSortFormIn.appendChild( workingSortDiv);
+  workingSortDiv.appendChild( sortResultItemDiv);
   // popupSortForm.appendChild( sortTaskPlanner);
   sortResultItemDiv.appendChild(sortTaskName);
   sortResultItemDiv.appendChild(sortTaskDescription);
@@ -493,7 +516,13 @@ function createTaskSort(i){
  
 }
 
+// function accountPopup1() {
+//   document.getElementById("sortResult").classList.toggle("show");
+// }
+
+
 });
+
 
   // ADD EVENT LISTENERS FOR CLOSES SORT POPUP
   
@@ -502,6 +531,8 @@ function createTaskSort(i){
     popupSortForm.style.display = 'none';
   }
   popupSortForm.addEventListener('click', closeSortResultForm);
+
+
 
 // SELECT TASKS BASED ON USERS
 
@@ -515,19 +546,26 @@ const personFilterForm = document.getElementById('dropdownUsers')
 personFilterForm.addEventListener('click', function(event){
   event.preventDefault();
   const assignedTasks = event.target.textContent.trim();
+  
+  
   function taskByPerson (){
     let tasksStored = JSON.parse(localStorage.getItem('taskBoard'));
     let filteredUserData = tasksStored.tasks.filter(tasks => tasks.owners.includes(assignedTasks));
+   
     return filteredUserData;
-    
   }
+  
   console.log(taskByPerson())
 let userFilterData= taskByPerson ()
+document.getElementById("personPopup").classList.toggle("show");
+
 // CREATING USER ASSIGN TASK RESULT POPUP FORM 
 
 
   for (let i = 0; i < userFilterData.length; i++){
   let popupPersonForm = document.querySelector('.person-popup');
+  let workingPersonDiv=document.createElement('div');
+  workingPersonDiv.classList.add('working-person')
   let personResultItemDiv = document.createElement('div');
   personResultItemDiv.classList.add('person-result-items');
   let personTaskName = document.createElement('h3');
@@ -540,7 +578,7 @@ let userFilterData= taskByPerson ()
   let personTaskOwners = document.createElement('div');
   personTaskOwners.classList.add('person-task-owners');
   let personPersonDetails = document.createElement('div');
-  personPersonDetails.classList.add('person-details');
+  personPersonDetails.classList.add('person-details-users');
   let personImagePersonResult = document.createElement('img');
   personImagePersonResult.classList.add('person-image-person-result');
   personImagePersonResult.setAttribute("src", "img/male-user-64.png");
@@ -574,7 +612,8 @@ let userFilterData= taskByPerson ()
   let statusPersonTask = document.createElement('p');
   statusPersonTask.classList.add('status-person-task');
   statusPersonTask.textContent = userFilterData[i].status
-  popupPersonForm.appendChild( personResultItemDiv);
+  popupPersonForm.appendChild( workingPersonDiv);
+  workingPersonDiv.appendChild( personResultItemDiv);
   // popupPersonForm.appendChild( personaskPlanner);
   personResultItemDiv.appendChild(personTaskName);
   personResultItemDiv.appendChild(personTaskDescription);
@@ -592,18 +631,22 @@ let userFilterData= taskByPerson ()
   statusDetailsPerson.appendChild(chartPerson);
   statusDetailsPerson.appendChild(statusPersonTaskName);
   statusDetailsPerson.appendChild(statusPersonTask );
-
-}
  
+}
+
+
 })
 
   // ADD EVENT LISTENERS FOR CLOSES USER POPUP
+  
   
   let popupPersonForm = document.querySelector('.person-popup');
   function closePersonResultForm() {
     popupPersonForm.style.display = 'none';
   }
   popupPersonForm.addEventListener('click', closePersonResultForm);
+
+
 
  
 //CLOSE THE DROPDOWN WHEN USER CLICK OUTSIDE OF THE DROPDOWN
@@ -645,5 +688,20 @@ if (event.target == loginPopup) {
   loginPopup.style.display = "none"
 }
 
+// if (event.target !== newTaskForm && event.target !== newTaskAddition) {
+//   closeNewTaskAddPopup.classList.remove('show');
+// }
+
+// if (!event.target.matches('.input-task')){
+//   console.log('', event.target)
+//   let closeNewTaskAddPopup = document.querySelector('.task-form')
+//   if(closeNewTaskAddPopup.classList.contains('show'))closeNewTaskAddPopup.classList.remove('show')
+// }
+
+// if (!event.target.matches('.sort-popup')){
+//   console.log('', event.target)
+//   let sortCloseResult = document.querySelector('.sortResult-popup')
+//   if(sortCloseResult.classList.contains('show'))sortCloseResult.classList.remove('show')
+// }
+
 }
- 

@@ -134,7 +134,7 @@
                 
             
         </div>
-
+    <div class="rigth-work">
         <div class="workspace">
             <!-- LAKMALI'S SECTION -->
             <!-- Selected project -->
@@ -171,20 +171,20 @@
                           </form>
                       
                         </div>
-                      </div>
+                        </div>
                       <!-- add to favourite project -->
-                      <div class="favourite-projects">
-                        <div class="tooltip">
-                          <span class="tooltiptext">Add to favourite</span>
-                          <img id="outLineStar"  class="star-outline" src="img/star-64.png"/>
+                        <div class="favourite-projects">
+                            <div class="tooltip">
+                            <span class="tooltiptext">Add to favourite</span>
+                            <img id="outLineStar"  class="star-outline" src="img/star-64.png"/>
+                            </div>
                         </div>
-                        </div>
-                      </div>
+                    </div>
                   
                   
                   
                   <!-- SECOND SECTION -->
-                <div class="second-section">
+                    <div class="second-section">
                     <div class="task-container">
                       <button id="taskFormButton" class="new-taskbutton" onclick="addTaskForm()">New Task</button>
                       <!-- POPUP TASK FORM -->
@@ -297,67 +297,52 @@
                     </div>
                 
                   </div>
-                </div>
+                    <!-- Popup for local storage data display -->
 
-
-                <!-- Popup for local storage data display -->
-
-                <!-- Popup for search result -->
-                <div id="searchResult" class="searchResult-popup">
-                 <form id="searchResultForm" class="searchResult-form">
-                    <img id="closeButtonSearchResult" class="close-button-searchResult" onclick="closeSearchResultForm()" src="img/close-64.png"/>
-                 </form>   
-                </div>
-
-                <!-- Popup for filter results -->
-                <div id ="filterResult" class="filterResult-popup">
-                    <form id = "filterPopup" class = "filter-popup">
-                        <img id="closeButtonFilter" class="close-button-filter" onclick="closeFilterResultForm()" src="img/close-64.png"/>
-                        <div class="filter-result-items">
-                            <!-- <h3 class="filter-task-name">Business Plan</h3>
-                            <p class="filter-task-description">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed
-                                do
-                                eiusmod
-                                tempor incididunt ut labore et dolore magna aliqua.</p> -->
+                    <!-- Popup for search result -->
+                    <div id="searchResult" class="searchResult-popup">
+                    <form id="searchResultForm" class="searchResult-form" onclick="closeSearchResultForm()" >
+                       <!-- <img id="closeButtonSearchResult" class="close-button-searchResult" onclick="closeSearchResultForm()" src="img/close-64.png"/> -->
+                    </form>   
+                    </div>
+   
+                   <!-- Popup for filter results -->
+                   <div id ="filterResult" class="filterResult-popup">
+                       <form id = "filterPopup" class = "filter-popup">
+                           <!-- <img id="closeButtonFilter" class="close-button-filter" onclick="closeFilterResultForm()" src="img/close-64.png"/> -->
                         </div>
-                        <div class="filter-tasks-planner">
-                            <!-- <div class="filter-task-owners">
-                                <div class="person-details">
-                                    <img class="person-image-filter-result" src="/img/UserCircle.png">
-                                    <p class="person-filter-coll">Person</p>
-                                    <p class="person-filtertasks-owner">LR</p>
-                                </div>
-                            </div>
-                            <div class="date-filter-task">
-                                    <img class="calander-filter" src="/img/CalendarCheck.png">
-                                    <p class="name-date-filter">Date</p>
-                                    <p class="date-task-filter">vhhvv</p>
-                            </div>
-                            <div class="status-filter-tasks">
-                                <div class="status-details-filter">
-                                    <img class="chart-filter" src="/img/ChartLine.png">
-                                    <p class="status-filter-taskname">Status</p>
-                                    <p class="status-filter-task">jgjgjgjgj</p>
-                                </div> -->
-                            <!-- </div> -->
+                       </form>
+   
+                   </div>
+   
+                   <!-- Popup for sort results -->
+                   <div class="sortResult-popup" id="sortResult"> 
+                   <form id = "sortPopup" class = "sort-popup" onclick="closeSortResultForm()">
+                       <!-- <img id="closeButtonSort" class="close-button-sort" onclick="closeSortResultForm()" src="img/close-64.png"/> -->
+                   </form>  
+                   </div>
+   
+                   <!-- Popup for person results -->
+                   <div id="personResult" claass="personResult-popup">
+        
+                       <form id = "personPopup" class = "person-popup" onclick="closePersonResultForm()">
+                        <div class="popupUser-PersonForm" id="popupUserPersonForm">
+                           <!-- <img id="closeButtonPerson" class="close-button-person" onclick="closePersonResultForm()" src="img/close-64.png"/> -->
                         </div>
-                    </form>
+                       </form>
+                    
+                   </div>
+
+
+
+
+
+
 
                 </div>
 
-                <!-- Popup for sort results -->
-                <div class="sortResult-popup" id="sortResult"> 
-                <form id = "sortPopup" class = "sort-popup">
-                    <img id="closeButtonSort" class="close-button-sort" onclick="closeSortResultForm()" src="img/close-64.png"/>
-                </form>  
-                </div>
 
-                <!-- Popup for person results -->
-                <div id="personResult" claass="personResult-popup">
-                    <form id = "personPopup" class = "person-popup">
-                        <img id="closeButtonPerson" class="close-button-person" onclick="closePersonResultForm()" src="img/close-64.png"/>
-                    </form>
-                </div>
+ 
 
 
                   <!-- ANASTASIJA'S SECTION -->
@@ -602,6 +587,7 @@
                     </div>
                 </div>
         </div>
+    </div>
     </main>
 
    
