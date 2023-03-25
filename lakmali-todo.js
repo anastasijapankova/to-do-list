@@ -1,3 +1,7 @@
+//OPEN THE WORK-RIGHT SECTION AFTER ADDING A BOARD NAME
+
+
+
 // RETRIEVE THE BOARD NAME FROM THE STORAGE
 let projectBoardNames = JSON.parse(localStorage.getItem('projectBoardNames'))||{
   
@@ -582,6 +586,18 @@ personFilterForm.addEventListener('click', function(event){
 let userFilterData= taskByPerson ()
 document.getElementById("personPopup").classList.toggle("show");
 
+
+// function taskByPerson (){
+//   let tasksStored = JSON.parse(localStorage.getItem('taskBoard'));
+//   let selectAllUsers = tasksStored.tasks.filter(tasks => tasks.owners)
+  // console.log(selectAllUsers )
+//   let filteredUserData = [];
+//   if()
+//    tasksStored.tasks.filter(tasks => tasks.owners.includes(assignedTasks) || (selectAllUsers) ) ;
+ 
+//   return filteredUserData;
+// }
+
 // CREATING USER ASSIGN TASK RESULT POPUP FORM 
 
 
@@ -657,6 +673,15 @@ document.getElementById("personPopup").classList.toggle("show");
  
 }
 
+// let popupPersonForm = document.querySelector('.person-popup');
+// function closePersonResultForm() {
+//   popupPersonForm.style.display = 'none';
+//   personTaskName.textContent = '';
+//   personTaskDescription.textContent = '';
+//   dateTaskPerson.textContent = '';
+//   statusPersonTask.textContent = '';
+// }
+// popupPersonForm.addEventListener('click', closePersonResultForm);
 
 })
 
@@ -666,9 +691,12 @@ document.getElementById("personPopup").classList.toggle("show");
   let popupPersonForm = document.querySelector('.person-popup');
   function closePersonResultForm() {
     popupPersonForm.style.display = 'none';
+    // personTaskName.textContent = '';
+    // personTaskDescription.textContent = '';
+    // dateTaskPerson.textContent = '';
+    // statusPersonTask.textContent = '';
   }
   popupPersonForm.addEventListener('click', closePersonResultForm);
-
 
 
  
