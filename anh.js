@@ -46,7 +46,7 @@ var loginPopup = document.getElementById('login001');
 
 // Close the dropdown if the user clicks outside of it
 
-  window.onclick = function(event) {
+  //window.onclick = function(event) {
   //   if (!event.target.matches('.drop-btn')) {
   //     var droppopup2 = document.getElementsByClassName("drop-account");
   //     var i;
@@ -68,7 +68,7 @@ var loginPopup = document.getElementById('login001');
   //   loginPopup.style.display = "none"
   // }
 
-}
+
 
  //Saving Add Board data in localStorage
 function boardfunct(event) {
@@ -80,7 +80,11 @@ function boardfunct(event) {
   localStorage.setItem('get_board_title', board_title);
   localStorage.setItem('get_board_author', board_author);
   localStorage.setItem('get_visibility', board_visible)
+
+  document.getElementById('my-title-here').innerHTML = localStorage.getItem('get_board_title');
 }
+
+
 
 
   // ADD EVENT LISTENERS FOR CLOSES ADD BOARD POPUP
@@ -90,3 +94,4 @@ function boardfunct(event) {
     addBoardPopupForm.style.display = 'none';
   }
   addBoardPopupButton.addEventListener('click', saveBoardTitle);
+
