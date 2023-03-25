@@ -1,3 +1,37 @@
+// RETRIEVE THE BOARD NAME FROM THE STORAGE
+let projectBoardNames = JSON.parse(localStorage.getItem('projectBoardNames'))||{
+  
+  projectBoardName: []
+}
+let selectedBoardName = localStorage.getItem('get_board_title');
+console.log(selectedBoardName)
+document.querySelector('.selected-project-name').textContent = selectedBoardName;
+document.querySelector('.project-title').textContent = selectedBoardName;
+
+let projectBoardName = [];
+
+// projectBoardNames.projectBoardName.push(selectedBoardName);
+// localStorage.setItem('projectBoardNames', JSON.stringify(projectBoardNames))
+// console.log(projectBoardNames)
+
+
+// RETRIEVE THE AUTHORS' NAME FROM THE STORAGE
+
+// let authorNames = JSON.parse(localStorage.getItem('get_board_author'))||{
+  
+//   projectAuthordName: []
+// }
+let selectedAuthordName = localStorage.getItem('get_board_author');
+console.log(selectedAuthordName)
+document.querySelector('.owner').textContent =selectedAuthordName;
+
+let projectAuthorName = [];
+
+// authorNames.projectAuthordName.push(selectedAuthordName);
+// localStorage.setItem('AuthordName', JSON.stringify(selectedAuthordName))
+// console.log(selectedAuthordName)
+
+
 // TO OPEN THE POPUP INFORMATION FORM
 
 let informationIcon = document.getElementById('informationIcon');
@@ -15,8 +49,22 @@ informationIcon.addEventListener('click', openInfromationForm);
 
 // ADD DESCRTIPTION TO THE PROJECT
 
+// const projectDescription = document.getElementById('projectDescription');
+// const projectDescriptionInputs = 'text';
 
+// const detailsProjectText = () => {
+//   projectDescription.value = localStorage.getItem(projectDescriptionInputs);
 
+// }
+
+function projectDescription (){
+  let userTextInput = document.getElementById('projectDescription').value;
+  localStorage.setItem('projectDescription', JSON.stringify(userTextInput))
+}
+
+// function loardProjectDescription(){
+//   let textFromStorage = localStorage.getItem('userTextInput')
+// }
 
 // ADD FOVOURITE PROJECT TO THE LOCAL STORGE
 
@@ -74,10 +122,11 @@ submitButton.addEventListener('click', function(event) {
   const owners = getOwners();
   const date = document.getElementById('assignDate').value;
   const status = document.getElementById('status').value;
+  const boardIdValue = document.querySelector('.project-title').textContent;
   
 // CREATE A NEW TASK OBJECT USING FORM INPUT
   const task = {
-    boardId: 1,
+    boardId: boardIdValue,
     name: taskName,
     description: taskDesc,
     owners: owners,
@@ -106,15 +155,23 @@ function getOwners() {
   return owners;
 }
 
+
 // RETRIEVE THE OWNERS FROM THE LOCAL STORAGE TO AN ARRY
-let retrievedOwners = localStorage.getItem("taskBoard");
-let projectCollaborators = JSON.parse(retrievedOwners);
+// let retrievedOwners = localStorage.getItem("taskBoard");
+let projectCollaborators = JSON.parse(localStorage.getItem("taskBoard")) || [];
 
 let collaborators = [];
 
-projectCollaborators.tasks.forEach(task => {
+if(projectCollaborators.length === 0){
+  console.log('No collaborators Found');
+} else {
+  projectCollaborators.tasks.forEach(task => {
   collaborators = collaborators.concat(task.owners);
+
 });
+}
+
+
 
 let uniqeCollaborators = [];
 collaborators.forEach((person) => {
