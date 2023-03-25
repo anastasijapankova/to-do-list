@@ -50,11 +50,13 @@
             </div>
                       
             <div class="account-btn">
-                <button onclick="accountPopup2()" class="drop-btn">Account</button>
+                <button onclick="accountPopup2(event)" class="drop-btn">Account</button>
                 <div class="drop-account" id="popUp2">
-                    <div class="" id="signin">
-                        <button onclick="document.getElementById('login001').style.display='block'" id="signinBtn">Sign in</button>
-                        <div class="display-name">Hello</div>
+                    <div id="signin">
+                        <button onclick="openLoginPopup(event)" id="signinBtn">Sign in</button>
+
+                        <!-- <button onclick="document.getElementById('login001').style.display='block'" id="signinBtn">Sign in</button> -->
+                        <!-- <div class="display-name">Hello</div> -->
                         
                     </div>
                     <div class="block-ac" id="my-tidy">MY TIDY

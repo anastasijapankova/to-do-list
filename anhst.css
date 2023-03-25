@@ -146,24 +146,27 @@ header {
     padding: 0.5rem 0 0.5rem 0;
     margin-top: 1rem;
 }
-#signin {
+/* #signin {
     display: block;
     
     
-}
+} */
 #my-tidy li {
     list-style-type: none;
     padding: 0.8rem 0 0.8rem 0;
 }
 #signinBtn {
+    height: 50px;
+    width: 100%;
+    line-height: 50px;
     background: none;
-    padding: 0.5rem 0 0.5rem 0;
+    padding: 0.5rem 0;
     margin: none;
     text-align: left;
     width: 50%;
     border-radius: 0;
     font-weight: 700;
-    color: #125A8E;
+    color: #125A8E;    
 }
 
 .taskbar {
