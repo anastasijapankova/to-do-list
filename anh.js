@@ -90,8 +90,13 @@ function boardfunct(event) {
   // ADD EVENT LISTENERS FOR CLOSES ADD BOARD POPUP
   let addBoardPopupForm = document.querySelector('.add-board')
   let addBoardPopupButton = document.querySelector('.add-board-popup');
+  // let addWorkSpace = document.querySelector('.rigth-work')
   function saveBoardTitle() {
     addBoardPopupForm.style.display = 'none';
+    // addWorkSpace.style.display = 'flex';
+    // addWorkSpace.style.flexDirection = 'column';
+    // document.querySelector('.selected-project-name').textContent = document.getElementById('brd-title').value;
+    // document.querySelector('.owner').textContent = document.getElementById('brd-author').value;
   }
   addBoardPopupButton.addEventListener('click', saveBoardTitle);
 

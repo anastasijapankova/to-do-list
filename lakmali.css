@@ -517,7 +517,7 @@ input::placeholder {
 
 .filterform{
   display:none;
-  width: 22%;
+  width: 280px;
   height: 100px;
   position:absolute;
   z-index: 9;
@@ -1181,4 +1181,5 @@ input::placeholder {
   /* display: flex; */
   /* flex-direction: row; */
   height: 100%;
+  /* display: none; */
 }
