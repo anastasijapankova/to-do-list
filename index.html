@@ -110,19 +110,19 @@
             <div class="add-board" id="popUp3">
                 <div id="adbHead">Add new board</div>
                 <div class="themePicker">Choose background: <br>
-                    <div id="theme1"></div>
-                    <div id="theme2"></div>
-                    <div id="theme3"></div>
+                    <div id="theme1" style = "background-color: grey;"></div>
+                    <div id="theme2" style = "background-color: blanchedalmond;"></div>
+                    <div id="theme3" style = "background-color:aquamarine;"></div>
                 </div>
                 <form action="" class="add-board-popup-form" onsubmit="boardfunct(event)">
                     <label>Add title: <input type="text" id="brd-title" name="title"></label>
                     <label>Author: <input type="text" id="brd-author"></label>
-                    <label>Visibility: </label><br>
+                    <label>Visibility: </label> <br>
                     <select id="visibility" name="visibility">
                         <option value="private">Private</option>
                         <option value="workspace">Workspace</option>
                         <option value="public">Public</option>
-                    </select>
+                    </select> <br>
                     <button id="addBoardPopup" class="add-board-popup" onclick="saveBoardTitle()">Create</button>
                 </form>
                 
