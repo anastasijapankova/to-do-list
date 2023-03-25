@@ -690,11 +690,11 @@ document.getElementById("personPopup").classList.toggle("show");
   
   let popupPersonForm = document.querySelector('.person-popup');
   function closePersonResultForm() {
-    popupPersonForm.style.display = 'none';
-    personTaskName.textContent = '';
-    personTaskDescription.textContent = '';
-    dateTaskPerson.textContent = '';
-    statusPersonTask.textContent = '';
+    // popupPersonForm.style.display = 'none';
+    // personTaskName.textContent = '';
+    // personTaskDescription.textContent = '';
+    // dateTaskPerson.textContent = '';
+    // statusPersonTask.textContent = '';
   }
   popupPersonForm.addEventListener('click', closePersonResultForm);
 

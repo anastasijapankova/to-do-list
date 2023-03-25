@@ -1181,5 +1181,6 @@ input::placeholder {
   /* display: flex; */
   /* flex-direction: row; */
   height: 100%;
-  /* display: none; */
+  display: flex;
+  flex-direction: column;
 }
