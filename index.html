@@ -50,11 +50,13 @@
             </div>
                       
             <div class="account-btn">
-                <button onclick="accountPopup2()" class="drop-btn">Account</button>
+                <button onclick="accountPopup2(event)" class="drop-btn">Account</button>
                 <div class="drop-account" id="popUp2">
-                    <div class="" id="signin">
-                        <button onclick="document.getElementById('login001').style.display='block'" id="signinBtn">Sign in</button>
-                        <div class="display-name">Hello</div>
+                    <div id="signin">
+                        <button onclick="openLoginPopup(event)" id="signinBtn">Sign in</button>
+
+                        <!-- <button onclick="document.getElementById('login001').style.display='block'" id="signinBtn">Sign in</button> -->
+                        <!-- <div class="display-name">Hello</div> -->
                         
                     </div>
                     <div class="block-ac" id="my-tidy">MY TIDY
@@ -110,19 +112,19 @@
             <div class="add-board" id="popUp3">
                 <div id="adbHead">Add new board</div>
                 <div class="themePicker">Choose background: <br>
-                    <div id="theme1" style = "background-color: grey;"></div>
-                    <div id="theme2" style = "background-color: blanchedalmond;"></div>
-                    <div id="theme3" style = "background-color:aquamarine;"></div>
+                    <div id="theme1"></div>
+                    <div id="theme2"></div>
+                    <div id="theme3"></div>
                 </div>
                 <form action="" class="add-board-popup-form" onsubmit="boardfunct(event)">
                     <label>Add title: <input type="text" id="brd-title" name="title"></label>
                     <label>Author: <input type="text" id="brd-author"></label>
-                    <label>Visibility: </label> <br>
+                    <label>Visibility: </label><br>
                     <select id="visibility" name="visibility">
                         <option value="private">Private</option>
                         <option value="workspace">Workspace</option>
                         <option value="public">Public</option>
-                    </select> <br>
+                    </select>
                     <button id="addBoardPopup" class="add-board-popup" onclick="saveBoardTitle()">Create</button>
                 </form>
                 

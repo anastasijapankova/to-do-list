@@ -1,8 +1,13 @@
 /* When the user clicks on the button, 
 toggle between hiding and showing the dropdown content */
-function accountPopup2() {
-    document.getElementById("popUp2").classList.toggle("show");
-  }
+// function accountPopup2() {
+//     document.getElementById("popUp2").classList.toggle("show");
+//   }
+function accountPopup2(event) {
+  event.stopPropagation(); // Add this line to stop the event from propagating
+  document.getElementById("popUp2").classList.toggle("show");
+}
+
 
 function accountPopup1() {
     document.getElementById("popUp1").classList.toggle("show");
@@ -43,6 +48,11 @@ for (i = 0; i < listBoard.length; i++) {
 //for the login 
 var loginPopup = document.getElementById('login001');
 
+function openLoginPopup(event) {
+  event.stopPropagation();
+  console.log('hey')
+  loginPopup.style.display = 'block';
+}
 
 // Close the dropdown if the user clicks outside of it
 
@@ -67,6 +77,36 @@ var loginPopup = document.getElementById('login001');
   // if (event.target == loginPopup) {
   //   loginPopup.style.display = "none"
   // }
+
+
+  
+
+// window.onclick = function(event) {
+//   if (!event.target.matches('.drop-btn')) {
+//     var droppopup2 = document.getElementsByClassName("drop-account");
+//     var i;
+//     for (i = 0; i < droppopup2.length; i++) {
+//       var openDropdown = droppopup2[i];
+//       if (openDropdown.classList.contains('show')) {
+//         openDropdown.classList.remove('show');
+//       }
+//     }
+//   }
+
+//   if (!event.target.matches('.fa-bell')) {
+//     const el = document.querySelector(".bell-notify")
+//     if (el.classList.contains('show')) el.classList.remove('show') 
+//   }
+  
+//   // When the user clicks anywhere outside of the login box, close it
+//   // if (event.target == loginPopup) {
+//   //   loginPopup.style.display = "none"
+//   // }
+//   // Prevent hiding dropdown when clicking on the "Sign in" button
+//   if (event.target == document.getElementById('signinBtn')) {
+//     event.stopPropagation();
+//   }
+// }
 
 
 
