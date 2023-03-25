@@ -286,7 +286,7 @@
 .task-form{
   border: 0.1em solid rgb(163, 164, 165);
   display:none;
-  width: 30vw;
+  width: 300px;
   position: absolute;
   z-index: 9;
   background-color: #F5F5F5;
@@ -303,7 +303,7 @@
 }
 
 .task-name{
-  width: 25vw;
+  width: 250px;
   font-size: 1em;
   margin-bottom: 0.5em;
   border-radius: 1em;
@@ -313,7 +313,7 @@
 }
 
 .task-description{
-  width: 25vw;
+  width: 280px;
   font-size: 1em;
   margin-bottom: 0.5em;
   border: 0.1em solid rgb(163, 164, 165);
@@ -753,7 +753,7 @@ input::placeholder {
   background-color: #eeebeb;
   /* height: 70%; */
   /* width: 100%; */
-  /* z-index: 9999; */
+  z-index: 1000;
   display: flex;
   justify-content: flex-start;
   flex-wrap: wrap;
@@ -863,7 +863,7 @@ input::placeholder {
   background-color: #eeebeb;
   /* height: 70%; */
   /* width: 100%; */
-  /* z-index: 9999; */
+  z-index: 1000;
   display: flex;
   justify-content: flex-start;
   flex-wrap: wrap;

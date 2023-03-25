@@ -15,8 +15,13 @@ informationIcon.addEventListener('click', openInfromationForm);
 
 // ADD DESCRTIPTION TO THE PROJECT
 
+const projectDescription = document.getElementById('projectDescription');
+const projectDescriptionInputs = 'text';
 
+const detailsProjectText = () => {
+  projectDescription.value = localStorage.getItem(projectDescriptionInputs);
 
+}
 
 // ADD FOVOURITE PROJECT TO THE LOCAL STORGE
 
@@ -106,15 +111,23 @@ function getOwners() {
   return owners;
 }
 
+
 // RETRIEVE THE OWNERS FROM THE LOCAL STORAGE TO AN ARRY
-let retrievedOwners = localStorage.getItem("taskBoard");
-let projectCollaborators = JSON.parse(retrievedOwners);
+// let retrievedOwners = localStorage.getItem("taskBoard");
+let projectCollaborators = JSON.parse(localStorage.getItem("taskBoard")) || [];
 
 let collaborators = [];
 
-projectCollaborators.tasks.forEach(task => {
+if(projectCollaborators.length === 0){
+  console.log('No collaborators Found');
+} else {
+  projectCollaborators.tasks.forEach(task => {
   collaborators = collaborators.concat(task.owners);
+
 });
+}
+
+
 
 let uniqeCollaborators = [];
 collaborators.forEach((person) => {
